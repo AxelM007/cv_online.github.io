@@ -14,19 +14,18 @@ profile_pic = current_dir / "utils" / "profile-pic.png"
 
 
 # --- GENERAL SETTINGS ---
-PAGE_TITLE = "Currículum | Jonathan Ramírez"
+PAGE_TITLE = "Currículum | Pedro Axel Méndez López"
 PAGE_ICON = ":wave:"
-NAME = "Jonathan Ramírez"
+NAME = "Pedro Axel Méndez López"
 DESCRIPTION = """
-Soy un científico de datos capaz de garantizar elevados niveles de satisfacción del cliente. Con experiencia en desarrollo e implementación de código a tráves de diversos lenguajes de
-programación con el fin de ofrecer soluciones eficaces para la toma de decisiones, un sólido conocimiento matemático en modelos de Machine Learning supervisados, no supervisados,
-semisupervisados, Deep Learning (NLP, LLM, embeddinggs, langchain etc), Series de Tiempo, Análisis Multivariado e Investigación de Operaciones.
-Capaz de colaborar con los compañeros de trabajo para proporcionar excelentes resultados.
+Soy un estudiante recien egresado en la licenciatura de actuaría con solidos conocimientos en el área de estadística y probabilidad, adicional a eso, tengo conocimientos 
+en código y machine learning, poseo un dominio básico en software tal como lo es python, R studio, Excel (visual basic), y MySQL para realizar consultas y la
+creación de bases de datos
 """
-EMAIL = "natael@ciencias.unam.mx"
+EMAIL = "axelmendezlopez@ciencias.unam.mx"
 SOCIAL_MEDIA = {
-    "LinkedIn": "https://www.linkedin.com/in/jonathan-ramirez-montes-8251a8220/",
-    "GitHub": "https://github.com/NataelM",
+    "LinkedIn": "www.linkedin.com/in/pedro-axel-méndez-lópez-2b695a27a",
+    "GitHub": "https://github.com/AxelM007",
 }
 #### notas y ejercicios 
 PROJECTS = {
@@ -81,10 +80,8 @@ st.write('\n')
 st.subheader("Experiencia & Cualificaciones")
 st.write(
     """
-- ✔️ 3 años de experiencia en el manejo y modelado de información con python.
-- ✔️ 2 años como profesor de adjunto en la UNAM en la materia de manejo de datos con python.
-- ✔️ Manejo de matemáticas y estadística de alto nivel para la modelación de problemas.
-- ✔️ Trabajo en equipo y entrega de resultados de alto valor para los clientes.
+- ✔️ 1 semestre como profesor de adjunto en la UNAM en la materia de probabilidad (con código en R).
+- ✔️ Manejo de matemáticas y estadística de nivel avanzado para la modelación de problemas.
 """
 )
 
