@@ -23,12 +23,12 @@
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="https://drive.google.com/file/d/18dLBZog7kpEGv2Am6coz8k_9m13hgni9/view?usp=sharing">
 
     <!-- Custom Styles -->
     <style>
         body {
-            background-color: #f2f2f2; /* Fondo más claro */
+            background-color: #ffffff;
         }
 
         .wrapper {
@@ -38,7 +38,7 @@
         }
 
         .sidebar-wrapper {
-            background-color: #343a40;
+            background-color: #8b0000; /* Rojo oscuro */
             color: #ffffff;
             padding: 20px;
             min-width: 200px;
@@ -51,27 +51,26 @@
 
         .profile-container {
             text-align: center;
-            margin-bottom: 20px;
         }
 
         .profile {
             border-radius: 50%;
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             object-fit: cover;
-            border: 4px solid #28a745; /* Borde verde más oscuro */
+            margin-bottom: 10px;
         }
 
         .name {
-            color: #28a745;
-            font-size: 28px;
-            margin: 10px 0 5px;
+            color: #dc3545; /* Rojo vivo */
+            font-size: 24px;
+            margin: 0;
         }
 
         .tagline {
             color: #6c757d;
             font-size: 18px;
-            margin: 0;
+            margin: 5px 0;
         }
 
         .contact-container,
@@ -82,43 +81,35 @@
             margin-top: 20px;
         }
 
+        .contact-list li {
+            margin-bottom: 10px;
+        }
+
         .container-block-title {
-            color: #28a745;
-            font-size: 24px;
+            color: #dc3545; /* Rojo vivo */
+            font-size: 20px;
             margin-bottom: 10px;
         }
 
         .section-title {
-            color: #28a745;
-            font-size: 28px;
+            color: #dc3545; /* Rojo vivo */
+            font-size: 24px;
             margin-bottom: 20px;
         }
 
         .btn-primary {
-            background-color: #28a745; /* Verde más oscuro */
-            border-color: #28a745;
-            font-size: 18px;
-            padding: 10px 20px;
+            background-color: #8b0000; /* Rojo oscuro */
+            border-color: #8b0000; /* Rojo oscuro */
         }
 
         .btn-primary:hover {
-            background-color: #218838; /* Verde aún más oscuro */
-            border-color: #218838;
+            background-color: #580000; /* Rojo más oscuro */
+            border-color: #580000; /* Rojo más oscuro */
         }
 
         .btn-primary:focus,
         .btn-primary.focus {
-            box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
-        }
-
-        .pdf-section {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .pdf-btn {
-            font-size: 18px;
-            padding: 10px 20px;
+            box-shadow: 0 0 0 0.2rem rgba(139, 0, 0, 0.5); /* Sutil cambio de sombra */
         }
     </style>
 
@@ -136,7 +127,7 @@
             <!-- Profile -->
             <div class="profile-container">
                 <!-- Profile Image -->
-                <img class="profile" src="assets/images/tu_foto.jpg" alt="Tu Foto">
+                <img class="profile" src="ENLACE_DE_GOOGLE_DRIVE_PARA_IMAGEN_PERFIL" alt="Profile Image">
                 <!-- Name and Tagline -->
                 <h1 class="name">Pedro Axel Méndez López</h1>
                 <h3 class="tagline">Actuario-Asistente de profesor</h3>
@@ -145,10 +136,14 @@
             <!-- Contact Information -->
             <div class="contact-container container-block">
                 <ul class="list-unstyled contact-list">
-                    <li class="email"><i class="fa fa-envelope"></i><a href="mailto:axelmendezlopez@ciencias.unam.mx">axelmendezlopez@ciencias.unam.mx</a></li>
+                    <li class="email"><i class="fa fa-envelope"></i><a
+                            href="mailto:axelmendezlopez@ciencias.unam.mx">axelmendezlopez@ciencias.unam.mx</a></li>
                     <li class="phone"><i class="fa fa-phone"></i>+55 5610397403</li>
-                    <li class="linkedin"><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/pedro-axel-méndez-lópez-2b695a27a/" target="_blank">LinkedIn</a></li>
-                    <li class="github"><i class="fab fa-github"></i><a href="https://github.com/AxelM007" target="_blank">GitHub</a></li>
+                    <li class="linkedin"><i class="fab fa-linkedin"></i><a
+                            href="https://www.linkedin.com/in/pedro-axel-méndez-lópez-2b695a27a/" target="_blank">LinkedIn</a>
+                    </li>
+                    <li class="github"><i class="fab fa-github"></i><a href="https://github.com/AxelM007"
+                            target="_blank">GitHub</a></li>
                 </ul>
             </div><!--// Contact Information -->
 
@@ -180,6 +175,7 @@
                     <li>Ciencia</li>
                 </ul>
             </div><!--// Interests Section -->
+
         </div><!--// Sidebar -->
 
         <!-- Main Content -->
@@ -250,20 +246,18 @@
                             <h3 class="job-title">Asistente de Profesor</h3>
                             <div class="time">Agosto 2023 - Presente</div>
                         </div>
-                        <!-- Quitar la parte de "Realidad Aumentada" y "Genderlab" -->
+                        <div class="company">Genderlab</div>
                     </div>
                     <div class="details"></div>
                 </div>
             </section><!--// Experiences Section -->
 
-            <!-- PDF Section -->
-            <section class="pdf-section">
-                <a class="btn btn-primary pdf-btn" href="https://github.com/AxelM007/utils/CV Pedro Axel Méndez López.pdf" target="_blank">Ver PDF</a>
-            </section><!--// PDF Section -->
-
             <!-- Footer -->
             <footer class="footer">
-                <div class="text-center"></div>
+                <div class="text-center">
+                    <!-- Agregamos el botón para abrir el PDF desde Google Drive -->
+                    <a class="btn btn-primary" href="https://drive.google.com/file/d/1kuq4yAx4KcOce83z5C1vN_PCLDuhbx32/view?usp=sharing" target="_blank">Ver CV en PDF</a>
+                </div>
             </footer><!--// Footer -->
 
         </div><!--// Main Content -->
@@ -271,7 +265,12 @@
     </div><!--// Wrapper -->
 
     <!-- Javascript -->
-    <!-- ... (Las etiquetas de script para jQuery y otros permanecen igual) ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <!-- Custom JS -->
+    <script type="text/javascript" src="assets/js/main.js"></script>
 
 </body>
 
