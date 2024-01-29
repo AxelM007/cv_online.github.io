@@ -51,26 +51,27 @@
 
         .profile-container {
             text-align: center;
+            margin-bottom: 20px;
         }
 
         .profile {
             border-radius: 50%;
-            width: 120px;
-            height: 120px;
+            width: 150px;
+            height: 150px;
             object-fit: cover;
-            margin-bottom: 10px;
+            border: 4px solid #28a745; /* Borde verde más oscuro */
         }
 
         .name {
             color: #28a745;
-            font-size: 24px;
-            margin: 0;
+            font-size: 28px;
+            margin: 10px 0 5px;
         }
 
         .tagline {
             color: #6c757d;
             font-size: 18px;
-            margin: 5px 0;
+            margin: 0;
         }
 
         .contact-container,
@@ -81,25 +82,23 @@
             margin-top: 20px;
         }
 
-        .contact-list li {
-            margin-bottom: 10px;
-        }
-
         .container-block-title {
             color: #28a745;
-            font-size: 20px;
+            font-size: 24px;
             margin-bottom: 10px;
         }
 
         .section-title {
             color: #28a745;
-            font-size: 24px;
+            font-size: 28px;
             margin-bottom: 20px;
         }
 
         .btn-primary {
             background-color: #28a745; /* Verde más oscuro */
             border-color: #28a745;
+            font-size: 18px;
+            padding: 10px 20px;
         }
 
         .btn-primary:hover {
@@ -110,6 +109,16 @@
         .btn-primary:focus,
         .btn-primary.focus {
             box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+        }
+
+        .pdf-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .pdf-btn {
+            font-size: 18px;
+            padding: 10px 20px;
         }
     </style>
 
@@ -178,9 +187,8 @@
             </section><!--// Experiences Section -->
 
             <!-- PDF Section -->
-            <section class="section pdf-section">
-                <h2 class="section-title">Currículum en PDF</h2>
-                <a class="btn btn-primary" href="enlace_a_tu_pdf.pdf" target="_blank">Ver PDF</a>
+            <section class="pdf-section">
+                <a class="btn btn-primary pdf-btn" href="enlace_a_tu_pdf.pdf" target="_blank">Ver PDF</a>
             </section><!--// PDF Section -->
 
             <!-- Footer -->
