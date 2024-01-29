@@ -28,13 +28,14 @@
     <!-- Custom Styles -->
     <style>
         body {
-            background-color: #f8f9fa;
+            background-color: #f5f5f5; 
         }
 
         .wrapper {
             display: flex;
             background-color: #ffffff;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid #28a745; /* Color verde olivo en la parte superior */
         }
 
         .sidebar-wrapper {
@@ -55,21 +56,21 @@
 
         .profile {
             border-radius: 50%;
-            width: 120px;
-            height: 120px;
+            width: 150px; 
+            height: 150px;
             object-fit: cover;
             margin-bottom: 10px;
         }
 
         .name {
             color: #28a745;
-            font-size: 24px;
+            font-size: 28px; 
             margin: 0;
         }
 
         .tagline {
             color: #6c757d;
-            font-size: 18px;
+            font-size: 20px; 
             margin: 5px 0;
         }
 
@@ -87,29 +88,29 @@
 
         .container-block-title {
             color: #28a745;
-            font-size: 20px;
+            font-size: 22px; 
             margin-bottom: 10px;
         }
 
         .section-title {
             color: #28a745;
-            font-size: 24px;
+            font-size: 28px; 
             margin-bottom: 20px;
         }
 
         .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
+            background-color: #28a745;
+            border-color: #28a745;
         }
 
         .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
+            background-color: #218838; 
+            border-color: #218838;
         }
 
         .btn-primary:focus,
         .btn-primary.focus {
-            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+            box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
         }
 
         .summary p {
@@ -158,14 +159,14 @@
             <!-- Profile -->
             <div class="profile-container">
                 <!-- Profile Image -->
-                <img class="profile" src="assets/images/oscar.jpg" alt="Profile Image">
+                <img class="profile" src="assets/images/tu_foto.jpg" alt="Tu Foto"> <!-- Cambia 'tu_foto.jpg' por el nombre de tu archivo de imagen -->
                 <!-- Name and Tagline -->
                 <h1 class="name">Pedro Axel Méndez López</h1>
                 <h3 class="tagline">Actuario-Asistente de profesor</h3>
                 <!-- Language Toggle -->
                 <div class="text-center">
                     <input id="language" type="checkbox" checked data-offstyle="warning"
-                        data-toggle="toggle" data-on="English" data-off="Spanish">
+                        data-toggle="toggle" data-on="Español" data-off="Inglés"> <!-- Cambié los textos del botón de idioma -->
                 </div>
             </div><!--// Profile -->
 
@@ -256,18 +257,6 @@
                             <div class="level-bar-inner" data-level="90%"></div>
                         </div>
                     </div>
-                    <div class="item">
-                        <h3 class="level-title">React</h3>
-                        <div class="level-bar">
-                            <div class="level-bar-inner" data-level="60%"></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <h3 class="level-title">Realidad Aumentada</h3>
-                        <div class="level-bar">
-                            <div class="level-bar-inner" data-level="35%"></div>
-                        </div>
-                    </div>
                 </div>
             </section><!--// Skills Section -->
 
@@ -288,13 +277,14 @@
             <!-- Experiences Section -->
             <section class="section experiences-section">
                 <h2 class="section-title"><i class="fa fa-briefcase"></i> Experiencias </h2>
+                <!-- Puedes agregar más experiencias según sea necesario -->
                 <div class="item">
                     <div class="meta">
                         <div class="upper-row">
                             <h3 class="job-title">Asistente de Profesor</h3>
                             <div class="time">Agosto 2023 - Presente</div>
                         </div>
-                        <div class="company">Genderlab</div>
+                        <!-- Eliminé la referencia a Genderlab -->
                     </div>
                     <div class="details"></div>
                 </div>
@@ -311,8 +301,7 @@
 
     <!-- Javascript -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <!-- Custom JS -->
