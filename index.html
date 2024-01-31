@@ -35,19 +35,20 @@
     <!-- Custom Styles -->
     <style>
         body {
-            background-color: #f8f9fa;
+            background-color: #2c3e50; /* Negro o Café Oscuro */
             font-family: 'Roboto', sans-serif;
+            color: #ffffff; /* Blanco */
         }
 
         .wrapper {
             display: flex;
-            background-color: #f8f9fa;
+            background-color: #2c3e50; /* Negro o Café Oscuro */
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
         .sidebar-wrapper {
-            background-color: #d4af37; /* Dorado */
-            color: #808080; /* Gris */
+            background-color: #2c3e50; /* Negro o Café Oscuro */
+            color: #ffffff; /* Blanco */
             padding: 20px;
             min-width: 200px;
         }
@@ -124,8 +125,36 @@
             text-align: center;
             margin-top: 40px;
             padding: 20px;
-            background-color: #d4af37; /* Dorado */
-            color: #808080; /* Gris */
+            background-color: #2c3e50; /* Negro o Café Oscuro */
+            color: #ffffff; /* Blanco */
+        }
+
+        /* Agregamos algunos estilos adicionales para dar más personalidad */
+        .section.summary-section {
+            border-bottom: 2px solid #d4af37; /* Dorado */
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .section.summary-section p {
+            font-size: 18px;
+        }
+
+        .skills-section,
+        .experiences-section {
+            border-bottom: 2px solid #d4af37; /* Dorado */
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .skillset,
+        .experiences-section .item {
+            border-left: 2px solid #d4af37; /* Dorado */
+            padding-left: 20px;
+        }
+
+        .footer p {
+            font-size: 16px;
         }
     </style>
 
@@ -256,8 +285,15 @@
             <!-- Footer -->
             <footer class="footer">
                 <div class="text-center">
-                    <p>Derechos Reservados &copy; Pedro Axel Méndez López</p>
+                    <p>&copy; Pedro Axel Méndez López</p>
                     <p>Comunicarse al: +55 5610397403</p>
+                    <!-- Botones de GitHub y LinkedIn -->
+                    <a class="btn btn-primary" href="https://github.com/AxelM007" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a class="btn btn-primary" href="https://www.linkedin.com/in/pedro-axel-méndez-lópez-2b695a27a/" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
                     <!-- Agregamos el botón para abrir el PDF desde Google Drive -->
                     <a class="btn btn-primary" href="https://drive.google.com/file/d/1kuq4yAx4KcOce83z5C1vN_PCLDuhbx32/view?usp=sharing"
                         target="_blank">Ver CV en PDF</a>
