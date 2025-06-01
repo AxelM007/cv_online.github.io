@@ -2,6 +2,7 @@
 <html lang="es">
 
 <head>
+    <!-- Meta y favicon -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CV - Pedro Axel Méndez López</title>
@@ -17,26 +18,25 @@
     <!-- Estilos personalizados -->
     <style>
         body {
-            background: linear-gradient(135deg, #e8f0ec 0%, #fdfdfd 100%);
+            background: linear-gradient(to bottom right, #f0f4f2, #ddeeea);
             color: #2c2c2c;
             font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
         }
         .sidebar {
             background-color: #ffffff;
             padding: 2rem;
             min-width: 280px;
-            border-right: 1px solid #ddd;
-            box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+            border-right: 1px solid #ccc;
         }
         .main-content {
             padding: 3rem 4rem;
             flex-grow: 1;
-            background-color: #fefefe;
-            background-image: radial-gradient(circle at top left, #e5ece9 0%, transparent 50%),
-                              radial-gradient(circle at bottom right, #f0f5f2 0%, transparent 50%);
+            background-color: transparent;
         }
         h1, .section-title {
-            color: #2f4f4f;
+            color: #314e4e;
         }
         .tagline, .contact-list a, .interests-list li {
             color: #6c757d;
@@ -46,52 +46,57 @@
             height: 130px;
             object-fit: cover;
             border-radius: 50%;
-            border: 3px solid #d0e0d5;
+            border: 3px solid #d2e0dc;
         }
         .btn-custom {
-            background-color: #2f4f4f;
+            background-color: #3a716f;
             border: none;
             color: #fff;
         }
         .btn-custom:hover {
-            background-color: #223c3c;
+            background-color: #2e5856;
         }
         .section-title {
             font-size: 1.6rem;
             margin-bottom: 1rem;
-            border-bottom: 2px solid #b6ccc4;
+            border-bottom: 2px solid #a0b8b5;
             padding-bottom: .3rem;
-        }
+        }  
         .main-content p,
         .main-content li {
             font-size: 1.05rem;
         }
         .border-start {
-            border-left: 4px solid #8bb3a6;
+            border-left: 4px solid #8cbab3;
             padding-left: 1.25rem;
         }
         .hero-header {
-            background-color: #f3f8f6;
-            border: 1px solid #cde3db;
+            background: linear-gradient(to right, #e7f5f1, #dbeae5);
+            border: 1px solid #c4dcd6;
             border-radius: 10px;
-            padding: 1.5rem 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            padding: 2rem 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
         }
         .hero-header h2 {
-            color: #2f4f4f;
-            font-size: 1.9rem;
-            margin-bottom: .5rem;
+            color: #2d4444;
+            font-size: 2rem;
+            margin-bottom: .75rem;
         }
         .hero-header p {
             font-size: 1.1rem;
-            color: #4d5d5d;
+            color: #4d5c5c;
+        }
+        .content-wrapper {
+            display: flex;
+            min-height: 100vh;
+            width: 100%;
         }
     </style>
 </head>
 
 <body>
-    <div class="d-flex flex-wrap">
+    <div class="content-wrapper">
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="text-center mb-4">
@@ -101,7 +106,7 @@
             </div>
             <h5 class="section-title">Contacto</h5>
             <ul class="list-unstyled contact-list">
-                <li><i class="fa fa-envelope"></i> <a href="mailto:axelmendezlopez@ciencias.unam.mx">axelmendezlopez@gmail.com</a></li>
+                <li><i class="fa fa-envelope"></i> <a href="mailto:axelmendezlopez@gmail.com">axelmendezlopez@gmail.com</a></li>
                 <li><i class="fa fa-phone"></i> 5610397403</li>
             </ul>
             <h5 class="section-title mt-4">Educación</h5>
