@@ -29,6 +29,7 @@
         }
         .main-content {
             padding: 2rem;
+            flex-grow: 1;
         }
         h1, .section-title {
             color: #00ffc3;
@@ -49,9 +50,20 @@
         .btn-custom:hover {
             background-color: #009175;
         }
-        .border-left {
+        .border-left, .border-start {
             border-left: 3px solid #00ffc3;
             padding-left: 1rem;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: .3rem;
+        }
+        .main-content p,
+        .main-content li {
+            font-size: 1.1rem;
+            color: #dee2e6;
         }
     </style>
 </head>
@@ -87,28 +99,32 @@
         </div>
 
         <!-- Main Content -->
-        <div class="main-content flex-grow-1">
+        <div class="main-content">
             <section class="mb-4">
-                <h2 class="section-title">Perfil Profesional</h2>
-                <p>Soy actuario egresado de la UNAM, con experiencia en análisis de datos, visualización y automatización de procesos. Me especializo en el uso de herramientas como Python, R, SQL, Excel y Power BI para generar soluciones prácticas y efectivas en contextos reales, principalmente en el sector salud y educación.
-He trabajado como becario de análisis en Nadro, como analista en Star Médica, y como asistente de profesor en estadística en la Facultad de Ciencias. Me considero una persona curiosa, adaptable y orientada a resultados. Siempre busco aprender algo nuevo, mantener una comunicación clara y generar impacto positivo a través de mi trabajo.
- </p>
+                <h2 class="section-title">Sobre mí</h2>
+                <p>
+                    Soy Pedro Axel Méndez López, actuario egresado de la UNAM. Me especializo en análisis de datos, visualización y automatización de procesos.
+                    Disfruto aprender, enseñar y resolver problemas complejos con herramientas como Python, R, SQL y Power BI.
+                </p>
             </section>
 
             <section class="mb-4">
                 <h2 class="section-title">Habilidades</h2>
-                <div class="border-left">
-                    <p>Python, MySQL, R Studio, Power BI, Excel (intermedio)</p>
-                    <p>Git</p>
-                </div>
+                <ul class="list-unstyled ms-3">
+                    <li>✔ Python & R</li>
+                    <li>✔ MySQL / PostgreSQL</li>
+                    <li>✔ Power BI / Excel avanzado</li>
+                    <li>✔ Estadística aplicada</li>
+                    <li>✔ Dashboarding & automatización</li>
+                </ul>
             </section>
 
             <section class="mb-4">
-                <h2 class="section-title">Experiencia</h2>
-                <div class="border-left">
-                    <p><strong>Asistente de Profesor - Facultad de Ciencias</strong><br><small>Agosto 2023 - Presente</small></p>
-                    <p><strong>Becario en Mercadotecnia - NADRO</strong><br><small>Julio 2024 - Febrero 2025</small></p>
-                    <p><strong>Analista de Vistas - Star Médica</strong><br><small>Febrero 2025 - Actualidad</small></p>
+                <h2 class="section-title">Experiencia reciente</h2>
+                <div class="border-start ps-3">
+                    <p><strong>Star Médica</strong> – Analista de Gestión de Vistas (2025 - Actualidad)</p>
+                    <p><strong>Nadro</strong> – Becario en Análisis de Datos (2024 - 2025)</p>
+                    <p><strong>UNAM</strong> – Asistente de profesor (2023 - Presente)</p>
                 </div>
             </section>
 
