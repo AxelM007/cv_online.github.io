@@ -30,6 +30,8 @@
         .main-content {
             padding: 2rem;
             flex-grow: 1;
+            min-height: 100vh;
+            background: linear-gradient(to bottom right, #012e2e, #001f1f);
         }
         h1, .section-title {
             color: #00ffc3;
@@ -64,6 +66,22 @@
         .main-content li {
             font-size: 1.1rem;
             color: #dee2e6;
+        }
+        .hero-header {
+            background-color: rgba(0, 255, 195, 0.05);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 10px rgba(0, 255, 195, 0.1);
+        }
+        .hero-header h2 {
+            color: #00ffc3;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .hero-header p {
+            font-size: 1.1rem;
+            color: #cfd8dc;
         }
     </style>
 </head>
@@ -100,6 +118,11 @@
 
         <!-- Main Content -->
         <div class="main-content">
+            <div class="hero-header">
+                <h2>Hola, soy Axel 👋</h2>
+                <p>Actuario con pasión por los datos, la docencia y la tecnología. Me gusta traducir problemas complejos en soluciones claras y accionables.</p>
+            </div>
+
             <section class="mb-4">
                 <h2 class="section-title">Sobre mí</h2>
                 <p>
