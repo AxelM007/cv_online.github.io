@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pedro Axel Méndez López | CV Profesional</title>
+  <link rel="icon" href="./imagenpagina.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
@@ -16,24 +17,37 @@
       color: #2b2b2b;
     }
     header {
-      background: #f4e6f0;
+      background: linear-gradient(to right, #f4e6f0, #faedf6);
       color: #2b2b2b;
-      padding: 2rem 1rem;
+      padding: 3rem 1rem;
       text-align: center;
       border-bottom: 2px solid #e0d0db;
+      position: relative;
+    }
+    header::after {
+      content: "\f2bb";
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      font-size: 3rem;
+      color: #d88dbc;
+      position: absolute;
+      right: 2rem;
+      top: 2rem;
+      opacity: 0.2;
     }
     header h1 {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       margin-bottom: .5rem;
     }
     header p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: #5e4c59;
     }
     nav {
       background: #e6d1de;
       padding: .75rem;
       text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
     nav a {
       color: #5e4c59;
@@ -52,7 +66,17 @@
     h2 {
       color: #a74382;
       font-size: 1.7rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
+      position: relative;
+    }
+    h2::before {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background-color: #d88dbc;
     }
     .about p {
       max-width: 700px;
@@ -65,11 +89,21 @@
     }
     .skills li, .experience li {
       padding: .5rem 0;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .skills li::before, .experience li::before {
+      content: "\f00c";
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      color: #a74382;
+      position: absolute;
+      left: 0;
     }
     .contact-icons a {
       margin: 0 .5rem;
       color: #a74382;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
     }
     .contact-icons a:hover {
       color: #d96bb6;
@@ -80,14 +114,6 @@
       background: #f4e6f0;
       color: #555;
       font-size: 0.9rem;
-    }
-    .photo {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #d9aacd;
-      margin-bottom: 1rem;
     }
     .cert-section {
       background: #faf2f8;
@@ -106,9 +132,8 @@
 
 <body>
   <header>
-    <img src="./foto.jpg" alt="Foto de Axel" class="photo">
     <h1>Pedro Axel Méndez López</h1>
-    <p>Actuario | Ciencia de Datos | Automatización | Visualización</p>
+    <p><i class="fas fa-chart-line"></i> Actuario | Ciencia de Datos | Automatización | Visualización</p>
   </header>
 
   <nav>
@@ -143,7 +168,6 @@
     </ul>
   </section>
 
-  <!-- Sección especial para mostrar una constancia/diplomado -->
   <section id="constancia" class="cert-section">
     <h2>Constancia académica</h2>
     <p>Concluí el diplomado <strong>"Técnicas estadísticas y minería de datos"</strong> en FES Acatlán UNAM. Puedes ver la constancia en el siguiente enlace:</p>
