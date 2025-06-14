@@ -1,80 +1,129 @@
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedro Axel Méndez López | Actuario y Analista de Datos</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-        background: linear-gradient(to bottom right, #f4f7f6, #e7efec);
-        color: #1f1f1f;
-        font-family: 'IBM Plex Sans', sans-serif;
-        margin: 0;
-        padding: 0;
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.6;
+      background: #f7f9f8;
+      color: #333;
     }
-    .sidebar {
-        background-color: #ffffff;
-        padding: 2rem;
-        min-width: 280px;
-        border-right: 1px solid #d4d9d8;
+    header {
+      background: #0f3f3c;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
     }
-    .main-content {
-        padding: 3rem 4rem;
-        flex-grow: 1;
-        background-color: transparent;
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: .5rem;
     }
-    h1, .section-title {
-        color: #1a3c3c;
-        font-weight: 600;
+    header p {
+      font-size: 1.1rem;
+      color: #c2dad9;
     }
-    .tagline, .contact-list a, .interests-list li {
-        color: #6b6b6b;
+    nav {
+      background: #103c3a;
+      padding: .75rem;
+      text-align: center;
     }
-    .profile-img {
-        width: 130px;
-        height: 130px;
-        object-fit: cover;
-        border-radius: 50%;
-        border: 3px solid #9accc4;
+    nav a {
+      color: #c9e4e2;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 500;
     }
-    .btn-custom {
-        background-color: #2d6e6c;
-        border: none;
-        color: #fff;
-        font-weight: 500;
+    nav a:hover {
+      color: #fff;
     }
-    .btn-custom:hover {
-        background-color: #255755;
+    section {
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: auto;
     }
-    .section-title {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        border-bottom: 2px solid #95bcb7;
-        padding-bottom: .4rem;
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1rem;
     }
-    .main-content p,
-    .main-content li {
-        font-size: 1.05rem;
+    .skills ul, .experience ul {
+      list-style: none;
+      padding-left: 0;
     }
-    .border-start {
-        border-left: 4px solid #7cb1ab;
-        padding-left: 1.25rem;
+    .skills li, .experience li {
+      padding: .5rem 0;
     }
-    .hero-header {
-        background: linear-gradient(to right, #eef7f4, #e0ece7);
-        border: 1px solid #c4dcd6;
-        border-radius: 10px;
-        padding: 2rem 2.5rem;
-        margin-bottom: 2.5rem;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+    .contact-icons a {
+      margin: 0 .5rem;
+      color: #0f3f3c;
+      font-size: 1.5rem;
     }
-    .hero-header h2 {
-        color: #2a4242;
-        font-size: 2rem;
-        margin-bottom: .75rem;
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #e6f0ee;
+      color: #555;
     }
-    .hero-header p {
-        font-size: 1.1rem;
-        color: #3c4f4f;
-    }
-    .content-wrapper {
-        display: flex;
-        min-height: 100vh;
-        width: 100%;
-    }
-</style>
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Pedro Axel Méndez López</h1>
+    <p>Actuario | Ciencia de Datos | Automatización | Visualización</p>
+  </header>
+
+  <nav>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#habilidades">Habilidades</a>
+    <a href="#experiencia">Experiencia</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section id="sobre-mi" class="about">
+    <h2>Sobre mí</h2>
+    <p>Soy actuario egresado de la UNAM con enfoque en análisis de datos, automatización y visualización. He trabajado en los sectores salud, académico y empresarial, buscando siempre traducir datos en decisiones útiles. Me interesa lo técnico con propósito práctico.</p>
+  </section>
+
+  <section id="habilidades" class="skills">
+    <h2>Habilidades</h2>
+    <ul>
+      <li><strong>Lenguajes:</strong> Python, R</li>
+      <li><strong>Bases de datos:</strong> PostgreSQL, MySQL</li>
+      <li><strong>Herramientas:</strong> Power BI, Excel avanzado</li>
+      <li><strong>Otros:</strong> Estadística aplicada, automatización, visualización</li>
+    </ul>
+  </section>
+
+  <section id="experiencia" class="experience">
+    <h2>Experiencia</h2>
+    <ul>
+      <li><strong>Star Médica</strong> – Analista de Gestión de Vistas (2025 - Actualidad)</li>
+      <li><strong>UNAM</strong> – Asistente de profesor en cursos de Probabilidad e Inferencia (2023 - Presente)</li>
+      <li><strong>Nadro</strong> – Becario en análisis de datos comerciales (2024 - 2025)</li>
+    </ul>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>¿Te interesa trabajar conmigo o colaborar?</p>
+    <div class="contact-icons">
+      <a href="mailto:axelmendezlopez@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/AxelM007" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/pedro-axel-méndez-lópez-2b695a27a/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://drive.google.com/file/d/1CKvNZNprQ_y9fv1j91SH8ZOIQ6rcpYdW/view?usp=sharing" target="_blank"><i class="fas fa-file-pdf"></i></a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Pedro Axel Méndez López – Todos los derechos reservados</p>
+  </footer>
+</body>
+</html>
