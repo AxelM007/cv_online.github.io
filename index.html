@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html>\n<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -13,59 +12,59 @@
     body {
       font-family: 'IBM Plex Sans', sans-serif;
       line-height: 1.6;
-      background: #fdfcfc;
-      color: #2b2b2b;
+      background: #f9fdfb;
+      color: #1f2d2a;
     }
     header {
-      background: linear-gradient(to right, #f4e6f0, #faedf6);
-      color: #2b2b2b;
+      background: linear-gradient(to right, #d6f3ec, #c0e8df);
+      color: #1f2d2a;
       padding: 3rem 1rem;
       text-align: center;
-      border-bottom: 2px solid #e0d0db;
+      border-bottom: 2px solid #b2dad2;
       position: relative;
     }
     header::after {
-      content: "\f2bb";
+      content: "\f201";
       font-family: 'Font Awesome 6 Free';
       font-weight: 900;
       font-size: 3rem;
-      color: #d88dbc;
+      color: #81cbbf;
       position: absolute;
       right: 2rem;
       top: 2rem;
-      opacity: 0.2;
+      opacity: 0.15;
     }
     header h1 {
-      font-size: 2.4rem;
+      font-size: 2.5rem;
       margin-bottom: .5rem;
     }
     header p {
       font-size: 1.2rem;
-      color: #5e4c59;
+      color: #3e5d58;
     }
     nav {
-      background: #e6d1de;
+      background: #d0eee7;
       padding: .75rem;
       text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.04);
     }
     nav a {
-      color: #5e4c59;
+      color: #2a4a46;
       margin: 0 1rem;
       text-decoration: none;
       font-weight: 500;
     }
     nav a:hover {
-      color: #a74382;
+      color: #379e8f;
     }
     section {
       padding: 3rem 2rem;
-      max-width: 900px;
+      max-width: 950px;
       margin: auto;
     }
     h2 {
-      color: #a74382;
-      font-size: 1.7rem;
+      color: #298f80;
+      font-size: 1.9rem;
       margin-bottom: 1.2rem;
       position: relative;
     }
@@ -74,56 +73,56 @@
       position: absolute;
       bottom: -8px;
       left: 0;
-      width: 50px;
+      width: 60px;
       height: 3px;
-      background-color: #d88dbc;
+      background-color: #77c7b8;
     }
     .about p {
-      max-width: 700px;
+      max-width: 740px;
       margin: auto;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
     }
-    .skills ul, .experience ul {
+    .skills ul, .experience ul, .projects ul {
       list-style: none;
       padding-left: 0;
     }
-    .skills li, .experience li {
-      padding: .5rem 0;
-      padding-left: 1.2rem;
+    .skills li, .experience li, .projects li {
+      padding: .6rem 0;
+      padding-left: 1.4rem;
       position: relative;
     }
-    .skills li::before, .experience li::before {
-      content: "\f00c";
+    .skills li::before, .experience li::before, .projects li::before {
+      content: "\f058";
       font-family: 'Font Awesome 6 Free';
       font-weight: 900;
-      color: #a74382;
+      color: #379e8f;
       position: absolute;
       left: 0;
     }
     .contact-icons a {
-      margin: 0 .5rem;
-      color: #a74382;
+      margin: 0 .6rem;
+      color: #298f80;
       font-size: 1.6rem;
     }
     .contact-icons a:hover {
-      color: #d96bb6;
+      color: #3fc4b0;
     }
     footer {
       text-align: center;
       padding: 2rem;
-      background: #f4e6f0;
-      color: #555;
-      font-size: 0.9rem;
+      background: #d6f3ec;
+      color: #425c58;
+      font-size: 0.95rem;
     }
     .cert-section {
-      background: #faf2f8;
-      border: 1px solid #e7c8dc;
+      background: #eefaf7;
+      border: 1px solid #c8e8e1;
       padding: 2rem;
       border-radius: 8px;
       margin-top: 2rem;
     }
     .cert-section a {
-      color: #a74382;
+      color: #2e998a;
       font-weight: 600;
       text-decoration: underline;
     }
@@ -133,50 +132,59 @@
 <body>
   <header>
     <h1>Pedro Axel Méndez López</h1>
-    <p><i class="fas fa-chart-line"></i> Actuario | Ciencia de Datos | Automatización | Visualización</p>
+    <p><i class="fas fa-rocket"></i> Actuario | Ciencia de Datos | Estrategia & Automatización</p>
   </header>
 
   <nav>
     <a href="#sobre-mi">Sobre mí</a>
     <a href="#habilidades">Habilidades</a>
     <a href="#experiencia">Experiencia</a>
+    <a href="#proyectos">Proyectos</a>
     <a href="#constancia">Constancia</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
   <section id="sobre-mi" class="about">
     <h2>Sobre mí</h2>
-    <p>Soy actuario egresado de la UNAM con enfoque en análisis de datos, automatización y visualización. He trabajado en los sectores salud, académico y empresarial, buscando siempre traducir datos en decisiones útiles. Me interesa lo técnico con propósito práctico.</p>
+    <p>Actuario egresado de la UNAM con enfoque en ciencia de datos, automatización y análisis aplicado. Tengo experiencia en el sector salud, académico y empresarial. Me apasiona transformar datos complejos en decisiones estratégicas claras. Busco siempre soluciones prácticas con visión técnica.</p>
   </section>
 
   <section id="habilidades" class="skills">
-    <h2>Habilidades</h2>
+    <h2>Habilidades técnicas</h2>
     <ul>
       <li><strong>Lenguajes:</strong> Python, R</li>
       <li><strong>Bases de datos:</strong> PostgreSQL, MySQL</li>
-      <li><strong>Herramientas:</strong> Power BI, Excel avanzado</li>
-      <li><strong>Otros:</strong> Estadística aplicada, automatización, visualización</li>
+      <li><strong>Herramientas:</strong> Power BI, Excel avanzado, Git, LaTeX</li>
+      <li><strong>Áreas:</strong> Estadística aplicada, automatización de procesos, visualización de datos, modelado</li>
     </ul>
   </section>
 
   <section id="experiencia" class="experience">
-    <h2>Experiencia</h2>
+    <h2>Experiencia profesional</h2>
     <ul>
-      <li><strong>Star Médica</strong> – Analista de Gestión de Vistas (2025 - Actualidad)</li>
-      <li><strong>UNAM</strong> – Asistente de profesor en cursos de Probabilidad e Inferencia (2023 - Presente)</li>
-      <li><strong>Nadro</strong> – Becario en análisis de datos comerciales (2024 - 2025)</li>
+      <li><strong>Star Médica</strong> – Analista de Gestión de Vistas (2025 - Actualidad)<br>Automatización de flujos, validación de datos médicos y construcción de dashboards para toma de decisiones clínicas y comerciales.</li>
+      <li><strong>UNAM</strong> – Asistente académico (2023 - Presente)<br>Apoyo docente en cursos de inferencia estadística y probabilidad, generación de material, asesorías y evaluación de proyectos.</li>
+      <li><strong>Nadro</strong> – Becario en análisis comercial (2024 - 2025)<br>Elaboración de reportes, visualización de tendencias y apoyo en análisis de campañas de mercado.</li>
+    </ul>
+  </section>
+
+  <section id="proyectos" class="projects">
+    <h2>Proyectos y herramientas</h2>
+    <ul>
+      <li><strong>Tablero para sector salud:</strong> Visualización y seguimiento de indicadores clínicos y administrativos con Power BI.</li>
+      <li><strong>Script de homologación:</strong> Automatización en Python para limpieza de bases médicas heterogéneas.</li>
+      <li><strong>Simuladores académicos:</strong> Modelos para cursos de probabilidad y estadística en entorno LaTeX/R.</li>
     </ul>
   </section>
 
   <section id="constancia" class="cert-section">
-    <h2>Constancia académica</h2>
-    <p>Concluí el diplomado <strong>"Técnicas estadísticas y minería de datos"</strong> en FES Acatlán UNAM. Puedes ver la constancia en el siguiente enlace:</p>
-    <p><a href="https://drive.google.com/file/d/1CKvNZNprQ_y9fv1j91SH8ZOIQ6rcpYdW/view?usp=sharing" target="_blank">Ver constancia</a></p>
+    <h2>Diplomado especializado</h2>
+    <p>Concluí el diplomado <strong>"Técnicas estadísticas y minería de datos"</strong> en FES Acatlán UNAM, enfocado en machine learning aplicado y herramientas estadísticas modernas. <a href="https://drive.google.com/file/d/1CKvNZNprQ_y9fv1j91SH8ZOIQ6rcpYdW/view?usp=sharing" target="_blank">Ver constancia</a></p>
   </section>
 
   <section id="contacto">
     <h2>Contacto</h2>
-    <p>¿Te interesa trabajar conmigo o colaborar?</p>
+    <p>¿Colaboramos? Estoy abierto a nuevas oportunidades y retos donde pueda aportar con impacto.</p>
     <div class="contact-icons">
       <a href="mailto:axelmendezlopez@gmail.com"><i class="fas fa-envelope"></i></a>
       <a href="https://github.com/AxelM007" target="_blank"><i class="fab fa-github"></i></a>
@@ -186,7 +194,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Pedro Axel Méndez López – Todos los derechos reservados</p>
+    <p>&copy; 2025 Pedro Axel Méndez López – CV profesional creado con orgullo y enfoque en datos.</p>
   </footer>
 </body>
 </html>
