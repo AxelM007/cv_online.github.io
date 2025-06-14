@@ -9,7 +9,11 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     body {
       font-family: 'IBM Plex Sans', sans-serif;
       background: #f9fdfb;
@@ -47,7 +51,7 @@
       background: #d0eee7;
       padding: 1rem;
       text-align: center;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.04);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.04);
     }
     nav a {
       color: #2a4a46;
@@ -103,11 +107,13 @@
       left: 0;
     }
     .contact-icons {
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.2rem;
       margin-top: 1.5rem;
     }
     .contact-icons a {
-      margin: 0 .6rem;
       color: #298f80;
       font-size: 1.8rem;
       transition: color 0.2s;
@@ -115,11 +121,19 @@
     .contact-icons a:hover {
       color: #3fc4b0;
     }
-    .cta-buttons {
+    .cta-section {
       text-align: center;
-      margin-top: 2.5rem;
+      margin-top: 3rem;
+      padding: 2rem;
+      background: #eaf8f5;
+      border-radius: 8px;
     }
-    .cta-buttons a {
+    .cta-section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #1f2d2a;
+    }
+    .cta-section a {
       display: inline-block;
       margin: 0 1rem;
       padding: 0.75rem 1.5rem;
@@ -130,7 +144,7 @@
       font-weight: 500;
       transition: background 0.2s ease;
     }
-    .cta-buttons a:hover {
+    .cta-section a:hover {
       background-color: #2c807f;
     }
     .cert-section {
@@ -199,7 +213,7 @@
     <ul>
       <li><strong>Tablero para sector salud:</strong> Visualización y seguimiento de indicadores clínicos y administrativos con Power BI.</li>
       <li><strong>Script de homologación:</strong> Automatización en Python para limpieza de bases médicas heterogéneas.</li>
-      <li><strong>Recursos didácticos interactivos:</strong> Desarrollo de material de enseñanza con simulaciones de datos y visualizaciones para fortalecer el aprendizaje estadístico en ambientes digitales (R + LaTeX).</li>
+      <li><strong>Recursos didácticos interactivos:</strong> Material docente con simulaciones de datos y visualización en R/LaTeX para fortalecer la enseñanza de estadística.</li>
     </ul>
   </section>
 
@@ -208,23 +222,24 @@
     <p>Concluí el diplomado <strong>"Técnicas estadísticas y minería de datos"</strong> en FES Acatlán UNAM, enfocado en machine learning aplicado y herramientas estadísticas modernas. <a href="https://drive.google.com/file/d/1CKvNZNprQ_y9fv1j91SH8ZOIQ6rcpYdW/view?usp=sharing" target="_blank">Ver constancia</a></p>
   </section>
 
+  <section class="cta-section">
+    <h3>¿Te interesa colaborar o saber más?</h3>
+    <a href="https://drive.google.com/file/d/1CKvNZNprQ_y9fv1j91SH8ZOIQ6rcpYdW/view?usp=sharing" target="_blank">Descargar CV</a>
+    <a href="https://www.linkedin.com/in/pedro-axel-méndez-lópez-2b695a27a/" target="_blank">Ver LinkedIn</a>
+  </section>
+
   <section id="contacto">
     <h2>Contacto</h2>
-    <p>¿Colaboramos? Estoy abierto a nuevas oportunidades y retos donde pueda aportar con impacto.</p>
+    <p>Estoy abierto a nuevas oportunidades, colaboraciones o proyectos donde pueda sumar con impacto.</p>
     <div class="contact-icons">
-      <a href="mailto:axelmendezlopez@gmail.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://github.com/AxelM007" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/pedro-axel-méndez-lópez-2b695a27a/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://drive.google.com/file/d/1CKvNZNprQ_y9fv1j91SH8ZOIQ6rcpYdW/view?usp=sharing" target="_blank"><i class="fas fa-file-pdf"></i></a>
-    </div>
-    <div class="cta-buttons">
-      <a href="https://drive.google.com/file/d/1CKvNZNprQ_y9fv1j91SH8ZOIQ6rcpYdW/view?usp=sharing" target="_blank">Descargar CV</a>
-      <a href="https://www.linkedin.com/in/pedro-axel-méndez-lópez-2b695a27a/" target="_blank">Ver LinkedIn</a>
+      <a href="mailto:axelmendezlopez@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/AxelM007" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/pedro-axel-méndez-lópez-2b695a27a/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Pedro Axel Méndez López – CV profesional creado con orgullo y enfoque en datos.</p>
+    <p>&copy; 2025 Pedro Axel Méndez López – CV profesional desarrollado con enfoque en datos, diseño y resultados.</p>
   </footer>
 </body>
 </html>
