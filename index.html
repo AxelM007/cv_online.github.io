@@ -1,125 +1,244 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pedro Axel Méndez López | CV Profesional</title>
-<link rel="icon" href="./imagenpagina.ico" type="image/x-icon">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#f7fafc;--surface:#ffffff;--soft:#eef6f4;--primary:#1f8f83;--primary-dark:#176e65;--text:#16212b;--muted:#5d6a76;--line:#d9e5e2;--shadow:0 18px 40px rgba(18,36,44,.08)}
-html{scroll-behavior:smooth}
-body{font-family:Inter,sans-serif;background:linear-gradient(180deg,#f8fbfc,#f2f7f8);color:var(--text);line-height:1.7}
-header{background:linear-gradient(135deg,#e5f5f1,#d9eee8 45%,#eef8f5);padding:4.5rem 1.5rem 3.5rem;border-bottom:1px solid #cfe2dd;position:relative;overflow:hidden}
-header:before{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,.35);right:-80px;top:-120px}
-header:after{content:"201";font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;right:2rem;bottom:1.2rem;font-size:4rem;color:#6db7ab;opacity:.14}
-.wrap{max-width:1080px;margin:auto}
-.hero{display:grid;grid-template-columns:1.4fr .8fr;gap:28px;align-items:center}
-h1{font-size:3rem;letter-spacing:-1px;margin-bottom:.55rem}
-.tagline{font-size:1.18rem;color:#38524d;margin-bottom:1rem;font-weight:500}
-.summary{font-size:1.05rem;color:#42525c;max-width:760px}
-.hero-card{background:rgba(255,255,255,.72);backdrop-filter:blur(8px);padding:1.4rem;border:1px solid rgba(255,255,255,.8);border-radius:22px;box-shadow:var(--shadow)}
-.hero-card div{padding:.65rem 0;border-bottom:1px solid #edf2f2}.hero-card div:last-child{border:none}
-nav{position:sticky;top:0;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:1000}
-nav .navwrap{max-width:1080px;margin:auto;padding:1rem 1.2rem;display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
-nav a{text-decoration:none;color:#31444f;font-weight:600;transition:.2s}
-nav a:hover{color:var(--primary)}
-section{max-width:1080px;margin:auto;padding:3.4rem 1.5rem}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:2rem;box-shadow:var(--shadow)}
-h2{font-size:2rem;color:#21897f;margin-bottom:1.4rem;position:relative;letter-spacing:-.5px}
-h2:after{content:"";position:absolute;left:0;bottom:-10px;width:70px;height:4px;background:linear-gradient(90deg,#59b8a7,#8fd5c8);border-radius:4px}
-p{color:#364652}
-ul{list-style:none;margin-top:.6rem}
-li{position:relative;padding:.55rem 0 .55rem 1.65rem;color:#33414d}
-li:before{content:"058";font-family:'Font Awesome 6 Free';font-weight:900;color:var(--primary);position:absolute;left:0;top:.68rem}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.timeline .job{padding:1rem 0;border-bottom:1px solid #edf2f2}.timeline .job:last-child{border:none}.job strong{color:#1f2b36}.job span{display:block;color:var(--primary-dark);font-weight:700}.meta{font-size:.95rem;color:var(--muted);margin:.2rem 0 .45rem}
-.contact-icons{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:1.5rem}.contact-icons a{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--line);color:var(--primary);font-size:1.25rem;text-decoration:none;box-shadow:var(--shadow);transition:.2s}.contact-icons a:hover{transform:translateY(-3px);color:#fff;background:var(--primary)}
-.cta{margin-top:1.4rem;display:flex;gap:1rem;flex-wrap:wrap}.btn{padding:.85rem 1.2rem;border-radius:12px;text-decoration:none;font-weight:700;border:1px solid var(--line)}.btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}.btn.secondary{background:#fff;color:var(--text)}
-footer{text-align:center;padding:2.2rem;background:#e2f1ed;color:#4f6662;margin-top:2rem;border-top:1px solid #d2e5df}
-@media(max-width:900px){.hero,.grid{grid-template-columns:1fr}h1{font-size:2.35rem}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedro Axel Méndez López | CV Profesional</title>
+  <link rel="icon" href="./imagenpagina.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background: #f9fdfb;
+      color: #1f2d2a;
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(to right, #d6f3ec, #c0e8df);
+      color: #1f2d2a;
+      padding: 3.5rem 1.5rem;
+      text-align: center;
+      border-bottom: 2px solid #b2dad2;
+      position: relative;
+    }
+    header::after {
+      content: "\f201";
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      font-size: 3.5rem;
+      color: #81cbbf;
+      position: absolute;
+      right: 2rem;
+      top: 2rem;
+      opacity: 0.15;
+    }
+    header h1 {
+      font-size: 2.6rem;
+      margin-bottom: .6rem;
+    }
+    header p {
+      font-size: 1.3rem;
+      color: #3e5d58;
+    }
+    .summary {
+      max-width: 720px;
+      margin: 2rem auto 0;
+      font-size: 1.1rem;
+      color: #2a3c39;
+      padding: 0 1rem;
+    }
+    nav {
+      background: #d0eee7;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.04);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    nav a {
+      color: #2a4a46;
+      margin: 0 1.2rem;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.05rem;
+    }
+    nav a:hover {
+      color: #379e8f;
+    }
+    section {
+      padding: 3.5rem 2rem;
+      max-width: 960px;
+      margin: auto;
+    }
+    h2 {
+      color: #298f80;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    h2::before {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background-color: #77c7b8;
+      border-radius: 2px;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      padding: .6rem 0 .6rem 1.5rem;
+      position: relative;
+    }
+    li::before {
+      content: "\f058";
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      color: #379e8f;
+      position: absolute;
+      left: 0;
+    }
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+    .contact-icons a {
+      color: #298f80;
+      font-size: 1.8rem;
+      transition: color 0.2s;
+    }
+    .contact-icons a:hover {
+      color: #3fc4b0;
+    }
+    .cta-section {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 2rem;
+      background: #eaf8f5;
+      border-radius: 8px;
+    }
+    .cta-section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #1f2d2a;
+    }
+    .cta-section a {
+      display: inline-block;
+      margin: 0 1rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      background-color: #379e8f;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s ease;
+    }
+    .cta-section a:hover {
+      background-color: #2c807f;
+    }
+    .cert-section {
+      background: #eefaf7;
+      border: 1px solid #c8e8e1;
+      padding: 2rem;
+      border-radius: 8px;
+      margin-top: 2rem;
+    }
+    .cert-section a {
+      color: #2e998a;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #d6f3ec;
+      color: #425c58;
+      font-size: 0.95rem;
+    }
+  </style>
 </head>
+
 <body>
-<header>
-<div class="wrap hero">
-<div>
-<h1>Pedro Axel Méndez López</h1>
-<p class="tagline"><i class="fa-solid fa-chart-line"></i> Actuario | Gerencia | Ciencia de Datos | Estrategia & Automatización</p>
-<p class="summary">Profesional con formación actuarial y enfoque en analítica aplicada, automatización y toma de decisiones basada en datos. Experiencia en banca, salud, academia y sector comercial. Me especializo en convertir información compleja en soluciones claras, eficientes y accionables.</p>
-<div class="cta">
-<a class="btn primary" href="#contacto">Contactar</a>
-<a class="btn secondary" href="https://drive.google.com/file/d/1Rl6EV9l2bOaOtlM8R4zCsphDsvJIRVp2/view?usp=sharing" target="_blank">CV PDF</a>
-</div>
-</div>
-<div class="hero-card">
-<div><strong>Posición actual:</strong> Gerente · Banorte</div>
-<div><strong>Especialidad:</strong> Datos, KPIs y mejora operativa</div>
-<div><strong>Herramientas:</strong> Python, SQL, Power BI, Excel</div>
-<div><strong>Perfil:</strong> Técnico con visión de negocio</div>
-</div>
-</div>
-</header>
-<nav><div class="navwrap"><a href="#sobre-mi">Sobre mí</a><a href="#habilidades">Habilidades</a><a href="#experiencia">Experiencia</a><a href="#proyectos">Proyectos</a><a href="#constancia">Constancia</a><a href="#contacto">Contacto</a></div></nav>
-<section id="sobre-mi">
-<div class="card">
-<h2>Sobre mí</h2>
-<p>Actuario egresado de la UNAM con experiencia profesional en banca, salud y análisis empresarial. Combino pensamiento cuantitativo, ejecución práctica y criterio estratégico para impulsar resultados medibles. Disfruto optimizar procesos, automatizar tareas clave y construir soluciones elegantes.</p>
-</div>
-</section>
-<section class="grid">
-<div id="habilidades" class="card">
-<h2>Habilidades técnicas</h2>
-<ul>
-<li><strong>Lenguajes:</strong> Python, R, SQL</li>
-<li><strong>BI:</strong> Power BI, Excel avanzado</li>
-<li><strong>Datos:</strong> Estadística aplicada, modelado, visualización</li>
-<li><strong>Herramientas:</strong> Git, LaTeX, automatización</li>
-<li><strong>Gestión:</strong> KPIs, reporting ejecutivo, mejora continua</li>
-</ul>
-</div>
-<div id="proyectos" class="card">
-<h2>Proyectos y herramientas</h2>
-<ul>
-<li>Tableros ejecutivos para seguimiento operativo y comercial.</li>
-<li>Scripts de homologación y limpieza de bases médicas.</li>
-<li>Automatización de reportes recurrentes con Python.</li>
-<li>Material didáctico cuantitativo en probabilidad y estadística.</li>
-</ul>
-</div>
-</section>
-<section id="experiencia">
-<div class="card timeline">
-<h2>Experiencia profesional</h2>
-<div class="job"><strong>Banorte</strong><span>Gerente</span><div class="meta">Noviembre 2025 – Presente</div><ul><li>Seguimiento de indicadores estratégicos y desempeño operativo.</li><li>Automatización de reportes ejecutivos y análisis recurrente.</li><li>Coordinación de iniciativas de mejora continua.</li></ul></div>
-<div class="job"><strong>Star Médica</strong><span>Analista de Gestión</span><div class="meta">2025</div><ul><li>Dashboards hospitalarios y homologación de datos.</li></ul></div>
-<div class="job"><strong>UNAM</strong><span>Asistente académico</span><div class="meta">2023 – Presente</div><ul><li>Apoyo docente en probabilidad e inferencia estadística.</li></ul></div>
-<div class="job"><strong>Nadro</strong><span>Becario de análisis comercial</span><div class="meta">2024 – 2025</div><ul><li>Reportes y análisis de tendencias comerciales.</li></ul></div>
-</div>
-</section>
-<section id="constancia">
-<div class="card">
-<h2>Diplomado especializado</h2>
-<p>Concluí el diplomado <strong>Técnicas estadísticas y minería de datos</strong> en FES Acatlán UNAM, enfocado en machine learning aplicado y herramientas estadísticas modernas.</p>
-<p style="margin-top:1rem"><a href="https://drive.google.com/file/d/1pIvyxVzOB1T1U4Gftgas0YZhP_0lyXmG/view?usp=sharing" target="_blank" style="color:#1f8f83;font-weight:700">Ver constancia</a></p>
-</div>
-</section>
-<section id="contacto">
-<div class="card">
-<h2>Contacto</h2>
-<p>Abierto a nuevas oportunidades, proyectos estratégicos o colaboraciones donde pueda aportar valor real.</p>
-<div class="contact-icons">
-<a href="mailto:axelmendezlopez@gmail.com"><i class="fas fa-envelope"></i></a>
-<a href="https://github.com/AxelM007" target="_blank"><i class="fab fa-github"></i></a>
-<a href="https://www.linkedin.com/in/pedro-axel-méndez-lópez-2b695a27a/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-<a href="https://drive.google.com/file/d/1Rl6EV9l2bOaOtlM8R4zCsphDsvJIRVp2/view?usp=sharing" target="_blank"><i class="fas fa-file-pdf"></i></a>
-</div>
-</div>
-</section>
-<footer>© 2026 Pedro Axel Méndez López · Enfoque en datos, diseño y resultados.</footer>
+  <header>
+    <h1>Pedro Axel Méndez López</h1>
+    <p><i class="fas fa-rocket"></i> Actuario | Ciencia de Datos | Estrategia & Automatización</p>
+  </header>
+
+  <div class="summary">
+    Profesional con formación en actuaría y enfoque en estadística aplicada, ciencia de datos y automatización. Me especializo en transformar datos complejos en soluciones ágiles y accionables. Cuento con experiencia en el sector salud, educativo y comercial, con proyectos orientados a eficiencia y visualización efectiva. Busco seguir aprendiendo, aportar valor real y crecer en entornos retadores.
+  </div>
+
+  <nav>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#habilidades">Habilidades</a>
+    <a href="#experiencia">Experiencia</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#constancia">Constancia</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section id="sobre-mi">
+    <h2>Sobre mí</h2>
+    <p>Actuario egresado de la UNAM con enfoque en ciencia de datos, automatización y análisis aplicado. Tengo experiencia en el sector salud, académico y empresarial. Me apasiona transformar datos complejos en decisiones estratégicas claras. Busco siempre soluciones prácticas con visión técnica.</p>
+  </section>
+
+  <section id="habilidades">
+    <h2>Habilidades técnicas</h2>
+    <ul>
+      <li><strong>Lenguajes:</strong> Python, R</li>
+      <li><strong>Bases de datos:</strong> PostgreSQL, MySQL</li>
+      <li><strong>Herramientas:</strong> Power BI, Excel avanzado, Git, LaTeX</li>
+      <li><strong>Áreas:</strong> Estadística aplicada, automatización de procesos, visualización de datos, modelado</li>
+    </ul>
+  </section>
+
+  <section id="experiencia">
+    <h2>Experiencia profesional</h2>
+    <ul>
+      <li><strong>Star Médica</strong> – Analista de Gestión de Vistas (febrero 2025 - agosto 2025)<br>Automatización de flujos, validación de datos médicos y construcción de dashboards para toma de decisiones clínicas y comerciales.</li>
+      <li><strong>UNAM</strong> – Asistente académico (2023 - Presente)<br>Apoyo docente en cursos de inferencia estadística y probabilidad, generación de material, asesorías y evaluación de proyectos.</li>
+      <li><strong>Nadro</strong> – Becario en análisis comercial (2024 - 2025)<br>Elaboración de reportes, visualización de tendencias y apoyo en análisis de campañas de mercado.</li>
+    </ul>
+  </section>
+
+  <section id="proyectos">
+    <h2>Proyectos y herramientas</h2>
+    <ul>
+      <li><strong>Tablero para sector salud:</strong> Visualización y seguimiento de indicadores clínicos y administrativos con Power BI.</li>
+      <li><strong>Script de homologación:</strong> Automatización en Python para limpieza de bases médicas heterogéneas.</li>
+      <li><strong>Recursos didácticos interactivos:</strong> Material docente con simulaciones de datos y visualización en R/LaTeX para fortalecer la enseñanza de estadística.</li>
+    </ul>
+  </section>
+
+  <section id="constancia" class="cert-section">
+    <h2>Diplomado especializado</h2>
+    <p>Concluí el diplomado <strong>"Técnicas estadísticas y minería de datos"</strong> en FES Acatlán UNAM, enfocado en machine learning aplicado y herramientas estadísticas modernas. <a href="https://drive.google.com/file/d/1pIvyxVzOB1T1U4Gftgas0YZhP_0lyXmG/view?usp=sharing" target="_blank">Ver constancia</a></p>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Estoy abierto a nuevas oportunidades, colaboraciones o proyectos donde pueda sumar con impacto.</p>
+    <div class="contact-icons">
+      <a href="mailto:axelmendezlopez@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/AxelM007" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/pedro-axel-méndez-lópez-2b695a27a/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://drive.google.com/file/d/1Rl6EV9l2bOaOtlM8R4zCsphDsvJIRVp2/view?usp=sharing" target="_blank" title="CV PDF"><i class="fas fa-file-pdf"></i></a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Pedro Axel Méndez López – Enfoque en datos, diseño y resultados.</p>
+  </footer>
 </body>
 </html>
