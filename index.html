@@ -1,2053 +1,1642 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#581727">
-
-  <title>Axel Méndez | Actuario · Datos · Modelación</title>
-  <meta name="description" content="Pedro Axel Méndez López. Actuario por la UNAM. Estadística, modelación cuantitativa, análisis de datos y riesgo financiero.">
-
-  <link rel="icon" href="./imagenpagina.ico" type="image/x-icon">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#234b37" />
+  <meta name="description" content="Pedro Axel Méndez López — Actuario. Gerente de Modelos Internos Minorista en Grupo Financiero Banorte." />
+  <title>Pedro Axel Méndez López | Actuario</title>
+  <link rel="icon" href="./imagenpagina.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     :root {
-      --wine: #681B2D;
-      --wine-dark: #390F1D;
-      --wine-mid: #8D3044;
-      --red: #B34D5B;
-      --rose: #CB8C91;
-      --blush: #EAD6D2;
-      --paper: #F7F1EA;
-      --cream: #EFE5DC;
-      --white: #FFFCF9;
-      --ink: #30272A;
-      --text: #68595C;
-      --muted: #9B898C;
-      --line: #E7D9D4;
-      --shadow: 0 18px 55px rgba(57, 15, 29, .09);
-      --radius: 12px;
-      --transition: .3s cubic-bezier(.2,.8,.2,1);
+      --forest:#234b37;
+      --forest-2:#315d42;
+      --olive:#777b3f;
+      --olive-2:#96965a;
+      --sage:#cbd1ad;
+      --sage-pale:#e8e8d4;
+      --cream:#f7f2e7;
+      --paper:#fffdf7;
+      --ink:#292d23;
+      --muted:#716f60;
+      --line:#e8dfcc;
+      --shadow:0 20px 55px rgba(61,72,40,.13);
+      --radius:22px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing:border-box; margin:0; padding:0; }
 
     html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 100px;
+      scroll-behavior:smooth;
+      scroll-padding-top:88px;
     }
 
     body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--paper);
-      color: var(--ink);
-      line-height: 1.65;
-      overflow-x: hidden;
+      font-family:'DM Sans',sans-serif;
+      background:radial-gradient(ellipse at 8% 8%,rgba(210,190,142,.16),transparent 28%),var(--cream);
+      color:var(--ink);
+      line-height:1.65;
     }
 
-    body::selection {
-      background: var(--wine);
-      color: white;
+    a { color:inherit; text-decoration:none; }
+    button { font:inherit; }
+
+    .wrap {
+      width:min(1080px,calc(100% - 42px));
+      margin:auto;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font: inherit;
-    }
-
-    .container {
-      width: min(1120px, 90%);
-      margin: auto;
-    }
-
-    .mono {
-      font-family: 'DM Mono', monospace;
-    }
-
-    /* Fondo decorativo */
-
-    .ambient {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    .ambient::before,
-    .ambient::after {
-      content: "";
-      position: absolute;
-      width: 420px;
-      height: 420px;
-      border-radius: 50%;
-      filter: blur(100px);
-      opacity: .14;
-    }
-
-    .ambient::before {
-      background: var(--rose);
-      top: 5%;
-      right: -200px;
-    }
-
-    .ambient::after {
-      background: var(--wine);
-      bottom: 5%;
-      left: -250px;
-      opacity: .07;
-    }
-
-    /* Navegación */
-
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(247, 241, 234, .91);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(104, 27, 45, .1);
+    .nav {
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(250,246,236,.91);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(218,207,180,.8);
+      box-shadow:0 5px 22px rgba(57,67,42,.045);
     }
 
     .nav-inner {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
+      height:68px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:22px;
     }
 
     .brand {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.35rem;
-      color: var(--wine);
-      font-weight: 700;
-      white-space: nowrap;
+      font-family:Manrope,sans-serif;
+      font-weight:800;
+      letter-spacing:-.04em;
+      color:var(--forest);
+      white-space:nowrap;
     }
 
-    .brand span {
-      color: var(--rose);
-    }
+    .brand span { color:var(--olive); }
 
     .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      list-style: none;
-      font-size: .84rem;
-      color: var(--text);
+      display:flex;
+      align-items:center;
+      gap:25px;
+      overflow-x:auto;
+      scrollbar-width:none;
+      white-space:nowrap;
     }
 
+    .nav-links::-webkit-scrollbar { display:none; }
+
     .nav-links a {
-      transition: color var(--transition);
+      font-size:.84rem;
+      color:#5c675d;
+      font-weight:600;
+      transition:.2s;
     }
 
     .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--wine-mid);
-    }
+    .nav-links a.active { color:var(--olive); }
 
-    .nav-cta {
-      padding: 9px 16px;
-      border: 1px solid var(--wine);
-      border-radius: 5px;
-      color: var(--wine);
-      font-size: .8rem;
-      transition: var(--transition);
-      white-space: nowrap;
-    }
-
-    .nav-cta:hover {
-      background: var(--wine);
-      color: white;
-    }
-
-    /* Elementos comunes */
-
-    .eyebrow {
-      color: var(--red);
-      font-family: 'DM Mono', monospace;
-      font-size: .72rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .section {
-      padding: 92px 0;
-    }
-
-    .section-head {
-      margin-bottom: 35px;
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 25px;
-    }
-
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      line-height: 1.15;
-      color: var(--wine-dark);
-      margin-top: 8px;
-    }
-
-    .section-description {
-      max-width: 460px;
-      color: var(--text);
-      font-size: .94rem;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      padding: 5px 10px;
-      border-radius: 100px;
-      font-family: 'DM Mono', monospace;
-      font-size: .68rem;
-      background: var(--blush);
-      color: var(--wine);
-    }
-
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 9px;
-      padding: 12px 19px;
-      border-radius: 5px;
-      font-size: .84rem;
-      font-weight: 600;
-      transition: var(--transition);
-      cursor: pointer;
-      border: 1px solid transparent;
-    }
-
-    .btn-primary {
-      background: var(--wine);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: var(--wine-mid);
-      transform: translateY(-3px);
-      box-shadow: 0 9px 22px rgba(104,27,45,.2);
-    }
-
-    .btn-outline {
-      border-color: var(--wine);
-      color: var(--wine);
-    }
-
-    .btn-outline:hover {
-      background: var(--blush);
-      transform: translateY(-2px);
-    }
-
-    .arrow {
-      transition: transform var(--transition);
-    }
-
-    a:hover .arrow {
-      transform: translateX(4px);
-    }
-
-    /* Portada */
+    /* PORTADA */
 
     .hero {
-      min-height: 620px;
-      padding: 105px 0 90px;
-      display: flex;
-      align-items: center;
-      position: relative;
+      padding:72px 0 58px;
+      position:relative;
+      overflow:hidden;
+      background:linear-gradient(125deg,rgba(239,232,211,.5),rgba(247,242,231,0) 52%,rgba(207,213,177,.24));
+    }
+
+    .hero:before {
+      content:"";
+      position:absolute;
+      width:510px;
+      height:510px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(185,190,133,.42),rgba(185,190,133,0) 68%);
+      right:-130px;
+      top:-190px;
+      pointer-events:none;
+    }
+
+    .hero:after {
+      content:"";
+      position:absolute;
+      width:240px;
+      height:240px;
+      border:1px solid rgba(119,123,63,.13);
+      border-radius:50%;
+      right:8%;
+      bottom:-175px;
+      box-shadow:0 0 0 24px rgba(119,123,63,.035),0 0 0 50px rgba(119,123,63,.025);
+      pointer-events:none;
     }
 
     .hero-grid {
-      display: grid;
-      grid-template-columns: 1.35fr .65fr;
-      align-items: center;
-      gap: 65px;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:44px;
+      align-items:center;
+      position:relative;
+      z-index:1;
     }
 
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3.3rem, 7vw, 5.7rem);
-      line-height: 1.02;
-      letter-spacing: -2px;
-      color: var(--wine-dark);
-      margin: 19px 0 25px;
+    .eyebrow {
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      color:#777b3f;
+      font-size:.76rem;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin-bottom:17px;
     }
 
-    .hero h1 em {
-      color: var(--wine-mid);
-      font-weight: 500;
+    .eyebrow:before {
+      content:"";
+      width:25px;
+      height:2px;
+      background:var(--olive);
     }
 
-    .hero-text {
-      max-width: 620px;
-      color: var(--text);
-      font-size: 1.06rem;
-      margin-bottom: 28px;
+    .eyebrow:after {
+      content:"✳";
+      font-size:.8rem;
+      color:#b28b57;
+      margin-left:2px;
     }
 
-    .hero-text strong {
-      color: var(--wine);
-      font-weight: 700;
+    h1,h2,h3 {
+      font-family:Manrope,sans-serif;
+      letter-spacing:-.045em;
+    }
+
+    h1 {
+      font-size:clamp(2.55rem,5.4vw,4.45rem);
+      line-height:1.04;
+      color:var(--forest);
+      max-width:680px;
+    }
+
+    .hero-lead {
+      font-size:1.08rem;
+      color:#566157;
+      max-width:610px;
+      margin:21px 0 24px;
+      line-height:1.7;
+    }
+
+    .hero-lead strong {
+      color:var(--forest);
+      font-weight:700;
     }
 
     .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:11px;
     }
 
-    .hero-meta {
-      margin-top: 37px;
-      display: flex;
-      gap: 22px;
-      flex-wrap: wrap;
-      color: var(--muted);
-      font-family: 'DM Mono', monospace;
-      font-size: .69rem;
-      letter-spacing: .5px;
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      padding:12px 17px;
+      border-radius:999px;
+      font-size:.88rem;
+      font-weight:700;
+      transition:transform .2s,box-shadow .2s,background .2s;
     }
 
-    .hero-meta span::before {
-      content: "●";
-      color: var(--rose);
-      margin-right: 8px;
+    .btn:hover { transform:translateY(-2px); }
+
+    .btn-primary {
+      background:var(--forest);
+      color:white;
+      box-shadow:0 9px 22px rgba(32,61,46,.18);
     }
 
-    /* Panel gráfico */
+    .btn-primary:hover { background:#152d21; }
 
-    .hero-panel {
-      position: relative;
-      padding: 29px;
-      background: var(--wine-dark);
-      color: white;
-      border-radius: 9px;
-      box-shadow: 0 30px 70px rgba(57,15,29,.19);
-      overflow: hidden;
-      isolation: isolate;
+    .btn-soft {
+      border:1px solid #cbd3c5;
+      color:var(--forest);
+      background:rgba(255,255,255,.55);
     }
 
-    .hero-panel::before {
-      content: "";
-      position: absolute;
-      width: 230px;
-      height: 230px;
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: 50%;
-      top: -115px;
-      right: -75px;
-      box-shadow: 0 0 0 25px rgba(255,255,255,.025),
-                  0 0 0 55px rgba(255,255,255,.02);
-      z-index: -1;
+    .btn-soft:hover { background:white; }
+
+    .hero-note {
+      margin-top:20px;
+      font-size:.82rem;
+      color:#7b8479;
     }
 
-    .panel-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 38px;
+    /* TARJETA BANORTE */
+
+    .role-card {
+      background:radial-gradient(circle at 95% 4%,rgba(208,190,128,.24),transparent 32%),linear-gradient(145deg,#234b37 0%,#315b40 56%,#737744 112%);
+      color:white;
+      border-radius:28px;
+      padding:28px;
+      box-shadow:0 24px 60px rgba(32,61,46,.2);
+      position:relative;
+      overflow:hidden;
+      min-height:285px;
     }
 
-    .panel-label {
-      color: var(--blush);
-      font-family: 'DM Mono', monospace;
-      font-size: .69rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+    .role-card:after {
+      content:"";
+      position:absolute;
+      width:220px;
+      height:220px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:50%;
+      right:-80px;
+      bottom:-100px;
+      box-shadow:0 0 0 25px rgba(255,255,255,.035),0 0 0 52px rgba(255,255,255,.025);
     }
 
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #A8C9A6;
-      box-shadow: 0 0 12px #A8C9A6;
+    .role-top {
+      font-size:.7rem;
+      letter-spacing:.17em;
+      text-transform:uppercase;
+      color:#e0d9b9;
+      font-weight:800;
+      display:flex;
+      align-items:center;
+      gap:9px;
     }
 
-    .hero-panel h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.9rem;
-      line-height: 1.2;
-      font-weight: 500;
-      margin-bottom: 12px;
+    .role-top:before {
+      content:"";
+      width:23px;
+      height:1px;
+      background:#c5c18a;
     }
 
-    .hero-panel p {
-      color: #DCC9CE;
-      font-size: .87rem;
-      line-height: 1.6;
+    .banorte-wordmark {
+      font-family:Manrope,sans-serif;
+      font-weight:800;
+      font-size:1.55rem;
+      letter-spacing:-.04em;
+      margin-top:20px;
+      line-height:1.1;
+      display:flex;
+      align-items:center;
+      gap:12px;
     }
 
-    .panel-divider {
-      height: 1px;
-      background: rgba(255,255,255,.17);
-      margin: 25px 0;
+    .banorte-mark {
+      width:43px;
+      height:43px;
+      flex:0 0 43px;
+      border:1px solid rgba(255,255,255,.35);
+      border-radius:13px;
+      display:grid;
+      place-items:center;
+      background:rgba(255,255,255,.1);
+      font-size:1.15rem;
+      color:#e5d9a9;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.15);
     }
 
-    .panel-bottom {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
+    .banorte-name {
+      display:block;
+      font-size:1.55rem;
+      letter-spacing:-.04em;
+      font-weight:800;
+      color:white;
     }
 
-    .panel-stat strong {
-      display: block;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      color: var(--blush);
-      font-weight: 500;
+    .banorte-name small {
+      display:block;
+      font-size:.63rem;
+      letter-spacing:.16em;
+      font-weight:700;
+      color:#e0d9b9;
+      margin-top:7px;
     }
 
-    .panel-stat span {
-      font-size: .67rem;
-      color: #DCC9CE;
+    .role-divider {
+      height:1px;
+      background:rgba(255,255,255,.2);
+      margin:23px 0 19px;
     }
 
-    /* Indicador de scroll */
-
-    .scroll-indicator {
-      position: absolute;
-      bottom: 25px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 5px;
-      font-family: 'DM Mono', monospace;
-      font-size: .61rem;
-      color: var(--muted);
-      letter-spacing: 1px;
+    .role-title {
+      font-size:1.55rem;
+      line-height:1.2;
+      font-family:Manrope,sans-serif;
+      font-weight:800;
+      max-width:300px;
     }
 
-    .scroll-indicator span:last-child {
-      animation: bounce 1.7s infinite;
-      font-size: 1rem;
+    .role-sub {
+      font-size:.86rem;
+      color:#d8e0d3;
+      margin-top:9px;
     }
 
-    @keyframes bounce {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(5px); }
+    .role-status {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:20px;
+      color:#e3eadf;
+      font-size:.75rem;
+      font-weight:600;
     }
 
-    /* Cinta de especialidades */
+    .role-status i {
+      font-size:.5rem;
+      color:#b6c98f;
+    }
+
+    /* CINTA ANIMADA */
 
     .ticker {
-      background: var(--wine);
-      color: white;
-      overflow: hidden;
-      padding: 17px 0;
+      border-top:1px solid rgba(255,255,255,.18);
+      border-bottom:1px solid rgba(255,255,255,.18);
+      background:linear-gradient(100deg,#354f37 0%,#667044 48%,#354f37 100%);
+      overflow:hidden;
+      position:relative;
+      box-shadow:0 8px 24px rgba(47,63,38,.13);
+    }
+
+    .ticker:before,
+    .ticker:after {
+      content:"";
+      position:absolute;
+      top:0;
+      bottom:0;
+      width:55px;
+      z-index:1;
+      pointer-events:none;
+    }
+
+    .ticker:before {
+      left:0;
+      background:linear-gradient(90deg,#354f37,transparent);
+    }
+
+    .ticker:after {
+      right:0;
+      background:linear-gradient(270deg,#354f37,transparent);
     }
 
     .ticker-track {
-      display: flex;
-      width: max-content;
-      animation: ticker 35s linear infinite;
+      display:flex;
+      gap:34px;
+      width:max-content;
+      padding:15px 0;
+      animation:marquee 27s linear infinite;
+      color:#f4f0df;
+      font-size:.76rem;
+      font-weight:800;
+      letter-spacing:.13em;
+      text-transform:uppercase;
+      text-shadow:0 1px 1px rgba(0,0,0,.12);
+    }
+
+    .ticker-track span {
+      display:flex;
+      align-items:center;
+      gap:34px;
+    }
+
+    .ticker-track b {
+      color:#d9c995;
+      font-size:1rem;
     }
 
     .ticker:hover .ticker-track {
-      animation-play-state: paused;
+      animation-play-state:paused;
     }
 
-    .ticker-item {
-      padding: 0 32px;
-      font-family: 'DM Mono', monospace;
-      font-size: .72rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      white-space: nowrap;
-      color: var(--blush);
+    @keyframes marquee {
+      to { transform:translateX(-50%); }
     }
 
-    .ticker-item::after {
-      content: "✳";
-      color: var(--rose);
-      margin-left: 60px;
+    /* SECCIONES */
+
+    section { padding:62px 0; }
+
+    .section-head {
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:24px;
+      margin-bottom:25px;
     }
 
-    @keyframes ticker {
-      to { transform: translateX(-50%); }
+    .section-kicker {
+      font-size:.72rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--olive);
+      font-weight:800;
+      margin-bottom:7px;
     }
 
-    /* Sobre mí */
-
-    .about {
-      background: var(--white);
+    h2 {
+      font-size:clamp(1.8rem,3.4vw,2.55rem);
+      color:var(--forest);
+      line-height:1.12;
     }
+
+    .section-intro {
+      max-width:450px;
+      color:var(--muted);
+      font-size:.91rem;
+    }
+
+    /* PERFIL */
 
     .about-grid {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 55px;
-      align-items: center;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:18px;
+    }
+
+    .about-copy,
+    .quick-facts {
+      background:linear-gradient(145deg,#fffdf8,#f8f4e9);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:25px;
+      box-shadow:0 10px 30px rgba(77,75,48,.045);
     }
 
     .about-copy p {
-      color: var(--text);
-      margin-bottom: 16px;
-      font-size: .97rem;
+      color:#59645a;
+      font-size:.97rem;
+      margin-bottom:13px;
     }
 
-    .about-copy strong {
-      color: var(--wine);
+    .about-copy p:last-child { margin:0; }
+    .about-copy strong { color:var(--forest); }
+
+    .fact-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:11px;
+      height:100%;
     }
 
-    .about-quote {
-      padding: 31px;
-      background: var(--paper);
-      border-left: 3px solid var(--rose);
-      border-radius: 0 8px 8px 0;
+    .fact {
+      background:linear-gradient(145deg,#eeeedc,#e4e7d1);
+      border:1px solid rgba(119,123,63,.08);
+      border-radius:15px;
+      padding:16px;
     }
 
-    .about-quote p {
-      font-family: 'Playfair Display', serif;
-      color: var(--wine);
-      font-size: 1.55rem;
-      line-height: 1.4;
+    .fact strong {
+      display:block;
+      font:800 1.35rem Manrope,sans-serif;
+      color:var(--forest);
+      letter-spacing:-.04em;
     }
 
-    .about-quote span {
-      display: block;
-      margin-top: 18px;
-      color: var(--muted);
-      font-family: 'DM Mono', monospace;
-      font-size: .67rem;
-      letter-spacing: 1px;
+    .fact span {
+      font-size:.77rem;
+      color:#6b7569;
     }
 
-    /* Experiencia */
-
-    .experience {
-      background: var(--paper);
-    }
-
-    .experience-grid {
-      display: grid;
-      grid-template-columns: .75fr 1.25fr;
-      gap: 40px;
-    }
-
-    .experience-intro {
-      position: sticky;
-      top: 115px;
-      align-self: start;
-    }
-
-    .experience-intro p {
-      color: var(--text);
-      font-size: .94rem;
-      margin-top: 17px;
-    }
-
-    .experience-intro .pill {
-      margin-top: 23px;
-    }
+    /* EXPERIENCIA DESPLEGABLE */
 
     .timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 13px;
+      display:grid;
+      gap:12px;
     }
 
-    .job {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      overflow: hidden;
-      transition: var(--transition);
+    details {
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:18px;
+      overflow:hidden;
+      transition:border .2s,box-shadow .2s;
     }
 
-    .job:hover {
-      border-color: var(--rose);
-      box-shadow: var(--shadow);
+    details[open] {
+      border-color:#b7bd8b;
+      box-shadow:0 14px 34px rgba(73,82,43,.10);
     }
 
-    .job[open] {
-      box-shadow: var(--shadow);
+    summary {
+      list-style:none;
+      cursor:pointer;
+      display:grid;
+      grid-template-columns:112px 1fr 30px;
+      gap:18px;
+      align-items:center;
+      padding:19px 21px;
     }
 
-    .job summary {
-      list-style: none;
-      cursor: pointer;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 15px;
-      padding: 22px 24px;
-      align-items: center;
+    summary::-webkit-details-marker { display:none; }
+
+    .date {
+      font-size:.75rem;
+      font-weight:800;
+      color:var(--olive);
+      letter-spacing:.04em;
     }
 
-    .job summary::-webkit-details-marker {
-      display: none;
+    .exp-title {
+      font-family:Manrope,sans-serif;
+      font-weight:800;
+      color:var(--forest);
+      font-size:1.02rem;
+      line-height:1.3;
     }
 
-    .job-company {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      color: var(--wine);
+    .exp-company {
+      font-size:.83rem;
+      color:#758075;
+      margin-top:3px;
     }
 
-    .job-role {
-      color: var(--text);
-      font-size: .84rem;
-      margin-top: 3px;
+    .chevron {
+      width:29px;
+      height:29px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:#eef1e9;
+      color:var(--olive);
+      transition:transform .2s;
     }
 
-    .job-date {
-      color: var(--muted);
-      font-family: 'DM Mono', monospace;
-      font-size: .68rem;
-      text-align: right;
+    details[open] .chevron { transform:rotate(180deg); }
+
+    .details-body {
+      padding:0 22px 20px 151px;
+      color:#59645a;
+      font-size:.88rem;
     }
 
-    .job-icon {
-      display: grid;
-      place-items: center;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: var(--blush);
-      color: var(--wine);
-      font-size: 1rem;
-      transition: transform var(--transition);
+    .details-body p { margin-bottom:10px; }
+
+    .details-body ul {
+      padding-left:18px;
+      display:grid;
+      gap:5px;
     }
 
-    .job[open] .job-icon {
-      transform: rotate(45deg);
+    .current-exp {
+      border-color:#aeb58a;
+      background:linear-gradient(110deg,#fffdf7,#f0f0df);
+      box-shadow:0 10px 28px rgba(82,88,48,.07);
     }
 
-    .job-content {
-      padding: 0 24px 23px;
-      color: var(--text);
-      font-size: .88rem;
-      border-top: 1px solid var(--line);
-      margin: 0 24px;
-      padding-top: 18px;
+    .current-exp summary {
+      padding-top:22px;
+      padding-bottom:22px;
     }
 
-    .job-content ul {
-      padding-left: 18px;
-      margin-top: 10px;
+    .current-exp .exp-title { font-size:1.1rem; }
+
+    .current-tag {
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      background:#e4eadc;
+      color:#536542;
+      border-radius:999px;
+      padding:4px 9px;
+      font-size:.67rem;
+      font-weight:800;
+      margin-top:8px;
     }
 
-    .job-content li {
-      margin-bottom: 7px;
+    /* ENFOQUE */
+
+    .focus-grid {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:13px;
     }
 
-    /* Área técnica */
-
-    .technical {
-      background: var(--wine-dark);
-      color: white;
-      position: relative;
-      overflow: hidden;
+    .focus-card {
+      background:linear-gradient(145deg,#fffdf8,#f7f2e7);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:20px;
+      min-height:150px;
+      box-shadow:0 8px 24px rgba(77,75,48,.035);
+      transition:transform .25s,box-shadow .25s;
     }
 
-    .technical::after {
-      content: "∑";
-      position: absolute;
-      right: 3%;
-      bottom: -150px;
-      font-family: 'Playfair Display', serif;
-      font-size: 29rem;
-      line-height: 1;
-      color: rgba(255,255,255,.025);
-      pointer-events: none;
+    .focus-card:hover,
+    .project:hover {
+      transform:translateY(-4px);
+      box-shadow:0 16px 34px rgba(66,77,43,.11);
     }
 
-    .technical .section-title {
-      color: white;
+    .focus-icon {
+      width:36px;
+      height:36px;
+      border-radius:12px;
+      background:#e9eee3;
+      color:var(--olive);
+      display:grid;
+      place-items:center;
+      margin-bottom:13px;
     }
 
-    .technical .section-description {
-      color: #DCC9CE;
+    .focus-card h3 {
+      font-size:1rem;
+      color:var(--forest);
+      margin-bottom:6px;
+      letter-spacing:-.025em;
     }
 
-    .technical .eyebrow {
-      color: var(--rose);
+    .focus-card p {
+      font-size:.82rem;
+      color:#6a746a;
+      line-height:1.55;
     }
 
-    .technical-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      position: relative;
-      z-index: 1;
+    /* HERRAMIENTAS */
+
+    .tools-panel {
+      background:radial-gradient(circle at 95% 0%,rgba(192,177,116,.24),transparent 30%),linear-gradient(120deg,#234b37,#52613b);
+      border-radius:24px;
+      padding:29px;
+      color:white;
+      display:grid;
+      grid-template-columns:.7fr 1.3fr;
+      gap:25px;
+      align-items:center;
     }
 
-    .technical-card {
-      padding: 27px;
-      border: 1px solid rgba(255,255,255,.17);
-      border-radius: 8px;
-      background: rgba(255,255,255,.045);
-      transition: var(--transition);
+    .tools-panel h2 {
+      color:white;
+      font-size:1.7rem;
     }
 
-    .technical-card:hover {
-      background: rgba(255,255,255,.085);
-      transform: translateY(-3px);
-      border-color: rgba(203,140,145,.55);
-    }
-
-    .technical-card h3 {
-      font-family: 'Playfair Display', serif;
-      color: var(--blush);
-      font-size: 1.35rem;
-      margin-bottom: 12px;
-    }
-
-    .technical-card p {
-      color: #DCC9CE;
-      font-size: .88rem;
-      margin-bottom: 17px;
-    }
-
-    .metric-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .metric {
-      padding: 6px 11px;
-      border: 1px solid rgba(255,255,255,.2);
-      border-radius: 4px;
-      color: white;
-      font-family: 'DM Mono', monospace;
-      font-size: .72rem;
-    }
-
-    .technical-footnote {
-      position: relative;
-      z-index: 1;
-      margin-top: 22px;
-      color: #CDB9BE;
-      font-size: .78rem;
-    }
-
-    /* Herramientas */
-
-    .tools {
-      background: var(--white);
-    }
-
-    .tools-layout {
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 45px;
-      align-items: start;
-    }
-
-    .tools-intro p {
-      color: var(--text);
-      margin-top: 15px;
-      font-size: .94rem;
-    }
-
-    .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .tool-group {
-      padding: 20px;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 7px;
-    }
-
-    .tool-group h3 {
-      font-size: .84rem;
-      color: var(--wine);
-      margin-bottom: 13px;
+    .tools-panel p {
+      color:#c6d0c1;
+      font-size:.86rem;
+      margin-top:8px;
     }
 
     .tool-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:9px;
     }
 
     .tool-tags span {
-      background: var(--white);
-      border: 1px solid var(--line);
-      padding: 5px 9px;
-      border-radius: 3px;
-      font-size: .72rem;
-      color: var(--text);
+      border:1px solid rgba(255,255,255,.2);
+      background:rgba(255,255,255,.07);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:.78rem;
+      color:#f0f3ed;
     }
 
-    /* Formación */
-
-    .formation {
-      background: var(--cream);
-    }
-
-    .formation-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .formation-card {
-      background: var(--white);
-      padding: 27px;
-      border-radius: 8px;
-      border: 1px solid var(--line);
-    }
-
-    .formation-card h3 {
-      font-family: 'Playfair Display', serif;
-      color: var(--wine);
-      font-size: 1.45rem;
-      margin-bottom: 20px;
-    }
-
-    .education {
-      padding: 15px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .education:last-child {
-      border-bottom: none;
-    }
-
-    .education small {
-      display: block;
-      font-family: 'DM Mono', monospace;
-      color: var(--red);
-      font-size: .66rem;
-      letter-spacing: 1px;
-      margin-bottom: 5px;
-    }
-
-    .education h4 {
-      font-size: .95rem;
-      color: var(--ink);
-    }
-
-    .education p {
-      font-size: .82rem;
-      color: var(--text);
-      margin-top: 4px;
-    }
-
-    .education-status {
-      display: inline-block;
-      color: var(--wine);
-      background: var(--blush);
-      padding: 3px 8px;
-      border-radius: 3px;
-      font-family: 'DM Mono', monospace;
-      font-size: .65rem;
-      margin-top: 8px;
-    }
-
-    .teaching-copy {
-      color: var(--text);
-      font-size: .9rem;
-    }
-
-    .teaching-copy p {
-      margin-bottom: 14px;
-    }
-
-    .credential-link {
-      display: inline-block;
-      margin-top: 9px;
-      color: var(--wine);
-      font-size: .82rem;
-      font-weight: 600;
-      border-bottom: 1px solid var(--rose);
-    }
-
-    /* Proyectos */
+    /* PROYECTOS */
 
     .projects {
-      background: var(--paper);
-    }
-
-    .project-track {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:13px;
     }
 
     .project {
-      min-height: 240px;
-      padding: 25px;
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      position: relative;
-      overflow: hidden;
-      transition: var(--transition);
+      background:linear-gradient(145deg,#fffdf8,#f7f2e7);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:20px;
+      min-height:170px;
+      display:flex;
+      flex-direction:column;
+      transition:transform .25s,box-shadow .25s;
     }
 
-    .project:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow);
-    }
-
-    .project::after {
-      content: "";
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      right: -45px;
-      bottom: -45px;
-      border: 1px solid var(--blush);
-      border-radius: 50%;
-      box-shadow: 0 0 0 14px rgba(234,214,210,.25),
-                  0 0 0 28px rgba(234,214,210,.15);
-    }
-
-    .project-number {
-      font-family: 'DM Mono', monospace;
-      font-size: .68rem;
-      color: var(--red);
-      letter-spacing: 1px;
+    .project small {
+      color:var(--olive);
+      font-size:.68rem;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-weight:800;
     }
 
     .project h3 {
-      font-family: 'Playfair Display', serif;
-      color: var(--wine);
-      font-size: 1.35rem;
-      margin: 20px 0 10px;
+      color:var(--forest);
+      font-size:1.02rem;
+      margin:10px 0 7px;
     }
 
     .project p {
-      color: var(--text);
-      font-size: .85rem;
-      margin-bottom: 18px;
+      font-size:.82rem;
+      color:#697369;
+      line-height:1.55;
     }
 
-    .project-tech {
-      color: var(--red);
-      font-family: 'DM Mono', monospace;
-      font-size: .67rem;
+    /* FORMACIÓN */
+
+    .education {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:13px;
     }
 
-    /* Contacto */
+    .edu-card {
+      border:1px solid var(--line);
+      background:var(--paper);
+      border-radius:18px;
+      padding:20px;
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+    }
+
+    .edu-icon {
+      flex:0 0 39px;
+      height:39px;
+      border-radius:12px;
+      background:#e9eee3;
+      color:var(--olive);
+      display:grid;
+      place-items:center;
+    }
+
+    .edu-card h3 {
+      font-size:.97rem;
+      color:var(--forest);
+      margin-bottom:4px;
+    }
+
+    .edu-card p {
+      font-size:.8rem;
+      color:#6d776d;
+    }
+
+    .edu-card details {
+      border:0;
+      background:transparent;
+      margin-top:8px;
+    }
+
+    .edu-card summary {
+      display:flex;
+      gap:7px;
+      padding:0;
+      color:var(--olive);
+      font-size:.77rem;
+      font-weight:800;
+    }
+
+    .edu-card .details-body {
+      padding:8px 0 0;
+      font-size:.77rem;
+    }
+
+    /* CONTACTO */
 
     .contact {
-      background: var(--wine);
-      color: white;
-      text-align: center;
-      padding: 90px 0;
-      position: relative;
-      overflow: hidden;
+      background:radial-gradient(circle at 95% 10%,rgba(180,174,112,.2),transparent 30%),linear-gradient(115deg,#e9ead8,#f3ead9);
+      border:1px solid #dedbc4;
+      border-radius:25px;
+      padding:30px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
     }
 
-    .contact::before {
-      content: "";
-      position: absolute;
-      width: 450px;
-      height: 450px;
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 50%;
-      top: -300px;
-      left: calc(50% - 225px);
-      box-shadow: 0 0 0 35px rgba(255,255,255,.025),
-                  0 0 0 70px rgba(255,255,255,.02);
-    }
-
-    .contact .eyebrow {
-      color: var(--blush);
-    }
-
-    .contact h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.3rem, 5vw, 3.6rem);
-      font-weight: 500;
-      margin: 12px 0;
-    }
+    .contact h2 { font-size:1.8rem; }
 
     .contact p {
-      max-width: 550px;
-      margin: 0 auto 27px;
-      color: #EAD6D2;
-      font-size: .94rem;
+      color:#697369;
+      margin-top:8px;
+      font-size:.88rem;
+      max-width:500px;
     }
 
-    .contact-actions {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
+    .socials {
+      display:flex;
+      gap:9px;
+      flex-wrap:wrap;
     }
 
-    .contact-actions a {
-      padding: 10px 16px;
-      border: 1px solid rgba(255,255,255,.45);
-      border-radius: 4px;
-      font-size: .82rem;
-      transition: var(--transition);
+    .socials a {
+      width:43px;
+      height:43px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:var(--forest);
+      color:white;
+      transition:.2s;
     }
 
-    .contact-actions a:hover {
-      background: white;
-      color: var(--wine);
-      transform: translateY(-3px);
+    .socials a:hover {
+      background:var(--olive);
+      transform:translateY(-2px);
     }
-
-    /* Footer */
 
     footer {
-      padding: 22px 0;
-      background: var(--wine-dark);
-      color: #CDB9BE;
-      font-size: .75rem;
+      padding:24px 0 35px;
+      color:#899187;
+      font-size:.75rem;
+      display:flex;
+      justify-content:space-between;
+      gap:15px;
     }
 
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
+    .top-btn {
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      width:42px;
+      height:42px;
+      border:0;
+      border-radius:50%;
+      background:var(--forest);
+      color:white;
+      box-shadow:var(--shadow);
+      cursor:pointer;
+      opacity:0;
+      pointer-events:none;
+      transform:translateY(8px);
+      transition:.2s;
+      z-index:40;
     }
 
-    footer a {
-      color: var(--blush);
+    .top-btn.show {
+      opacity:1;
+      pointer-events:auto;
+      transform:translateY(0);
     }
 
-    /* Botón flotante */
-
-    .back-top {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      z-index: 50;
-      width: 43px;
-      height: 43px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: var(--wine);
-      color: white;
-      box-shadow: 0 5px 20px rgba(57,15,29,.2);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(10px);
-      transition: var(--transition);
-    }
-
-    .back-top.visible {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    /* Animaciones de entrada */
+    /* ANIMACIONES */
 
     .reveal {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity .7s ease, transform .7s ease;
+      opacity:0;
+      transform:translateY(14px);
+      transition:opacity .65s ease,transform .65s ease;
     }
 
-    .reveal.show {
-      opacity: 1;
-      transform: translateY(0);
+    .reveal.visible {
+      opacity:1;
+      transform:none;
     }
 
-    /* Responsive */
+    /* RESPONSIVE */
 
-    @media (max-width: 900px) {
-      .nav-links {
-        gap: 14px;
-        font-size: .76rem;
-      }
-
-      .hero-grid {
-        gap: 35px;
-      }
-
-      .experience-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-
-      .experience-intro {
-        position: static;
-      }
-
-      .tools-layout {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-
-      .section {
-        padding: 75px 0;
-      }
+    @media(max-width:800px) {
+      .hero-grid { grid-template-columns:1fr; gap:25px; }
+      .role-card { max-width:520px; }
+      .about-grid { grid-template-columns:1fr; }
+      .tools-panel { grid-template-columns:1fr; }
+      .focus-grid,.projects { grid-template-columns:repeat(2,1fr); }
+      .section-head { display:block; }
+      .section-intro { margin-top:9px; }
     }
 
-    @media (max-width: 680px) {
-      .container {
-        width: min(100% - 34px, 540px);
-      }
+    @media(max-width:560px) {
+      .wrap { width:min(100% - 30px,1080px); }
 
       .nav-inner {
-        min-height: 65px;
-        flex-wrap: wrap;
-        gap: 8px;
-        padding: 10px 0;
+        height:60px;
+        display:block;
+        padding-top:9px;
       }
 
       .brand {
-        font-size: 1.15rem;
+        display:block;
+        font-size:.93rem;
+        margin-bottom:3px;
       }
 
       .nav-links {
-        order: 3;
-        width: 100%;
-        overflow-x: auto;
-        justify-content: flex-start;
-        gap: 20px;
-        padding: 5px 0 7px;
-        scrollbar-width: none;
-        white-space: nowrap;
+        gap:19px;
+        padding-bottom:7px;
       }
 
-      .nav-links::-webkit-scrollbar {
-        display: none;
+      .nav-links a { font-size:.76rem; }
+
+      .hero { padding:45px 0 37px; }
+      .hero-grid { gap:22px; }
+      h1 { font-size:2.65rem; }
+
+      .hero-lead {
+        font-size:.96rem;
+        margin:16px 0 19px;
       }
 
-      .nav-cta {
-        font-size: .72rem;
-        padding: 7px 11px;
+      .role-card {
+        padding:23px;
+        min-height:255px;
       }
 
-      .hero {
-        min-height: auto;
-        padding: 65px 0 60px;
+      .banorte-wordmark { font-size:1.25rem; }
+      .banorte-name { font-size:1.25rem; }
+
+      .banorte-mark {
+        width:39px;
+        height:39px;
+        flex-basis:39px;
       }
 
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
+      .role-title { font-size:1.35rem; }
+
+      section { padding:44px 0; }
+      .section-head { margin-bottom:18px; }
+      h2 { font-size:1.9rem; }
+
+      .about-copy,.quick-facts { padding:19px; }
+      .fact { padding:13px; }
+      .fact strong { font-size:1.2rem; }
+
+      .focus-grid,.projects {
+        grid-template-columns:1fr 1fr;
+        gap:9px;
       }
 
-      .hero h1 {
-        font-size: clamp(3rem, 13vw, 4.2rem);
+      .focus-card,.project {
+        padding:15px;
+        min-height:0;
       }
 
-      .hero-text {
-        font-size: .96rem;
+      .focus-card p,.project p { font-size:.77rem; }
+
+      summary {
+        grid-template-columns:1fr 28px;
+        gap:5px;
+        padding:16px;
       }
 
-      .hero-panel {
-        padding: 24px;
+      .date {
+        grid-column:1;
+        font-size:.7rem;
       }
 
-      .hero-panel h2 {
-        font-size: 1.65rem;
+      .exp-title-wrap { grid-column:1; }
+
+      .chevron {
+        grid-column:2;
+        grid-row:1/3;
       }
 
-      .scroll-indicator {
-        display: none;
+      .details-body {
+        padding:0 17px 17px;
+        font-size:.82rem;
       }
 
-      .section {
-        padding: 58px 0;
+      .current-exp summary { padding:17px; }
+
+      .tools-panel { padding:22px; }
+      .tool-tags { gap:7px; }
+
+      .tool-tags span {
+        font-size:.72rem;
+        padding:7px 10px;
       }
 
-      .section-head {
-        display: block;
-        margin-bottom: 25px;
-      }
-
-      .section-description {
-        margin-top: 12px;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .about-quote {
-        padding: 23px;
-      }
-
-      .about-quote p {
-        font-size: 1.3rem;
-      }
-
-      .technical-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-
-      .technical-card {
-        padding: 21px;
-      }
-
-      .tools-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 9px;
-      }
-
-      .tool-group {
-        padding: 14px;
-      }
-
-      .formation-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-
-      .formation-card {
-        padding: 21px;
-      }
-
-      .project-track {
-        display: flex;
-        overflow-x: auto;
-        gap: 12px;
-        padding: 3px 2px 17px;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: thin;
-        scrollbar-color: var(--rose) transparent;
-      }
-
-      .project {
-        min-width: 83%;
-        scroll-snap-align: start;
-        min-height: 215px;
-      }
-
-      .project-track::after {
-        content: "Desliza para explorar →";
-        position: sticky;
-        left: 0;
-        min-width: 100%;
-        padding-top: 3px;
-        color: var(--muted);
-        font-family: 'DM Mono', monospace;
-        font-size: .65rem;
-        pointer-events: none;
-      }
-
-      .job summary {
-        padding: 17px;
-        grid-template-columns: 1fr auto;
-      }
-
-      .job-company {
-        font-size: 1.25rem;
-      }
-
-      .job-date {
-        font-size: .62rem;
-      }
-
-      .job-content {
-        margin: 0 17px;
-        padding-bottom: 18px;
-      }
-
-      .identity {
-        padding: 15px 0;
-      }
-
-      .ticker-item {
-        padding: 0 20px;
-        font-size: .66rem;
-      }
-
-      .ticker-item::after {
-        margin-left: 35px;
-      }
+      .education { grid-template-columns:1fr; }
+      .edu-card { padding:16px; }
 
       .contact {
-        padding: 68px 0;
+        padding:22px;
+        display:block;
       }
 
-      .footer-inner {
-        flex-direction: column;
-        text-align: center;
+      .contact .socials { margin-top:19px; }
+
+      footer {
+        display:block;
+        line-height:1.8;
       }
 
-      .back-top {
-        right: 14px;
-        bottom: 14px;
-        width: 39px;
-        height: 39px;
-      }
+      .ticker-track { font-size:.68rem; }
     }
 
-    @media (max-width: 380px) {
-      .tools-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .hero-actions .btn {
-        width: 100%;
-      }
-    }
-
-    /* Respeto a preferencias de movimiento */
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        scroll-behavior: auto !important;
-        animation-duration: .01ms !important;
-        transition-duration: .01ms !important;
+    @media(prefers-reduced-motion:reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior:auto!important;
+        animation:none!important;
+        transition:none!important;
       }
 
       .reveal {
-        opacity: 1;
-        transform: none;
+        opacity:1;
+        transform:none;
       }
     }
   </style>
 </head>
 
 <body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#inicio">Axel <span>Méndez.</span></a>
 
-  <div class="ambient"></div>
-
-  <!-- Navegación -->
-  <nav class="navbar">
-    <div class="container nav-inner">
-
-      <a class="brand" href="#inicio">Axel<span>.</span></a>
-
-      <ul class="nav-links">
-        <li><a href="#sobre-mi">Sobre mí</a></li>
-        <li><a href="#experiencia">Experiencia</a></li>
-        <li><a href="#enfoque">Modelación</a></li>
-        <li><a href="#herramientas">Herramientas</a></li>
-        <li><a href="#formacion">Formación</a></li>
-      </ul>
-
-      <a class="nav-cta" href="#contacto">Contacto ↗</a>
-
+      <div class="nav-links" id="navLinks">
+        <a href="#perfil">Perfil</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#enfoque">Enfoque</a>
+        <a href="#herramientas">Herramientas</a>
+        <a href="#formacion">Formación</a>
+        <a href="#contacto">Contacto</a>
+      </div>
     </div>
   </nav>
 
-  <!-- Portada -->
-  <header class="hero" id="inicio">
-    <div class="container hero-grid">
+  <main>
+    <header class="hero" id="inicio">
+      <div class="wrap hero-grid">
 
-      <div class="reveal">
-        <div class="eyebrow">Actuaría · Datos · Modelación</div>
+        <div class="reveal">
+          <div class="eyebrow">Actuaría · Datos · Riesgo de crédito</div>
 
-        <h1>Pedro Axel<br><em>Méndez López.</em></h1>
+          <h1>Pedro Axel<br>Méndez López</h1>
 
-        <p class="hero-text">
-          Soy actuario por la UNAM y actualmente trabajo en
-          <strong>Modelos Internos Minorista en Banorte</strong>.
-          Me gusta encontrar conexiones entre los datos, la estadística
-          y los problemas reales; especialmente cuando hay algo nuevo
-          que aprender en el proceso.
-        </p>
+          <p class="hero-lead">
+            Me gusta entender lo que hay detrás de los datos y convertirlo
+            en análisis que ayuden a tomar mejores decisiones. Actualmente soy
+            <strong>Gerente de Modelos Internos Minorista en Grupo Financiero Banorte</strong>.
+          </p>
 
-        <div class="hero-actions">
-          <a href="#experiencia" class="btn btn-primary">
-            Explorar mi trayectoria <span class="arrow">→</span>
-          </a>
+          <div class="hero-actions">
+            <a class="btn btn-primary"
+               href="https://drive.google.com/file/d/1Rl6EV9l2bOaOtlM8R4zCsphDsvJIRVp2/view?usp=sharing"
+               target="_blank" rel="noopener">
+              <i class="fa-regular fa-file-pdf"></i> Ver CV
+            </a>
 
-          <a href="https://drive.google.com/file/d/1Rl6EV9l2bOaOtlM8R4zCsphDsvJIRVp2/view?usp=sharing"
-             target="_blank" rel="noopener" class="btn btn-outline">
-            Ver mi CV ↗
-          </a>
+            <a class="btn btn-soft"
+               href="https://www.linkedin.com/in/pedro-axel-méndez-lópez-2b695a27a/"
+               target="_blank" rel="noopener">
+              <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+            </a>
+          </div>
+
+          <p class="hero-note">
+            Actuario · Universidad Nacional Autónoma de México
+          </p>
         </div>
 
-        <div class="hero-meta">
-          <span>UNAM · Actuaría</span>
-          <span>Modelación cuantitativa</span>
-          <span>Ciudad de México</span>
-        </div>
+        <aside class="role-card reveal" aria-label="Puesto actual">
+          <div class="role-top">Experiencia actual</div>
+
+          <div class="banorte-wordmark">
+            <span class="banorte-mark">
+              <i class="fa-solid fa-building-columns"></i>
+            </span>
+
+            <span class="banorte-name">
+              GRUPO FINANCIERO<br>BANORTE
+              <small>MODELOS INTERNOS · MINORISTA</small>
+            </span>
+          </div>
+
+          <div class="role-divider"></div>
+
+          <div class="role-title">
+            Gerente de Modelos Internos Minorista
+          </div>
+
+          <div class="role-sub">
+            Riesgo de crédito · Evaluación de modelos · Reservas
+          </div>
+
+          <div class="role-status">
+            <i class="fa-solid fa-circle"></i> Posición actual
+          </div>
+        </aside>
+
       </div>
+    </header>
 
-      <aside class="hero-panel reveal">
-        <div class="panel-top">
-          <span class="panel-label">Mi presente profesional</span>
-          <span class="status-dot"></span>
-        </div>
+    <!-- CINTA EN MOVIMIENTO -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>
+          Riesgo de crédito <b>✳</b>
+          Modelos internos <b>✳</b>
+          Estadística aplicada <b>✳</b>
+          Evaluación de modelos <b>✳</b>
+          Análisis de datos <b>✳</b>
+        </span>
 
-        <h2>Modelos Internos Minorista</h2>
-
-        <p>
-          Gerente en Banorte. Trabajo con análisis cuantitativo,
-          evaluación de modelos y estimación de parámetros
-          relacionados con el riesgo de crédito.
-        </p>
-
-        <div class="panel-divider"></div>
-
-        <div class="panel-bottom">
-          <div class="panel-stat">
-            <strong>UNAM</strong>
-            <span>Formación actuarial</span>
-          </div>
-
-          <div class="panel-stat">
-            <strong>Datos</strong>
-            <span>Mi lenguaje de trabajo</span>
-          </div>
-        </div>
-      </aside>
-
+        <span>
+          Riesgo de crédito <b>✳</b>
+          Modelos internos <b>✳</b>
+          Estadística aplicada <b>✳</b>
+          Evaluación de modelos <b>✳</b>
+          Análisis de datos <b>✳</b>
+        </span>
+      </div>
     </div>
 
-    <div class="scroll-indicator">
-      <span>EXPLORAR</span>
-      <span>↓</span>
-    </div>
-  </header>
-
-  <!-- Cinta animada -->
-  <div class="ticker" aria-label="Áreas de interés">
-    <div class="ticker-track">
-      <span class="ticker-item">Estadística</span>
-      <span class="ticker-item">Riesgo de crédito</span>
-      <span class="ticker-item">Modelación</span>
-      <span class="ticker-item">Programación</span>
-      <span class="ticker-item">Probabilidad</span>
-      <span class="ticker-item">Análisis de datos</span>
-      <span class="ticker-item">Estadística</span>
-      <span class="ticker-item">Riesgo de crédito</span>
-      <span class="ticker-item">Modelación</span>
-      <span class="ticker-item">Programación</span>
-      <span class="ticker-item">Probabilidad</span>
-      <span class="ticker-item">Análisis de datos</span>
-    </div>
-  </div>
-
-  <!-- Sobre mí -->
-  <section class="section about" id="sobre-mi">
-    <div class="container">
-
+    <!-- PERFIL -->
+    <section id="perfil" class="wrap">
       <div class="section-head reveal">
         <div>
-          <div class="eyebrow">01 / SOBRE MÍ</div>
-          <h2 class="section-title">Más que trabajar con datos.</h2>
+          <div class="section-kicker">Un poco sobre mí</div>
+          <h2>Datos con contexto.<br>Análisis con propósito.</h2>
         </div>
+
+        <p class="section-intro">
+          Una trayectoria entre la estadística, el análisis de información
+          y la aplicación práctica de modelos.
+        </p>
       </div>
 
       <div class="about-grid">
-
-        <div class="about-copy reveal">
+        <article class="about-copy reveal">
           <p>
-            Estudié Actuaría porque siempre me ha interesado entender
-            cómo funcionan las cosas detrás de los números. Durante
-            mi formación descubrí que la probabilidad y la estadística
-            no son solamente herramientas matemáticas: también son
-            formas de interpretar la incertidumbre.
+            Soy <strong>actuario por la UNAM</strong> y disfruto trabajar
+            en problemas donde el análisis cuantitativo se encuentra
+            con decisiones reales.
           </p>
 
           <p>
-            En mi trayectoria he tenido la oportunidad de trabajar
-            con información de distintos sectores, automatizar tareas,
-            construir reportes y acercarme a problemas de modelación.
-            Cada experiencia me ha dado una perspectiva diferente
-            sobre cómo utilizar los datos.
+            Mi experiencia combina riesgo de crédito, evaluación de modelos,
+            análisis estadístico y visualización de información. También me
+            interesa la docencia: explicar con claridad es otra forma
+            de entender a fondo.
           </p>
 
           <p>
-            Hoy disfruto especialmente mi trabajo en el sector financiero.
-            Me gusta el reto técnico, pero también entender el contexto,
-            cuestionar los resultados y aprender de las personas
-            con quienes colaboro.
+            Me considero una persona curiosa, analítica y en constante
+            aprendizaje. Me gusta que el trabajo esté bien hecho,
+            pero también que se entienda.
           </p>
+        </article>
 
-          <p>
-            Me considero alguien curioso, analítico y en constante
-            aprendizaje. Disfruto lo que hago y creo que siempre
-            hay espacio para desarrollar nuevas habilidades,
-            profundizar en lo que conocemos y hacer mejor nuestro trabajo.
-          </p>
-        </div>
+        <aside class="quick-facts reveal">
+          <div class="fact-grid">
+            <div class="fact">
+              <strong>Actuario</strong>
+              <span>Formación UNAM</span>
+            </div>
 
-        <div class="about-quote reveal">
-          <p>
-            No se trata solamente de encontrar una respuesta,
-            sino de entender por qué tiene sentido.
-          </p>
-          <span>UNA FORMA DE ENTENDER MI TRABAJO</span>
-        </div>
+            <div class="fact">
+              <strong>Riesgo</strong>
+              <span>Enfoque profesional</span>
+            </div>
 
+            <div class="fact">
+              <strong>Datos</strong>
+              <span>Estadística y programación</span>
+            </div>
+
+            <div class="fact">
+              <strong>Docencia</strong>
+              <span>Probabilidad y estadística</span>
+            </div>
+          </div>
+        </aside>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Experiencia -->
-  <section class="section experience" id="experiencia">
-    <div class="container">
-
-      <div class="experience-grid">
-
-        <div class="experience-intro reveal">
-          <div class="eyebrow">02 / TRAYECTORIA</div>
-          <h2 class="section-title">Lo que he construido hasta ahora.</h2>
-
-          <p>
-            Mi experiencia ha pasado por diferentes entornos:
-            desde el análisis operativo y comercial hasta la
-            modelación estadística en el sector financiero.
-          </p>
-
-          <span class="pill">Experiencia profesional y académica</span>
-        </div>
-
-        <div class="timeline reveal">
-
-          <details class="job" open>
-            <summary>
-              <div>
-                <h3 class="job-company">Banorte</h3>
-                <p class="job-role">Gerente de Modelos Internos Minorista</p>
-              </div>
-              <div>
-                <div class="job-date">ACTUALIDAD</div>
-                <div class="job-icon">+</div>
-              </div>
-            </summary>
-
-            <div class="job-content">
-              <p>
-                Actualmente participo en actividades de análisis,
-                seguimiento y evaluación de modelos internos
-                asociados al riesgo de crédito minorista.
-              </p>
-
-              <ul>
-                <li>
-                  Análisis de parámetros y componentes de riesgo,
-                  incluyendo PD, LGD y EAD.
-                </li>
-                <li>
-                  Evaluación del desempeño y poder discriminante
-                  de modelos mediante estadísticos como KS y ROC/AUC.
-                </li>
-                <li>
-                  Análisis de estabilidad y cambios en la población
-                  mediante PSI, así como evaluación de variables
-                  con herramientas como Information Value (IV).
-                </li>
-                <li>
-                  Aplicación de técnicas estadísticas, regresiones
-                  y estimación de parámetros en procesos relacionados
-                  con la modelación y el cálculo de reservas.
-                </li>
-                <li>
-                  Seguimiento de resultados y análisis de escenarios
-                  para comprender el comportamiento de las estimaciones.
-                </li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="job">
-            <summary>
-              <div>
-                <h3 class="job-company">Star Médica</h3>
-                <p class="job-role">Analista de Gestión de Vistas</p>
-              </div>
-              <div>
-                <div class="job-date">2025</div>
-                <div class="job-icon">+</div>
-              </div>
-            </summary>
-
-            <div class="job-content">
-              <p>
-                Participé en el análisis de información relacionada
-                con insumos médicos, costos y operación hospitalaria.
-              </p>
-
-              <ul>
-                <li>Homologación y revisión de catálogos de insumos.</li>
-                <li>Procesamiento y automatización de información con Python.</li>
-                <li>Elaboración de reportes y tableros en Power BI y Excel.</li>
-                <li>Análisis de costos y apoyo en ejercicios de proyección.</li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="job">
-            <summary>
-              <div>
-                <h3 class="job-company">Nadro</h3>
-                <p class="job-role">Becario de Análisis Comercial</p>
-              </div>
-              <div>
-                <div class="job-date">2024 — 2025</div>
-                <div class="job-icon">+</div>
-              </div>
-            </summary>
-
-            <div class="job-content">
-              <p>
-                Colaboré en actividades de análisis de información
-                comercial, elaboración de reportes y seguimiento
-                de indicadores para apoyar la interpretación
-                de resultados y el trabajo del área.
-              </p>
-            </div>
-          </details>
-
-          <details class="job">
-            <summary>
-              <div>
-                <h3 class="job-company">UNAM</h3>
-                <p class="job-role">Asistente académico · Probabilidad y Estadística</p>
-              </div>
-              <div>
-                <div class="job-date">2023 — ACTUALIDAD</div>
-                <div class="job-icon">+</div>
-              </div>
-            </summary>
-
-            <div class="job-content">
-              <p>
-                Colaboro en actividades de enseñanza y acompañamiento
-                académico para estudiantes de ciencias.
-              </p>
-
-              <ul>
-                <li>Preparación de ejercicios y material didáctico.</li>
-                <li>Explicación de conceptos de probabilidad y estadística.</li>
-                <li>Desarrollo de demostraciones y soluciones matemáticas en LaTeX.</li>
-              </ul>
-            </div>
-          </details>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Enfoque técnico -->
-  <section class="section technical" id="enfoque">
-    <div class="container">
-
+    <!-- EXPERIENCIA -->
+    <section id="experiencia" class="wrap">
       <div class="section-head reveal">
         <div>
-          <div class="eyebrow">03 / ENFOQUE TÉCNICO</div>
-          <h2 class="section-title">Estadística que se lleva a la práctica.</h2>
+          <div class="section-kicker">Trayectoria</div>
+          <h2>Experiencia profesional</h2>
         </div>
 
-        <p class="section-description">
-          Distintas herramientas para estudiar relaciones,
-          evaluar modelos y entender el comportamiento de los datos.
+        <p class="section-intro">
+          Lo esencial a primera vista; abre cada etapa para conocer un poco más.
         </p>
       </div>
 
-      <div class="technical-grid">
+      <div class="timeline">
 
-        <article class="technical-card reveal">
-          <h3>Evaluación de modelos</h3>
-          <p>
-            Análisis de la capacidad de discriminación,
-            desempeño y estabilidad de modelos predictivos.
-          </p>
+        <details class="current-exp reveal" open>
+          <summary>
+            <span class="date">Actualidad</span>
 
-          <div class="metric-list">
-            <span class="metric">KS</span>
-            <span class="metric">ROC / AUC</span>
-            <span class="metric">PSI</span>
-            <span class="metric">IV</span>
+            <span class="exp-title-wrap">
+              <span class="exp-title">Gerente de Modelos Internos Minorista</span>
+              <span class="exp-company">Grupo Financiero Banorte</span>
+              <span class="current-tag">
+                <i class="fa-solid fa-leaf"></i> Puesto actual
+              </span>
+            </span>
+
+            <span class="chevron">
+              <i class="fa-solid fa-chevron-down"></i>
+            </span>
+          </summary>
+
+          <div class="details-body">
+            <p>
+              Participación en actividades de análisis y seguimiento de
+              modelos internos para riesgo de crédito minorista.
+            </p>
+
+            <ul>
+              <li>
+                Análisis de parámetros de riesgo: PD, LGD y EAD,
+                y su relación con la estimación de reservas.
+              </li>
+              <li>
+                Evaluación y seguimiento del desempeño y estabilidad
+                de modelos mediante indicadores como KS, ROC/AUC, PSI e IV.
+              </li>
+              <li>
+                Uso de herramientas estadísticas y análisis cuantitativo
+                para interpretar resultados y apoyar el seguimiento de modelos.
+              </li>
+            </ul>
           </div>
-        </article>
+        </details>
 
-        <article class="technical-card reveal">
-          <h3>Modelación estadística</h3>
-          <p>
-            Estudio de relaciones entre variables, ajuste de modelos,
-            estimación de parámetros e interpretación de resultados.
-          </p>
+        <details class="reveal">
+          <summary>
+            <span class="date">Feb. – Ago. 2025</span>
 
-          <div class="metric-list">
-            <span class="metric">Regresión lineal</span>
-            <span class="metric">Estimación</span>
-            <span class="metric">Inferencia</span>
-            <span class="metric">Validación</span>
+            <span class="exp-title-wrap">
+              <span class="exp-title">Analista de Gestión de Vistas</span>
+              <span class="exp-company">Star Médica</span>
+            </span>
+
+            <span class="chevron">
+              <i class="fa-solid fa-chevron-down"></i>
+            </span>
+          </summary>
+
+          <div class="details-body">
+            <p>
+              Análisis y seguimiento de información operativa para apoyar
+              la gestión de insumos y reportes.
+            </p>
+
+            <ul>
+              <li>Integración y revisión de información para reportes de gestión.</li>
+              <li>Automatización y visualización de indicadores mediante Excel, Power BI y Python.</li>
+              <li>Apoyo en el análisis de catálogos y comportamiento de insumos.</li>
+            </ul>
           </div>
-        </article>
+        </details>
 
-        <article class="technical-card reveal">
+        <details class="reveal">
+          <summary>
+            <span class="date">2024 – 2025</span>
+
+            <span class="exp-title-wrap">
+              <span class="exp-title">Becario de Análisis Comercial</span>
+              <span class="exp-company">Nadro</span>
+            </span>
+
+            <span class="chevron">
+              <i class="fa-solid fa-chevron-down"></i>
+            </span>
+          </summary>
+
+          <div class="details-body">
+            <p>
+              Apoyo en el análisis de información comercial y elaboración
+              de reportes para el seguimiento de indicadores.
+            </p>
+          </div>
+        </details>
+
+        <details class="reveal">
+          <summary>
+            <span class="date">2023 – Actualidad</span>
+
+            <span class="exp-title-wrap">
+              <span class="exp-title">Asistente académico · Probabilidad y Estadística</span>
+              <span class="exp-company">Facultad de Ciencias, UNAM</span>
+            </span>
+
+            <span class="chevron">
+              <i class="fa-solid fa-chevron-down"></i>
+            </span>
+          </summary>
+
+          <div class="details-body">
+            <p>
+              Colaboración en actividades de docencia y acompañamiento
+              académico, con énfasis en la explicación y resolución
+              de problemas de probabilidad y estadística.
+            </p>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- ENFOQUE -->
+    <section id="enfoque" class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-kicker">Áreas de trabajo</div>
+          <h2>¿En qué me enfoco?</h2>
+        </div>
+
+        <p class="section-intro">
+          Una combinación de criterio estadístico, herramientas cuantitativas
+          y comunicación de resultados.
+        </p>
+      </div>
+
+      <div class="focus-grid">
+        <article class="focus-card reveal">
+          <div class="focus-icon">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
           <h3>Riesgo de crédito</h3>
           <p>
-            Análisis de componentes de riesgo y su relación
-            con la estimación de pérdidas y reservas.
+            Análisis de PD, LGD y EAD, así como su relación
+            con las reservas crediticias.
           </p>
-
-          <div class="metric-list">
-            <span class="metric">PD</span>
-            <span class="metric">LGD</span>
-            <span class="metric">EAD</span>
-            <span class="metric">Reservas</span>
-          </div>
         </article>
 
-        <article class="technical-card reveal">
-          <h3>Análisis y exploración</h3>
+        <article class="focus-card reveal">
+          <div class="focus-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3>Evaluación de modelos</h3>
           <p>
-            Preparación de datos, análisis exploratorio,
-            identificación de patrones y comunicación
-            de hallazgos.
+            Seguimiento de discriminación, estabilidad y capacidad
+            predictiva mediante KS, ROC/AUC, PSI e IV.
           </p>
-
-          <div class="metric-list">
-            <span class="metric">EDA</span>
-            <span class="metric">Minería de datos</span>
-            <span class="metric">Visualización</span>
-            <span class="metric">Automatización</span>
-          </div>
         </article>
 
+        <article class="focus-card reveal">
+          <div class="focus-icon">
+            <i class="fa-solid fa-square-root-variable"></i>
+          </div>
+          <h3>Estadística aplicada</h3>
+          <p>
+            Probabilidad, inferencia, análisis cuantitativo
+            y estimación de parámetros.
+          </p>
+        </article>
       </div>
+    </section>
 
-      <p class="technical-footnote">
-        Mi interés está en combinar fundamentos estadísticos,
-        criterio analítico y conocimiento del problema para
-        obtener resultados interpretables y útiles.
-      </p>
+    <!-- HERRAMIENTAS -->
+    <section id="herramientas" class="wrap">
+      <div class="tools-panel reveal">
+        <div>
+          <div class="section-kicker" style="color:#c4cdb7">
+            Mi caja de herramientas
+          </div>
 
-    </div>
-  </section>
-
-  <!-- Herramientas -->
-  <section class="section tools" id="herramientas">
-    <div class="container">
-
-      <div class="tools-layout">
-
-        <div class="tools-intro reveal">
-          <div class="eyebrow">04 / HERRAMIENTAS</div>
-          <h2 class="section-title">Tecnología para pensar, explorar y construir.</h2>
+          <h2>Herramientas que uso</h2>
 
           <p>
-            Me gusta utilizar la herramienta adecuada según el problema.
-            Desde consultas y procesamiento de datos hasta modelos
-            estadísticos, automatización y visualización.
-          </p>
-
-          <p>
-            También disfruto aprender nuevas tecnologías y encontrar
-            formas de hacer más claros y eficientes los procesos.
+            La herramienta depende de la pregunta; lo importante
+            es entender bien el problema.
           </p>
         </div>
 
-        <div class="tools-grid reveal">
-
-          <div class="tool-group">
-            <h3>Programación y estadística</h3>
-            <div class="tool-tags">
-              <span>Python</span>
-              <span>R</span>
-              <span>SAS Studio</span>
-              <span>Pandas</span>
-              <span>NumPy</span>
-              <span>Statsmodels</span>
-            </div>
-          </div>
-
-          <div class="tool-group">
-            <h3>Bases de datos</h3>
-            <div class="tool-tags">
-              <span>SQL</span>
-              <span>MySQL</span>
-              <span>PostgreSQL</span>
-            </div>
-          </div>
-
-          <div class="tool-group">
-            <h3>Inteligencia de negocios</h3>
-            <div class="tool-tags">
-              <span>Power BI</span>
-              <span>DAX</span>
-              <span>Excel</span>
-            </div>
-          </div>
-
-          <div class="tool-group">
-            <h3>Visualización y desarrollo</h3>
-            <div class="tool-tags">
-              <span>Plotly</span>
-              <span>Dash</span>
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>Git</span>
-              <span>GitHub</span>
-            </div>
-          </div>
-
-          <div class="tool-group">
-            <h3>Matemáticas y documentación</h3>
-            <div class="tool-tags">
-              <span>LaTeX</span>
-              <span>Wolfram Mathematica</span>
-              <span>Probabilidad</span>
-              <span>Estadística</span>
-            </div>
-          </div>
-
-          <div class="tool-group">
-            <h3>Intereses en desarrollo</h3>
-            <div class="tool-tags">
-              <span>Modelos predictivos</span>
-              <span>Minería de datos</span>
-              <span>Modelación de riesgo</span>
-              <span>Automatización</span>
-            </div>
-          </div>
-
+        <div class="tool-tags">
+          <span>Python</span>
+          <span>R</span>
+          <span>SAS Studio</span>
+          <span>SQL</span>
+          <span>MySQL</span>
+          <span>PostgreSQL</span>
+          <span>Power BI</span>
+          <span>DAX</span>
+          <span>Excel</span>
+          <span>Plotly</span>
+          <span>Dash</span>
+          <span>Git / GitHub</span>
+          <span>LaTeX</span>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Proyectos -->
-  <section class="section projects" id="proyectos">
-    <div class="container">
-
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="wrap">
       <div class="section-head reveal">
         <div>
-          <div class="eyebrow">05 / PROYECTOS E INTERESES</div>
-          <h2 class="section-title">Ideas que toman forma.</h2>
+          <div class="section-kicker">Intereses profesionales</div>
+          <h2>Lo que me gusta construir</h2>
         </div>
 
-        <p class="section-description">
-          Algunas áreas en las que he aplicado conocimientos
-          y desarrollado soluciones.
+        <p class="section-intro">
+          Algunos temas que conectan mi experiencia
+          y mis intereses técnicos.
         </p>
       </div>
 
-      <div class="project-track reveal">
-
-        <article class="project">
-          <span class="project-number">01 / DATOS</span>
-          <h3>Automatización y procesamiento</h3>
+      <div class="projects">
+        <article class="project reveal">
+          <small>Riesgo y modelos</small>
+          <h3>Análisis de desempeño</h3>
           <p>
-            Scripts para transformar, depurar y organizar información,
-            reduciendo tareas repetitivas y facilitando el análisis.
+            Evaluación de indicadores de discriminación,
+            estabilidad y comportamiento de modelos.
           </p>
-          <span class="project-tech">PYTHON · PANDAS · SQL</span>
         </article>
 
-        <article class="project">
-          <span class="project-number">02 / VISUALIZACIÓN</span>
-          <h3>Tableros e indicadores</h3>
+        <article class="project reveal">
+          <small>Datos y automatización</small>
+          <h3>Reportes y tableros</h3>
           <p>
-            Reportes interactivos para explorar información,
-            dar seguimiento a indicadores y comunicar resultados.
+            Transformar información dispersa en reportes claros
+            y herramientas de seguimiento.
           </p>
-          <span class="project-tech">POWER BI · DAX · EXCEL</span>
         </article>
 
-        <article class="project">
-          <span class="project-number">03 / DOCENCIA</span>
-          <h3>Material de Probabilidad</h3>
+        <article class="project reveal">
+          <small>Docencia</small>
+          <h3>Material de probabilidad</h3>
           <p>
-            Desarrollo de ejercicios, demostraciones y material
-            de apoyo para explicar conceptos matemáticos y estadísticos.
+            Desarrollo de ejercicios, demostraciones y recursos
+            didácticos de estadística y probabilidad.
           </p>
-          <span class="project-tech">LATEX · MATEMÁTICAS</span>
         </article>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Formación -->
-  <section class="section formation" id="formacion">
-    <div class="container">
-
+    <!-- FORMACIÓN -->
+    <section id="formacion" class="wrap">
       <div class="section-head reveal">
         <div>
-          <div class="eyebrow">06 / FORMACIÓN</div>
-          <h2 class="section-title">Una base para seguir creciendo.</h2>
+          <div class="section-kicker">Formación</div>
+          <h2>De dónde vengo</h2>
         </div>
       </div>
 
-      <div class="formation-grid">
-
-        <article class="formation-card reveal">
-          <h3>Formación académica</h3>
-
-          <div class="education">
-            <small>UNAM · FACULTAD DE CIENCIAS</small>
-            <h4>Licenciatura en Actuaría</h4>
-            <p>Universidad Nacional Autónoma de México</p>
-            <span class="education-status">Titulado</span>
+      <div class="education">
+        <article class="edu-card reveal">
+          <div class="edu-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
           </div>
 
-          <div class="education">
-            <small>UNAM · FES ACATLÁN</small>
-            <h4>Técnicas Estadísticas y Minería de Datos</h4>
-            <p>Diplomado · Universidad Nacional Autónoma de México</p>
-            <span class="education-status">Concluido</span>
+          <div>
+            <h3>Actuaría</h3>
+            <p>
+              Facultad de Ciencias · Universidad Nacional Autónoma de México
+            </p>
+
+            <details>
+              <summary>
+                Ver detalle <i class="fa-solid fa-arrow-down"></i>
+              </summary>
+
+              <div class="details-body">
+                Licenciatura concluida. Formación en probabilidad,
+                estadística, matemáticas y análisis de riesgo.
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <article class="edu-card reveal">
+          <div class="edu-icon">
+            <i class="fa-solid fa-award"></i>
           </div>
 
-          <a class="credential-link"
-             href="https://drive.google.com/file/d/1pIvyxVzOB1T1U4Gftgas0YZhP_0lyXmG/view?usp=sharing"
-             target="_blank" rel="noopener">
-            Consultar constancia del diplomado ↗
+          <div>
+            <h3>Técnicas Estadísticas y Minería de Datos</h3>
+            <p>Diplomado · FES Acatlán, UNAM</p>
+
+            <details>
+              <summary>
+                Ver constancia <i class="fa-solid fa-arrow-down"></i>
+              </summary>
+
+              <div class="details-body">
+                <a
+                  href="https://drive.google.com/file/d/1pIvyxVzOB1T1U4Gftgas0YZhP_0lyXmG/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener"
+                  style="color:var(--olive);font-weight:700"
+                >
+                  Consultar constancia
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </details>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="wrap">
+      <div class="contact reveal">
+        <div>
+          <div class="section-kicker">Contacto</div>
+          <h2>Siempre hay algo nuevo que aprender.</h2>
+
+          <p>
+            Si te interesa conversar sobre análisis de datos,
+            estadística, modelos o proyectos, puedes encontrarme
+            por estos medios.
+          </p>
+        </div>
+
+        <div class="socials">
+          <a href="mailto:axelmendezlopez@gmail.com" aria-label="Correo">
+            <i class="fa-regular fa-envelope"></i>
           </a>
-        </article>
 
-        <article class="formation-card reveal">
-          <h3>Enseñar también es aprender</h3>
+          <a
+            href="https://www.linkedin.com/in/pedro-axel-méndez-lópez-2b695a27a/"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+          >
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
 
-          <div class="teaching-copy">
-            <p>
-              La docencia es una parte importante de mi vida académica.
-              He colaborado en cursos de Probabilidad y Estadística,
-              preparando ejercicios y acompañando a estudiantes
-              en el aprendizaje de conceptos matemáticos.
-            </p>
-
-            <p>
-              Me gusta encontrar distintas maneras de explicar
-              una idea hasta que deja de parecer complicada.
-              Esa experiencia también ha fortalecido mi capacidad
-              para comunicar conceptos técnicos.
-            </p>
-
-            <p>
-              Creo que compartir lo que uno sabe es una buena
-              manera de seguir aprendiendo.
-            </p>
-          </div>
-        </article>
-
+          <a
+            href="https://github.com/AxelM007"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Contacto -->
-  <section class="contact" id="contacto">
-    <div class="container reveal">
-
-      <div class="eyebrow">07 / CONEXIONES</div>
-
-      <h2>Las buenas ideas<br>también se comparten.</h2>
-
-      <p>
-        Disfruto conversar sobre estadística, tecnología,
-        modelación y nuevas formas de resolver problemas.
-        Si compartimos alguno de estos intereses,
-        será un gusto conectar.
-      </p>
-
-      <div class="contact-actions">
-        <a href="mailto:axelmendezlopez@gmail.com">Correo electrónico ↗</a>
-
-        <a href="https://www.linkedin.com/in/pedro-axel-méndez-lópez-2b695a27a/"
-           target="_blank" rel="noopener">LinkedIn ↗</a>
-
-        <a href="https://github.com/AxelM007"
-           target="_blank" rel="noopener">GitHub ↗</a>
-
-        <a href="https://drive.google.com/file/d/1Rl6EV9l2bOaOtlM8R4zCsphDsvJIRVp2/view?usp=sharing"
-           target="_blank" rel="noopener">CV ↗</a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-inner">
-      <span>© 2026 Pedro Axel Méndez López</span>
-      <span>Hecho con curiosidad, estadística y código.</span>
-      <a href="#inicio">Volver al inicio ↑</a>
-    </div>
+  <footer class="wrap">
+    <span>© <span id="year"></span> Pedro Axel Méndez López</span>
+    <span>Hecho con curiosidad, criterio y café.</span>
   </footer>
 
-  <a href="#inicio" class="back-top" id="backTop" aria-label="Volver arriba">↑</a>
+  <button class="top-btn" id="topBtn" aria-label="Volver arriba">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
 
   <script>
-    // Animaciones al entrar en pantalla
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-          observer.unobserve(entry.target);
+    // Año dinámico
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
+
+    // Acordeón: una sola experiencia abierta a la vez
+    const experienceItems =
+      document.querySelectorAll('.timeline details');
+
+    experienceItems.forEach(item => {
+      item.addEventListener('toggle', () => {
+        if (item.open) {
+          experienceItems.forEach(other => {
+            if (other !== item) other.open = false;
+          });
         }
       });
-    }, {
-      threshold: 0.12
     });
 
-    document.querySelectorAll('.reveal').forEach(element => {
-      observer.observe(element);
-    });
-
-    // Botón para regresar al inicio
-    const backTop = document.getElementById('backTop');
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 450) {
-        backTop.classList.add('visible');
-      } else {
-        backTop.classList.remove('visible');
-      }
-    }, { passive: true });
-
-    // Navegación activa según la sección visible
-    const sections = document.querySelectorAll('header[id], section[id]');
-    const navItems = document.querySelectorAll('.nav-links a');
-
-    const navObserver = new IntersectionObserver((entries) => {
+    // Animaciones al entrar en pantalla
+    const revealObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          navItems.forEach(link => {
-            link.classList.toggle(
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      revealObserver.observe(el);
+    });
+
+    // Navegación activa
+    const navAnchors =
+      [...document.querySelectorAll('.nav-links a')];
+
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navAnchors.forEach(a => {
+            a.classList.toggle(
               'active',
-              link.getAttribute('href') === '#' + entry.target.id
+              a.getAttribute('href') === '#' + entry.target.id
             );
           });
         }
       });
-    }, {
-      rootMargin: '-25% 0px -65% 0px'
+    }, { rootMargin: '-35% 0px -55% 0px' });
+
+    document.querySelectorAll('main section[id]').forEach(section => {
+      sectionObserver.observe(section);
     });
 
-    sections.forEach(section => navObserver.observe(section));
+    // Botón para volver arriba
+    const topBtn = document.getElementById('topBtn');
 
-    // Acordeón: mantener una sola experiencia abierta
-    const jobs = document.querySelectorAll('.job');
+    window.addEventListener('scroll', () => {
+      topBtn.classList.toggle('show', window.scrollY > 500);
+    }, { passive:true });
 
-    jobs.forEach(job => {
-      job.addEventListener('toggle', () => {
-        if (job.open) {
-          jobs.forEach(other => {
-            if (other !== job) {
-              other.open = false;
-            }
-          });
-        }
-      });
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top:0, behavior:'smooth' });
     });
   </script>
-
 </body>
 </html>
