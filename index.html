@@ -1,244 +1,2343 @@
+
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pedro Axel Méndez López | CV Profesional</title>
+
+  <title>Pedro Axel Méndez López | Actuaría, Modelos y Data Science</title>
+
+  <!-- Identidad original: se conserva tu favicon -->
   <link rel="icon" href="./imagenpagina.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <meta name="description" content="Pedro Axel Méndez López. Actuario, Gerente de Modelos Internos Minorista en Banorte. Especialista en analítica, estadística aplicada, modelación y ciencia de datos.">
+
+  <meta name="theme-color" content="#d6f3ec">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f9fdfb;
+      --surface: #ffffff;
+      --surface-alt: #eef8f5;
+
+      --mint: #d6f3ec;
+      --mint-dark: #c0e8df;
+
+      --primary: #298f80;
+      --primary-dark: #226f66;
+      --primary-light: #77c7b8;
+
+      --text: #1f2d2a;
+      --text-soft: #526762;
+      --muted: #829590;
+
+      --border: #dcebe6;
+
+      --shadow:
+        0 12px 40px rgba(31, 70, 61, 0.055);
+
+      --shadow-hover:
+        0 20px 48px rgba(31, 70, 61, 0.11);
+
+      --radius: 16px;
+
+      --max-width: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 95px;
+    }
+
     body {
       font-family: 'IBM Plex Sans', sans-serif;
-      background: #f9fdfb;
-      color: #1f2d2a;
-      line-height: 1.7;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      overflow-x: hidden;
     }
-    header {
-      background: linear-gradient(to right, #d6f3ec, #c0e8df);
-      color: #1f2d2a;
-      padding: 3.5rem 1.5rem;
-      text-align: center;
-      border-bottom: 2px solid #b2dad2;
-      position: relative;
+
+    a {
+      color: inherit;
     }
-    header::after {
-      content: "\f201";
-      font-family: 'Font Awesome 6 Free';
-      font-weight: 900;
-      font-size: 3.5rem;
-      color: #81cbbf;
-      position: absolute;
-      right: 2rem;
-      top: 2rem;
-      opacity: 0.15;
+
+    ::selection {
+      background: var(--mint-dark);
+      color: var(--text);
     }
-    header h1 {
-      font-size: 2.6rem;
-      margin-bottom: .6rem;
-    }
-    header p {
-      font-size: 1.3rem;
-      color: #3e5d58;
-    }
-    .summary {
-      max-width: 720px;
-      margin: 2rem auto 0;
-      font-size: 1.1rem;
-      color: #2a3c39;
-      padding: 0 1rem;
-    }
-    nav {
-      background: #d0eee7;
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.04);
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-    nav a {
-      color: #2a4a46;
-      margin: 0 1.2rem;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1.05rem;
-    }
-    nav a:hover {
-      color: #379e8f;
-    }
-    section {
-      padding: 3.5rem 2rem;
-      max-width: 960px;
+
+    /* ----------------------------------
+       UTILIDADES
+    ---------------------------------- */
+
+    .container {
+      width: min(var(--max-width), calc(100% - 48px));
       margin: auto;
     }
-    h2 {
-      color: #298f80;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      position: relative;
+
+    .mono {
+      font-family: 'IBM Plex Mono', monospace;
+      letter-spacing: -0.4px;
     }
-    h2::before {
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--primary);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .76rem;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      display: block;
+      width: 27px;
+      height: 2px;
+      background: var(--primary-light);
+    }
+
+    .section-heading {
+      font-family: 'IBM Plex Serif', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 500;
+      letter-spacing: -1.2px;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .section-description {
+      max-width: 690px;
+      color: var(--text-soft);
+      font-size: 1.03rem;
+    }
+
+    .section-header {
+      margin-bottom: 45px;
+    }
+
+    .accent {
+      color: var(--primary);
+    }
+
+    /* ----------------------------------
+       NAVEGACIÓN
+    ---------------------------------- */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background: rgba(249, 253, 251, .92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+
+      border-bottom: 1px solid rgba(178, 218, 210, .65);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      line-height: 1.3;
+    }
+
+    .brand strong {
+      font-family: 'IBM Plex Serif', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: -.4px;
+    }
+
+    .brand span {
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--muted);
+      font-size: .65rem;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 27px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: .87rem;
+      font-weight: 500;
+      color: var(--text-soft);
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-contact {
+      border: 1px solid var(--primary) !important;
+      padding: 8px 17px;
+      border-radius: 5px;
+      color: var(--primary) !important;
+    }
+
+    .nav-contact:hover {
+      background: var(--primary);
+      color: white !important;
+    }
+
+    /* ----------------------------------
+       HERO / PRESENTACIÓN
+    ---------------------------------- */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 105px 0 95px;
+
+      background:
+        radial-gradient(
+          circle at 85% 25%,
+          rgba(119, 199, 184, .23),
+          transparent 32%
+        ),
+        linear-gradient(
+          115deg,
+          #dff5ef 0%,
+          #d1eee6 48%,
+          #c0e8df 100%
+        );
+
+      border-bottom: 1px solid #b9ded5;
+    }
+
+    .hero::before {
       content: "";
       position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 60px;
-      height: 4px;
-      background-color: #77c7b8;
-      border-radius: 2px;
+      width: 480px;
+      height: 480px;
+      border: 1px solid rgba(41, 143, 128, .12);
+      border-radius: 50%;
+      right: -150px;
+      top: -220px;
     }
-    ul {
-      list-style: none;
-      padding-left: 0;
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border: 1px solid rgba(41, 143, 128, .12);
+      border-radius: 50%;
+      right: -80px;
+      top: -155px;
     }
-    li {
-      padding: .6rem 0 .6rem 1.5rem;
+
+    .hero-grid {
       position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.65fr .85fr;
+      gap: 65px;
+      align-items: center;
     }
-    li::before {
-      content: "\f058";
-      font-family: 'Font Awesome 6 Free';
-      font-weight: 900;
-      color: #379e8f;
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border: 1px solid rgba(41, 143, 128, .28);
+      border-radius: 4px;
+      background: rgba(255, 255, 255, .35);
+
+      color: var(--primary-dark);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem;
+      letter-spacing: .5px;
+      margin-bottom: 28px;
+    }
+
+    .hero-label i {
+      font-size: .55rem;
+    }
+
+    .hero h1 {
+      max-width: 760px;
+      font-family: 'IBM Plex Serif', serif;
+      font-size: clamp(3rem, 6.2vw, 5.2rem);
+      font-weight: 500;
+      letter-spacing: -3px;
+      line-height: 1.04;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: var(--primary-dark);
+    }
+
+    .hero-subtitle {
+      max-width: 680px;
+      color: #405c55;
+      font-size: 1.18rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .hero-description {
+      max-width: 680px;
+      color: #526b65;
+      font-size: 1rem;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      padding: 13px 22px;
+      border-radius: 5px;
+
+      font-size: .9rem;
+      font-weight: 600;
+      text-decoration: none;
+
+      transition: all .25s ease;
+    }
+
+    .button-primary {
+      background: var(--primary);
+      color: white;
+      border: 1px solid var(--primary);
+    }
+
+    .button-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      border: 1px solid rgba(41, 143, 128, .5);
+      color: var(--primary-dark);
+      background: rgba(255, 255, 255, .25);
+    }
+
+    .button-outline:hover {
+      background: rgba(255, 255, 255, .7);
+      transform: translateY(-2px);
+    }
+
+    /* Panel lateral */
+
+    .hero-panel {
+      position: relative;
+      background: rgba(255, 255, 255, .68);
+      border: 1px solid rgba(255, 255, 255, .85);
+      box-shadow: var(--shadow);
+      border-radius: 10px;
+      padding: 29px;
+      backdrop-filter: blur(8px);
+    }
+
+    .panel-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 23px;
+    }
+
+    .panel-top span {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .67rem;
+      color: var(--muted);
+      letter-spacing: 1px;
+    }
+
+    .panel-icon {
+      color: var(--primary);
+      font-size: 1.3rem;
+    }
+
+    .panel-item {
+      margin-bottom: 22px;
+    }
+
+    .panel-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .panel-item small {
+      display: block;
+      color: var(--muted);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .66rem;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .panel-item strong {
+      display: block;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    .panel-item p {
+      color: var(--text-soft);
+      font-size: .83rem;
+      margin-top: 4px;
+    }
+
+    .panel-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 20px 0;
+    }
+
+    /* ----------------------------------
+       BANDA DE ESPECIALIZACIÓN
+    ---------------------------------- */
+
+    .expertise-strip {
+      background: white;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .expertise-item {
+      padding: 27px 22px;
+      border-right: 1px solid var(--border);
+    }
+
+    .expertise-item:first-child {
+      border-left: 1px solid var(--border);
+    }
+
+    .expertise-item i {
+      display: block;
+      color: var(--primary);
+      font-size: 1.15rem;
+      margin-bottom: 9px;
+    }
+
+    .expertise-item strong {
+      display: block;
+      font-size: .94rem;
+      margin-bottom: 3px;
+    }
+
+    .expertise-item span {
+      font-size: .76rem;
+      color: var(--muted);
+    }
+
+    /* ----------------------------------
+       SECCIONES GENERALES
+    ---------------------------------- */
+
+    section {
+      padding: 100px 0;
+    }
+
+    /* ----------------------------------
+       PERFIL
+    ---------------------------------- */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 75px;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: var(--text-soft);
+      margin-bottom: 18px;
+      font-size: 1rem;
+    }
+
+    .about-text strong {
+      color: var(--text);
+    }
+
+    .about-quote {
+      border-left: 3px solid var(--primary-light);
+      padding: 15px 22px;
+      background: var(--surface-alt);
+      margin-top: 30px;
+      color: var(--primary-dark);
+      font-family: 'IBM Plex Serif', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+    }
+
+    .profile-facts {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .fact {
+      padding: 17px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .fact:first-child {
+      padding-top: 0;
+    }
+
+    .fact:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .fact span {
+      display: block;
+      color: var(--muted);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: .9px;
+      margin-bottom: 5px;
+    }
+
+    .fact strong {
+      font-size: .96rem;
+      font-weight: 600;
+    }
+
+    /* ----------------------------------
+       EXPERIENCIA
+    ---------------------------------- */
+
+    #experiencia {
+      background: #f0f9f6;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 950px;
+      margin-left: 9px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 9px;
+      top: 12px;
+      bottom: 10px;
+      width: 1px;
+      background: #b7dcd2;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 48px 45px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      top: 8px;
+      left: 3px;
+      width: 13px;
+      height: 13px;
+      border: 3px solid var(--primary);
+      border-radius: 50%;
+      background: #f0f9f6;
+      z-index: 2;
+    }
+
+    .timeline-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 28px 31px;
+      box-shadow: var(--shadow);
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .timeline-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .timeline-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 12px;
+    }
+
+    .timeline-company {
+      color: var(--primary);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .timeline-card h3 {
+      font-family: 'IBM Plex Serif', serif;
+      font-size: 1.45rem;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    .timeline-date {
+      flex-shrink: 0;
+      padding: 6px 10px;
+      background: var(--surface-alt);
+      color: var(--primary-dark);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .68rem;
+      border-radius: 3px;
+    }
+
+    .timeline-card p {
+      color: var(--text-soft);
+      font-size: .94rem;
+      margin: 13px 0;
+    }
+
+    .timeline-card ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px 20px;
+      margin-top: 17px;
+    }
+
+    .timeline-card li {
+      position: relative;
+      padding-left: 17px;
+      color: var(--text-soft);
+      font-size: .83rem;
+    }
+
+    .timeline-card li::before {
+      content: "";
       position: absolute;
       left: 0;
+      top: 11px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--primary-light);
     }
+
+    .role-highlight {
+      border-left: 3px solid var(--primary);
+    }
+
+    /* ----------------------------------
+       ESPECIALIZACIÓN
+    ---------------------------------- */
+
+    .specialization-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .specialization-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 30px;
+      transition: .25s ease;
+    }
+
+    .specialization-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--primary-light);
+    }
+
+    .specialization-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      background: var(--surface-alt);
+      border-radius: 8px;
+      color: var(--primary);
+      font-size: 1.2rem;
+      margin-bottom: 23px;
+    }
+
+    .specialization-card h3 {
+      font-family: 'IBM Plex Serif', serif;
+      font-size: 1.28rem;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .specialization-card p {
+      color: var(--text-soft);
+      font-size: .88rem;
+    }
+
+    /* ----------------------------------
+       HABILIDADES TÉCNICAS
+    ---------------------------------- */
+
+    #habilidades {
+      background: #f0f9f6;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .skills-layout {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .skill-card {
+      padding: 29px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+    }
+
+    .skill-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .skill-card-header i {
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+
+    .skill-card-header h3 {
+      font-size: 1.03rem;
+      font-weight: 600;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .skill-tag {
+      display: inline-block;
+      padding: 7px 12px;
+      background: #eff8f5;
+      border: 1px solid #d8ebe4;
+      border-radius: 4px;
+      color: #376b60;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .73rem;
+    }
+
+    .skill-note {
+      margin-top: 25px;
+      color: var(--muted);
+      font-size: .79rem;
+    }
+
+    /* ----------------------------------
+       PROYECTOS
+    ---------------------------------- */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 23px;
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      padding: 31px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      transition: .25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .project-number {
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--primary-light);
+      font-size: .78rem;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+    }
+
+    .project-card h3 {
+      font-family: 'IBM Plex Serif', serif;
+      font-size: 1.45rem;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .project-card p {
+      color: var(--text-soft);
+      font-size: .9rem;
+      margin-bottom: 23px;
+    }
+
+    .project-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .project-tools span {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .68rem;
+      color: var(--primary-dark);
+      background: var(--surface-alt);
+      padding: 5px 9px;
+      border-radius: 3px;
+    }
+
+    /* ----------------------------------
+       FORMACIÓN
+    ---------------------------------- */
+
+    #formacion {
+      background: #f0f9f6;
+      border-top: 1px solid var(--border);
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .education-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 30px;
+    }
+
+    .education-card i {
+      color: var(--primary);
+      font-size: 1.35rem;
+      margin-bottom: 19px;
+    }
+
+    .education-card .education-type {
+      color: var(--primary);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .69rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 9px;
+    }
+
+    .education-card h3 {
+      font-family: 'IBM Plex Serif', serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      line-height: 1.35;
+      margin-bottom: 9px;
+    }
+
+    .education-card p {
+      color: var(--text-soft);
+      font-size: .87rem;
+    }
+
+    .education-card a {
+      display: inline-block;
+      margin-top: 15px;
+      color: var(--primary);
+      font-size: .85rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid var(--primary-light);
+    }
+
+    .education-card a:hover {
+      color: var(--primary-dark);
+    }
+
+    /* ----------------------------------
+       DOCENCIA
+    ---------------------------------- */
+
+    .teaching {
+      background: white;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary-light);
+      border-radius: 8px;
+      padding: 33px;
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .teaching-icon {
+      width: 65px;
+      height: 65px;
+      display: grid;
+      place-items: center;
+      background: var(--surface-alt);
+      color: var(--primary);
+      border-radius: 50%;
+      font-size: 1.5rem;
+    }
+
+    .teaching h3 {
+      font-family: 'IBM Plex Serif', serif;
+      font-size: 1.45rem;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .teaching p {
+      color: var(--text-soft);
+      font-size: .9rem;
+    }
+
+    /* ----------------------------------
+       CONTACTO
+    ---------------------------------- */
+
+    #contacto {
+      padding: 100px 0;
+    }
+
+    .contact-panel {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(120deg, #dff5ef, #c6eae1);
+      border: 1px solid #b8ded4;
+      border-radius: 12px;
+      padding: 65px 45px;
+      text-align: center;
+    }
+
+    .contact-panel::after {
+      content: "\f1ab";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      right: 35px;
+      top: 15px;
+      font-size: 8rem;
+      color: rgba(41, 143, 128, .07);
+    }
+
+    .contact-panel h2 {
+      position: relative;
+      z-index: 1;
+      font-family: 'IBM Plex Serif', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    .contact-panel p {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      margin: auto;
+      color: var(--text-soft);
+    }
+
     .contact-icons {
+      position: relative;
+      z-index: 1;
       display: flex;
       justify-content: center;
+      gap: 17px;
       flex-wrap: wrap;
-      gap: 1.2rem;
-      margin-top: 1.5rem;
+      margin-top: 32px;
     }
+
     .contact-icons a {
-      color: #298f80;
-      font-size: 1.8rem;
-      transition: color 0.2s;
-    }
-    .contact-icons a:hover {
-      color: #3fc4b0;
-    }
-    .cta-section {
-      text-align: center;
-      margin-top: 3rem;
-      padding: 2rem;
-      background: #eaf8f5;
-      border-radius: 8px;
-    }
-    .cta-section h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #1f2d2a;
-    }
-    .cta-section a {
-      display: inline-block;
-      margin: 0 1rem;
-      padding: 0.75rem 1.5rem;
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(41, 143, 128, .4);
       border-radius: 6px;
-      background-color: #379e8f;
-      color: white;
+      color: var(--primary-dark);
+      font-size: 1.2rem;
       text-decoration: none;
-      font-weight: 500;
-      transition: background 0.2s ease;
+      transition: .2s ease;
     }
-    .cta-section a:hover {
-      background-color: #2c807f;
+
+    .contact-icons a:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-4px);
     }
-    .cert-section {
-      background: #eefaf7;
-      border: 1px solid #c8e8e1;
-      padding: 2rem;
-      border-radius: 8px;
-      margin-top: 2rem;
-    }
-    .cert-section a {
-      color: #2e998a;
-      font-weight: 600;
-      text-decoration: underline;
-    }
+
+    /* ----------------------------------
+       FOOTER
+    ---------------------------------- */
+
     footer {
-      text-align: center;
-      padding: 2rem;
-      background: #d6f3ec;
-      color: #425c58;
-      font-size: 0.95rem;
+      background: #e2f3ed;
+      border-top: 1px solid #c8e5dc;
+      padding: 32px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    footer p {
+      color: var(--text-soft);
+      font-size: .81rem;
+    }
+
+    footer .footer-code {
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--primary);
+      font-size: .68rem;
+      letter-spacing: .7px;
+    }
+
+    /* ----------------------------------
+       ANIMACIONES
+    ---------------------------------- */
+
+    .reveal {
+      animation: appear .8s ease both;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+
+    /* ----------------------------------
+       RESPONSIVE
+    ---------------------------------- */
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .hero-panel {
+        max-width: 600px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .specialization-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .expertise-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .expertise-item:nth-child(3) {
+        border-left: 1px solid var(--border);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .container {
+        width: min(100% - 30px, var(--max-width));
+      }
+
+      .nav-inner {
+        padding: 13px 0;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        width: 100%;
+        gap: 12px 19px;
+      }
+
+      .nav-links a {
+        font-size: .78rem;
+      }
+
+      .nav-contact {
+        display: none;
+      }
+
+      .hero {
+        padding: 70px 0;
+      }
+
+      .hero h1 {
+        font-size: 3.1rem;
+        letter-spacing: -2px;
+      }
+
+      .hero-subtitle {
+        font-size: 1.02rem;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .expertise-item {
+        padding: 20px 13px;
+      }
+
+      .specialization-grid,
+      .skills-layout,
+      .projects-grid,
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-card {
+        padding: 22px;
+      }
+
+      .timeline-top {
+        flex-direction: column;
+      }
+
+      .timeline-card ul {
+        grid-template-columns: 1fr;
+      }
+
+      .teaching {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-panel {
+        padding: 50px 22px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>Pedro Axel Méndez López</h1>
-    <p><i class="fas fa-rocket"></i> Actuario | Ciencia de Datos | Estrategia & Automatización</p>
-  </header>
 
-  <div class="summary">
-    Profesional con formación en actuaría y enfoque en estadística aplicada, ciencia de datos y automatización. Me especializo en transformar datos complejos en soluciones ágiles y accionables. Cuento con experiencia en el sector salud, educativo y comercial, con proyectos orientados a eficiencia y visualización efectiva. Busco seguir aprendiendo, aportar valor real y crecer en entornos retadores.
-  </div>
+  <!-- ==================================
+       NAVEGACIÓN
+  =================================== -->
 
   <nav>
-    <a href="#sobre-mi">Sobre mí</a>
-    <a href="#habilidades">Habilidades</a>
-    <a href="#experiencia">Experiencia</a>
-    <a href="#proyectos">Proyectos</a>
-    <a href="#constancia">Constancia</a>
-    <a href="#contacto">Contacto</a>
+    <div class="container nav-inner">
+
+      <a class="brand" href="#inicio">
+        <strong>Pedro Axel Méndez</strong>
+        <span>ACTUARÍA · ANALYTICS · STRATEGY</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#sobre-mi">Perfil</a>
+        <a href="#experiencia">Trayectoria</a>
+        <a href="#especializacion">Especialización</a>
+        <a href="#habilidades">Tecnología</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#formacion">Formación</a>
+        <a href="#contacto" class="nav-contact">Contacto</a>
+      </div>
+
+    </div>
   </nav>
 
+
+  <!-- ==================================
+       HERO
+  =================================== -->
+
+  <header class="hero" id="inicio">
+
+    <div class="container hero-grid">
+
+      <div class="reveal">
+
+        <div class="hero-label">
+          <i class="fas fa-circle"></i>
+          PERFIL PROFESIONAL · 2026
+        </div>
+
+        <h1>
+          Pedro Axel<br>
+          <span>Méndez López.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Actuario | Modelos Internos | Ciencia de Datos |
+          Analítica Financiera
+        </p>
+
+        <p class="hero-description">
+          Profesional de la actuaría enfocado en la intersección
+          entre estadística, tecnología y estrategia financiera.
+          Actualmente me desempeño como Gerente de Modelos Internos
+          Minorista en Grupo Financiero Banorte, participando en un
+          entorno de análisis cuantitativo, gestión de riesgos y
+          modelación financiera.
+        </p>
+
+        <div class="hero-actions">
+
+          <a href="#experiencia" class="button button-primary">
+            <i class="fas fa-arrow-down"></i>
+            Explorar trayectoria
+          </a>
+
+          <a href="https://github.com/AxelM007"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="button button-outline">
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <aside class="hero-panel reveal">
+
+        <div class="panel-top">
+          <span>PERFIL EJECUTIVO / 01</span>
+          <i class="fas fa-chart-line panel-icon"></i>
+        </div>
+
+        <div class="panel-item">
+          <small>Posición actual</small>
+          <strong>Gerente de Modelos Internos Minorista</strong>
+          <p>Grupo Financiero Banorte</p>
+        </div>
+
+        <div class="panel-divider"></div>
+
+        <div class="panel-item">
+          <small>Formación</small>
+          <strong>Licenciatura en Actuaría</strong>
+          <p>Facultad de Ciencias · UNAM</p>
+        </div>
+
+        <div class="panel-divider"></div>
+
+        <div class="panel-item">
+          <small>Especialización</small>
+          <strong>Estadística y Minería de Datos</strong>
+          <p>Analítica cuantitativa y modelación</p>
+        </div>
+
+        <div class="panel-divider"></div>
+
+        <div class="panel-item">
+          <small>Enfoque profesional</small>
+          <strong>Datos que se convierten en decisiones.</strong>
+          <p>Modelación · Automatización · Estrategia</p>
+        </div>
+
+      </aside>
+
+    </div>
+
+  </header>
+
+
+  <!-- ==================================
+       ÁREAS DE CONOCIMIENTO
+  =================================== -->
+
+  <div class="expertise-strip">
+
+    <div class="container expertise-grid">
+
+      <div class="expertise-item">
+        <i class="fas fa-chart-pie"></i>
+        <strong>Modelación cuantitativa</strong>
+        <span>Estadística y riesgo financiero</span>
+      </div>
+
+      <div class="expertise-item">
+        <i class="fas fa-database"></i>
+        <strong>Data Analytics</strong>
+        <span>Integración y análisis de información</span>
+      </div>
+
+      <div class="expertise-item">
+        <i class="fas fa-code"></i>
+        <strong>Desarrollo y automatización</strong>
+        <span>Python, R y SQL</span>
+      </div>
+
+      <div class="expertise-item">
+        <i class="fas fa-chalkboard-teacher"></i>
+        <strong>Docencia y conocimiento</strong>
+        <span>Probabilidad y estadística</span>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==================================
+       PERFIL
+  =================================== -->
+
   <section id="sobre-mi">
-    <h2>Sobre mí</h2>
-    <p>Actuario egresado de la UNAM con enfoque en ciencia de datos, automatización y análisis aplicado. Tengo experiencia en el sector salud, académico y empresarial. Me apasiona transformar datos complejos en decisiones estratégicas claras. Busco siempre soluciones prácticas con visión técnica.</p>
+
+    <div class="container">
+
+      <div class="section-header">
+        <span class="eyebrow">01 / Perfil profesional</span>
+        <h2 class="section-heading">
+          Pensamiento cuantitativo.<br>
+          <span class="accent">Visión estratégica.</span>
+        </h2>
+      </div>
+
+      <div class="about-grid">
+
+        <div class="about-text">
+
+          <p>
+            Soy <strong>actuario egresado de la Facultad de Ciencias
+            de la Universidad Nacional Autónoma de México</strong>,
+            con formación en probabilidad, inferencia estadística,
+            modelación matemática y análisis de datos.
+          </p>
+
+          <p>
+            Mi trayectoria profesional se ha desarrollado en
+            entornos donde la información es un activo estratégico.
+            He participado en proyectos de análisis de rentabilidad,
+            automatización, integración de datos, visualización
+            ejecutiva y evaluación cuantitativa.
+          </p>
+
+          <p>
+            Actualmente, como <strong>Gerente de Modelos Internos
+            Minorista en Banorte</strong>, mi ámbito profesional
+            se encuentra vinculado con la modelación de riesgo
+            de crédito, el análisis de parámetros de riesgo,
+            el seguimiento de indicadores y la evaluación
+            de escenarios financieros.
+          </p>
+
+          <p>
+            Complemento mi experiencia con herramientas
+            computacionales y lenguajes de programación que
+            permiten desarrollar soluciones reproducibles,
+            optimizar procesos analíticos y transformar datos
+            en información útil para la toma de decisiones.
+          </p>
+
+          <div class="about-quote">
+            "La precisión matemática adquiere verdadero valor
+            cuando se traduce en decisiones relevantes."
+          </div>
+
+        </div>
+
+
+        <aside class="profile-facts">
+
+          <div class="fact">
+            <span>Formación académica</span>
+            <strong>Actuaría · UNAM</strong>
+          </div>
+
+          <div class="fact">
+            <span>Sector actual</span>
+            <strong>Financiero · Banca</strong>
+          </div>
+
+          <div class="fact">
+            <span>Organización</span>
+            <strong>Grupo Financiero Banorte</strong>
+          </div>
+
+          <div class="fact">
+            <span>Disciplina principal</span>
+            <strong>Modelación estadística y financiera</strong>
+          </div>
+
+          <div class="fact">
+            <span>Áreas complementarias</span>
+            <strong>Programación, automatización y visualización</strong>
+          </div>
+
+          <div class="fact">
+            <span>Intereses profesionales</span>
+            <strong>Data Science · Risk Analytics · Machine Learning</strong>
+          </div>
+
+        </aside>
+
+      </div>
+
+    </div>
+
   </section>
 
-  <section id="habilidades">
-    <h2>Habilidades técnicas</h2>
-    <ul>
-      <li><strong>Lenguajes:</strong> Python, R</li>
-      <li><strong>Bases de datos:</strong> PostgreSQL, MySQL</li>
-      <li><strong>Herramientas:</strong> Power BI, Excel avanzado, Git, LaTeX</li>
-      <li><strong>Áreas:</strong> Estadística aplicada, automatización de procesos, visualización de datos, modelado</li>
-    </ul>
-  </section>
+
+  <!-- ==================================
+       EXPERIENCIA
+  =================================== -->
 
   <section id="experiencia">
-    <h2>Experiencia profesional</h2>
-    <ul>
-      <li><strong>Star Médica</strong> – Analista de Gestión de Vistas (febrero 2025 - agosto 2025)<br>Automatización de flujos, validación de datos médicos y construcción de dashboards para toma de decisiones clínicas y comerciales.</li>
-      <li><strong>UNAM</strong> – Asistente académico (2023 - Presente)<br>Apoyo docente en cursos de inferencia estadística y probabilidad, generación de material, asesorías y evaluación de proyectos.</li>
-      <li><strong>Nadro</strong> – Becario en análisis comercial (2024 - 2025)<br>Elaboración de reportes, visualización de tendencias y apoyo en análisis de campañas de mercado.</li>
-    </ul>
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="eyebrow">02 / Trayectoria profesional</span>
+
+        <h2 class="section-heading">
+          Experiencia y<br>
+          <span class="accent">evolución profesional.</span>
+        </h2>
+
+        <p class="section-description">
+          Experiencia en análisis cuantitativo, gestión de
+          información, automatización y desarrollo de capacidades
+          analíticas en los sectores financiero, salud y educativo.
+        </p>
+
+      </div>
+
+
+      <div class="timeline">
+
+        <!-- BANORTE -->
+
+        <article class="timeline-item">
+
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-card role-highlight">
+
+            <div class="timeline-top">
+
+              <div>
+                <div class="timeline-company">
+                  GRUPO FINANCIERO BANORTE
+                </div>
+
+                <h3>Gerente de Modelos Internos Minorista</h3>
+              </div>
+
+              <span class="timeline-date">ACTUALIDAD</span>
+
+            </div>
+
+            <p>
+              Desarrollo y seguimiento de actividades relacionadas
+              con modelos internos y análisis cuantitativo de
+              portafolios minoristas dentro del sector financiero.
+              Enfoque en parámetros de riesgo, evaluación de
+              resultados y análisis de escenarios.
+            </p>
+
+            <ul>
+              <li>Modelos internos y riesgo de crédito.</li>
+              <li>Análisis de PD, LGD y EAD.</li>
+              <li>Seguimiento de reservas y métricas de riesgo.</li>
+              <li>Análisis de comportamiento de portafolios.</li>
+              <li>Evaluación de escenarios macroeconómicos.</li>
+              <li>Interpretación de indicadores cuantitativos.</li>
+            </ul>
+
+          </div>
+
+        </article>
+
+
+        <!-- STAR MEDICA -->
+
+        <article class="timeline-item">
+
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-card">
+
+            <div class="timeline-top">
+
+              <div>
+                <div class="timeline-company">STAR MÉDICA</div>
+                <h3>Analista de Gestión de Vistas</h3>
+              </div>
+
+              <span class="timeline-date">FEB. 2025 – AGO. 2025</span>
+
+            </div>
+
+            <p>
+              Análisis de información operativa y financiera
+              relacionada con insumos médicos, costos y procesos
+              administrativos. Desarrollo de soluciones para
+              consolidar información y mejorar la disponibilidad
+              de indicadores de gestión.
+            </p>
+
+            <ul>
+              <li>Integración, limpieza y homologación de bases.</li>
+              <li>Procesos ETL y transformación de información.</li>
+              <li>Automatización de reportes con Python.</li>
+              <li>Dashboards ejecutivos en Power BI.</li>
+              <li>Análisis de costos y proyecciones.</li>
+              <li>Seguimiento de catálogos e indicadores operativos.</li>
+            </ul>
+
+          </div>
+
+        </article>
+
+
+        <!-- NADRO -->
+
+        <article class="timeline-item">
+
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-card">
+
+            <div class="timeline-top">
+
+              <div>
+                <div class="timeline-company">NADRO</div>
+                <h3>Becario de Análisis de Datos</h3>
+              </div>
+
+              <span class="timeline-date">2024 – 2025</span>
+
+            </div>
+
+            <p>
+              Participación en actividades de análisis comercial,
+              elaboración de reportes y seguimiento de información
+              para la identificación de tendencias y generación
+              de indicadores de desempeño.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- UNAM -->
+
+        <article class="timeline-item">
+
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-card">
+
+            <div class="timeline-top">
+
+              <div>
+                <div class="timeline-company">
+                  UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO
+                </div>
+
+                <h3>Asistente académico · Probabilidad y Estadística</h3>
+              </div>
+
+              <span class="timeline-date">2023 – ACTUALIDAD</span>
+
+            </div>
+
+            <p>
+              Apoyo en actividades de enseñanza universitaria,
+              asesorías, preparación de material didáctico y
+              resolución de problemas de probabilidad, estadística
+              e inferencia estadística.
+            </p>
+
+            <ul>
+              <li>Preparación de ejercicios y soluciones.</li>
+              <li>Elaboración de material académico en LaTeX.</li>
+              <li>Asesorías y acompañamiento estudiantil.</li>
+              <li>Diseño y evaluación de proyectos estadísticos.</li>
+            </ul>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
   </section>
+
+
+  <!-- ==================================
+       ESPECIALIZACIÓN
+  =================================== -->
+
+  <section id="especializacion">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="eyebrow">03 / Áreas de especialización</span>
+
+        <h2 class="section-heading">
+          Un perfil multidisciplinario<br>
+          <span class="accent">orientado al análisis.</span>
+        </h2>
+
+        <p class="section-description">
+          La combinación de formación actuarial, experiencia
+          profesional y herramientas computacionales permite
+          abordar problemas desde diferentes perspectivas.
+        </p>
+
+      </div>
+
+
+      <div class="specialization-grid">
+
+        <article class="specialization-card">
+
+          <div class="specialization-icon">
+            <i class="fas fa-scale-balanced"></i>
+          </div>
+
+          <h3>Riesgo financiero</h3>
+
+          <p>
+            Análisis de parámetros de riesgo, modelos internos,
+            comportamiento de portafolios, reservas y escenarios
+            macroeconómicos.
+          </p>
+
+        </article>
+
+
+        <article class="specialization-card">
+
+          <div class="specialization-icon">
+            <i class="fas fa-square-root-variable"></i>
+          </div>
+
+          <h3>Estadística aplicada</h3>
+
+          <p>
+            Probabilidad, inferencia estadística, regresión,
+            análisis de distribuciones, series de tiempo y
+            modelación cuantitativa.
+          </p>
+
+        </article>
+
+
+        <article class="specialization-card">
+
+          <div class="specialization-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+
+          <h3>Data Science</h3>
+
+          <p>
+            Preparación de datos, análisis exploratorio,
+            procesamiento de información y aplicación de
+            técnicas estadísticas y minería de datos.
+          </p>
+
+        </article>
+
+
+        <article class="specialization-card">
+
+          <div class="specialization-icon">
+            <i class="fas fa-gears"></i>
+          </div>
+
+          <h3>Automatización</h3>
+
+          <p>
+            Desarrollo de scripts, transformación de datos,
+            optimización de procesos y generación automatizada
+            de reportes.
+          </p>
+
+        </article>
+
+
+        <article class="specialization-card">
+
+          <div class="specialization-icon">
+            <i class="fas fa-chart-column"></i>
+          </div>
+
+          <h3>Business Intelligence</h3>
+
+          <p>
+            Construcción de indicadores, tableros ejecutivos,
+            análisis de desempeño y visualización de información
+            para la toma de decisiones.
+          </p>
+
+        </article>
+
+
+        <article class="specialization-card">
+
+          <div class="specialization-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+
+          <h3>Investigación y docencia</h3>
+
+          <p>
+            Desarrollo de material académico, documentación
+            matemática, demostraciones y enseñanza de
+            fundamentos estadísticos.
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================
+       TECNOLOGÍA Y HABILIDADES
+  =================================== -->
+
+  <section id="habilidades">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="eyebrow">04 / Stack tecnológico</span>
+
+        <h2 class="section-heading">
+          Herramientas para<br>
+          <span class="accent">convertir datos en conocimiento.</span>
+        </h2>
+
+        <p class="section-description">
+          Tecnologías y herramientas utilizadas en proyectos
+          de análisis, procesamiento de información,
+          modelación y comunicación de resultados.
+        </p>
+
+      </div>
+
+
+      <div class="skills-layout">
+
+        <article class="skill-card">
+
+          <div class="skill-card-header">
+            <i class="fab fa-python"></i>
+            <h3>Programación y análisis</h3>
+          </div>
+
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">Statsmodels</span>
+            <span class="skill-tag">R</span>
+            <span class="skill-tag">Jupyter</span>
+          </div>
+
+        </article>
+
+
+        <article class="skill-card">
+
+          <div class="skill-card-header">
+            <i class="fas fa-database"></i>
+            <h3>Bases de datos y consultas</h3>
+          </div>
+
+          <div class="skill-tags">
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Consultas</span>
+            <span class="skill-tag">Manipulación de datos</span>
+          </div>
+
+        </article>
+
+
+        <article class="skill-card">
+
+          <div class="skill-card-header">
+            <i class="fas fa-chart-area"></i>
+            <h3>Business Intelligence</h3>
+          </div>
+
+          <div class="skill-tags">
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">DAX</span>
+            <span class="skill-tag">Power Query</span>
+            <span class="skill-tag">Excel avanzado</span>
+            <span class="skill-tag">Macros</span>
+          </div>
+
+        </article>
+
+
+        <article class="skill-card">
+
+          <div class="skill-card-header">
+            <i class="fas fa-laptop-code"></i>
+            <h3>Desarrollo y documentación</h3>
+          </div>
+
+          <div class="skill-tags">
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">LaTeX</span>
+            <span class="skill-tag">Wolfram Mathematica</span>
+          </div>
+
+        </article>
+
+
+        <article class="skill-card">
+
+          <div class="skill-card-header">
+            <i class="fas fa-calculator"></i>
+            <h3>Fundamentos cuantitativos</h3>
+          </div>
+
+          <div class="skill-tags">
+            <span class="skill-tag">Probabilidad</span>
+            <span class="skill-tag">Inferencia</span>
+            <span class="skill-tag">Regresión</span>
+            <span class="skill-tag">Series de tiempo</span>
+            <span class="skill-tag">Estadística</span>
+          </div>
+
+        </article>
+
+
+        <article class="skill-card">
+
+          <div class="skill-card-header">
+            <i class="fas fa-building-columns"></i>
+            <h3>Analítica financiera</h3>
+          </div>
+
+          <div class="skill-tags">
+            <span class="skill-tag">PD</span>
+            <span class="skill-tag">LGD</span>
+            <span class="skill-tag">EAD</span>
+            <span class="skill-tag">Reservas</span>
+            <span class="skill-tag">Modelos internos</span>
+            <span class="skill-tag">Escenarios macroeconómicos</span>
+          </div>
+
+        </article>
+
+      </div>
+
+      <p class="skill-note">
+        Las herramientas representan experiencia de uso en
+        distintos contextos profesionales y académicos.
+        El nivel de dominio depende de la tecnología y su aplicación.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================
+       PROYECTOS
+  =================================== -->
 
   <section id="proyectos">
-    <h2>Proyectos y herramientas</h2>
-    <ul>
-      <li><strong>Tablero para sector salud:</strong> Visualización y seguimiento de indicadores clínicos y administrativos con Power BI.</li>
-      <li><strong>Script de homologación:</strong> Automatización en Python para limpieza de bases médicas heterogéneas.</li>
-      <li><strong>Recursos didácticos interactivos:</strong> Material docente con simulaciones de datos y visualización en R/LaTeX para fortalecer la enseñanza de estadística.</li>
-    </ul>
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="eyebrow">05 / Desarrollo y proyectos</span>
+
+        <h2 class="section-heading">
+          Aplicación de conocimientos.<br>
+          <span class="accent">Soluciones analíticas.</span>
+        </h2>
+
+        <p class="section-description">
+          Proyectos y líneas de trabajo en los que convergen
+          programación, estadística, automatización y
+          visualización de información.
+        </p>
+
+      </div>
+
+
+      <div class="projects-grid">
+
+        <article class="project-card">
+
+          <div class="project-number">PROJECT / 001</div>
+
+          <h3>Automatización y procesamiento de datos</h3>
+
+          <p>
+            Desarrollo de scripts para limpieza, homologación,
+            integración y consolidación de información procedente
+            de fuentes heterogéneas. Aplicación de procesos
+            ETL y preparación de bases para análisis posterior.
+          </p>
+
+          <div class="project-tools">
+            <span>Python</span>
+            <span>Pandas</span>
+            <span>NumPy</span>
+            <span>ETL</span>
+          </div>
+
+        </article>
+
+
+        <article class="project-card">
+
+          <div class="project-number">PROJECT / 002</div>
+
+          <h3>Modelación y análisis de información financiera</h3>
+
+          <p>
+            Análisis de indicadores financieros y parámetros
+            de riesgo, seguimiento de reservas, comparación
+            de periodos y evaluación de escenarios para
+            interpretar cambios en el comportamiento de
+            portafolios.
+          </p>
+
+          <div class="project-tools">
+            <span>Estadística</span>
+            <span>PD / LGD / EAD</span>
+            <span>Python</span>
+            <span>Excel</span>
+          </div>
+
+        </article>
+
+
+        <article class="project-card">
+
+          <div class="project-number">PROJECT / 003</div>
+
+          <h3>Business Intelligence y proyecciones</h3>
+
+          <p>
+            Construcción de tableros de seguimiento, indicadores
+            dinámicos y modelos de proyección de cierre mensual.
+            Integración de presupuestos, ventas, costos y
+            métricas de desempeño.
+          </p>
+
+          <div class="project-tools">
+            <span>Power BI</span>
+            <span>DAX</span>
+            <span>Excel</span>
+            <span>Power Query</span>
+          </div>
+
+        </article>
+
+
+        <article class="project-card">
+
+          <div class="project-number">PROJECT / 004</div>
+
+          <h3>Desarrollo de recursos académicos</h3>
+
+          <p>
+            Elaboración de documentos técnicos y material
+            didáctico para cursos de probabilidad y estadística.
+            Desarrollo de soluciones matemáticas, demostraciones,
+            ejercicios y recursos de apoyo a la enseñanza.
+          </p>
+
+          <div class="project-tools">
+            <span>LaTeX</span>
+            <span>R</span>
+            <span>Python</span>
+            <span>Wolfram</span>
+          </div>
+
+        </article>
+
+
+        <article class="project-card">
+
+          <div class="project-number">PROJECT / 005</div>
+
+          <h3>Desarrollo web y portafolio profesional</h3>
+
+          <p>
+            Diseño y desarrollo de un sitio web personal
+            para presentar experiencia, conocimientos técnicos
+            y proyectos. Implementación de HTML, CSS,
+            diseño responsivo y control de versiones.
+          </p>
+
+          <div class="project-tools">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>Git</span>
+            <span>GitHub Pages</span>
+          </div>
+
+        </article>
+
+
+        <article class="project-card">
+
+          <div class="project-number">PROJECT / 006</div>
+
+          <h3>Analítica estadística y minería de datos</h3>
+
+          <p>
+            Aplicación de herramientas estadísticas y técnicas
+            de minería de datos para explorar información,
+            identificar patrones, construir análisis y
+            desarrollar soluciones basadas en evidencia.
+          </p>
+
+          <div class="project-tools">
+            <span>R</span>
+            <span>Python</span>
+            <span>Estadística</span>
+            <span>Machine Learning</span>
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
   </section>
 
-  <section id="constancia" class="cert-section">
-    <h2>Diplomado especializado</h2>
-    <p>Concluí el diplomado <strong>"Técnicas estadísticas y minería de datos"</strong> en FES Acatlán UNAM, enfocado en machine learning aplicado y herramientas estadísticas modernas. <a href="https://drive.google.com/file/d/1pIvyxVzOB1T1U4Gftgas0YZhP_0lyXmG/view?usp=sharing" target="_blank">Ver constancia</a></p>
+
+  <!-- ==================================
+       FORMACIÓN
+  =================================== -->
+
+  <section id="formacion">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="eyebrow">06 / Formación académica</span>
+
+        <h2 class="section-heading">
+          Fundamentos sólidos.<br>
+          <span class="accent">Aprendizaje continuo.</span>
+        </h2>
+
+      </div>
+
+
+      <div class="education-grid">
+
+        <article class="education-card">
+
+          <i class="fas fa-university"></i>
+
+          <div class="education-type">Licenciatura</div>
+
+          <h3>Actuaría</h3>
+
+          <p>
+            Facultad de Ciencias · Universidad Nacional
+            Autónoma de México.
+          </p>
+
+          <p>
+            Formación en matemáticas, probabilidad,
+            estadística, inferencia y modelación.
+          </p>
+
+        </article>
+
+
+        <article class="education-card">
+
+          <i class="fas fa-certificate"></i>
+
+          <div class="education-type">Formación especializada</div>
+
+          <h3>Técnicas Estadísticas y Minería de Datos</h3>
+
+          <p>
+            Diplomado · FES Acatlán · UNAM.
+          </p>
+
+          <p>
+            Formación complementaria en herramientas
+            estadísticas y técnicas de minería de datos.
+          </p>
+
+          <a
+            href="https://drive.google.com/file/d/1pIvyxVzOB1T1U4Gftgas0YZhP_0lyXmG/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            <i class="fas fa-external-link-alt"></i>
+            Consultar constancia
+
+          </a>
+
+        </article>
+
+      </div>
+
+    </div>
+
   </section>
+
+
+  <!-- ==================================
+       DOCENCIA
+  =================================== -->
+
+  <section id="docencia">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="eyebrow">07 / Actividad académica</span>
+
+        <h2 class="section-heading">
+          La enseñanza como<br>
+          <span class="accent">extensión del conocimiento.</span>
+        </h2>
+
+      </div>
+
+
+      <div class="teaching">
+
+        <div class="teaching-icon">
+          <i class="fas fa-book-open"></i>
+        </div>
+
+        <div>
+
+          <h3>Asistente académico en la UNAM</h3>
+
+          <p>
+            Participación en actividades docentes relacionadas
+            con Probabilidad, Estadística e Inferencia Estadística.
+            Desarrollo de ejercicios, demostraciones, documentos
+            en LaTeX y material de apoyo para el aprendizaje
+            de conceptos matemáticos y estadísticos.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================
+       CONTACTO
+  =================================== -->
 
   <section id="contacto">
-    <h2>Contacto</h2>
-    <p>Estoy abierto a nuevas oportunidades, colaboraciones o proyectos donde pueda sumar con impacto.</p>
-    <div class="contact-icons">
-      <a href="mailto:axelmendezlopez@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-      <a href="https://github.com/AxelM007" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/pedro-axel-méndez-lópez-2b695a27a/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://drive.google.com/file/d/1Rl6EV9l2bOaOtlM8R4zCsphDsvJIRVp2/view?usp=sharing" target="_blank" title="CV PDF"><i class="fas fa-file-pdf"></i></a>
+
+    <div class="container">
+
+      <div class="contact-panel">
+
+        <span class="eyebrow">08 / Contacto profesional</span>
+
+        <h2>Construyamos algo<br>con valor analítico.</h2>
+
+        <p>
+          Abierto al intercambio de conocimiento,
+          colaboraciones y proyectos relacionados con
+          actuaría, analítica de datos, estadística,
+          tecnología y modelación financiera.
+        </p>
+
+
+        <div class="contact-icons">
+
+          <a
+            href="mailto:axelmendezlopez@gmail.com"
+            title="Correo electrónico"
+            aria-label="Correo electrónico">
+
+            <i class="fas fa-envelope"></i>
+          </a>
+
+
+          <a
+            href="https://github.com/AxelM007"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="GitHub"
+            aria-label="GitHub">
+
+            <i class="fab fa-github"></i>
+          </a>
+
+
+          <a
+            href="https://www.linkedin.com/in/pedro-axel-méndez-lópez-2b695a27a/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="LinkedIn"
+            aria-label="LinkedIn">
+
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+
+
+          <a
+            href="https://drive.google.com/file/d/1Rl6EV9l2bOaOtlM8R4zCsphDsvJIRVp2/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Currículum PDF"
+            aria-label="Currículum PDF">
+
+            <i class="fas fa-file-pdf"></i>
+          </a>
+
+        </div>
+
+      </div>
+
     </div>
+
   </section>
 
+
+  <!-- ==================================
+       FOOTER
+  =================================== -->
+
   <footer>
-    <p>&copy; 2025 Pedro Axel Méndez López – Enfoque en datos, diseño y resultados.</p>
+
+    <div class="container footer-inner">
+
+      <p>
+        © 2026 Pedro Axel Méndez López.
+        Todos los derechos reservados.
+      </p>
+
+      <span class="footer-code">
+        ACTUARÍA · DATA · FINANCE · TECHNOLOGY
+      </span>
+
+    </div>
+
   </footer>
+
 </body>
 </html>
