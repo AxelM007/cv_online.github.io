@@ -6,14 +6,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Pedro Axel Méndez López | Actuaría, Datos y Modelación</title>
+  <title>Pedro Axel Méndez López | Actuaría & Data</title>
 
-  <!-- Identidad original conservada -->
+  <!-- Identidad original -->
   <link rel="icon" href="./imagenpagina.ico" type="image/x-icon">
 
-  <meta name="description" content="Pedro Axel Méndez López. Actuario, Gerente de Modelos Internos Minorista en Banorte. Estadística, programación, modelación y ciencia de datos.">
+  <meta name="description" content="Pedro Axel Méndez López. Actuario y Gerente de Modelos Internos Minorista en Banorte. Modelación estadística, programación y ciencia de datos.">
 
-  <meta name="theme-color" content="#511D32">
+  <meta name="theme-color" content="#581727">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,1205 +23,1015 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 
-  <style>
-
-    /* ==================================================
-       01. IDENTIDAD VISUAL
-    ================================================== */
-
-    :root {
-
-      --wine: #511D32;
-      --wine-light: #722D48;
-      --wine-soft: #A56B7C;
-      --wine-pale: #EAD9DE;
-
-      --ivory: #F8F4EF;
-      --paper: #F1E9E2;
-      --white: #FFFEFC;
-
-      --ink: #30262B;
-      --text: #54484B;
-      --muted: #887A7B;
-
-      --border: #E5D9D4;
-
-      --serif: 'Playfair Display', Georgia, serif;
-      --sans: 'DM Sans', sans-serif;
-      --mono: 'DM Mono', monospace;
-
-      --shadow: 0 12px 40px rgba(67, 34, 46, .07);
-      --shadow-hover: 0 20px 50px rgba(67, 34, 46, .12);
-
-      --container: 1160px;
-    }
-
-
-    /* ==================================================
-       02. CONFIGURACIÓN GENERAL
-    ================================================== */
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 95px;
-    }
-
-    body {
-      font-family: var(--sans);
-      background: var(--ivory);
-      color: var(--ink);
-      line-height: 1.8;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    ::selection {
-      background: var(--wine-pale);
-      color: var(--wine);
-    }
-
-    .container {
-      width: min(var(--container), calc(100% - 48px));
-      margin: 0 auto;
-    }
-
-    .serif {
-      font-family: var(--serif);
-    }
-
-    .mono {
-      font-family: var(--mono);
-    }
-
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-
-      color: var(--wine-light);
-      font-family: var(--mono);
-      font-size: .7rem;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-
-      margin-bottom: 22px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 28px;
-      height: 1px;
-      background: var(--wine-soft);
-    }
-
-    .section-title {
-      font-family: var(--serif);
-      font-size: clamp(2.1rem, 4vw, 3.3rem);
-      font-weight: 500;
-      letter-spacing: -1.4px;
-      line-height: 1.2;
-    }
-
-    .section-title em {
-      color: var(--wine-light);
-      font-weight: 400;
-    }
-
-    .section-intro {
-      max-width: 680px;
-      color: var(--text);
-      font-size: 1rem;
-      margin-top: 17px;
-    }
-
-    .section-header {
-      margin-bottom: 52px;
-    }
-
-    .section-number {
-      color: var(--wine-soft);
-      font-family: var(--mono);
-      font-size: .72rem;
-      letter-spacing: 1px;
-    }
-
-    section {
-      padding: 105px 0;
-    }
-
-
-    /* ==================================================
-       03. NAVEGACIÓN
-    ================================================== */
-
-    .navigation {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-
-      background: rgba(248, 244, 239, .94);
-      backdrop-filter: blur(18px);
-
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-inner {
-      min-height: 78px;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 25px;
-    }
-
-    .brand {
-      text-decoration: none;
-      line-height: 1.3;
-    }
-
-    .brand strong {
-      display: block;
-      font-family: var(--serif);
-      font-size: 1.15rem;
-      font-weight: 600;
-    }
-
-    .brand span {
-      display: block;
-      color: var(--muted);
-      font-family: var(--mono);
-      font-size: .62rem;
-      letter-spacing: 1.5px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 25px;
-    }
-
-    .nav-links a {
-      color: var(--text);
-      font-size: .82rem;
-      text-decoration: none;
-      transition: color .2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--wine-light);
-    }
-
-    .nav-links .contact-link {
-      color: var(--wine);
-      border: 1px solid var(--wine-soft);
-      padding: 8px 16px;
-    }
-
-    .nav-links .contact-link:hover {
-      background: var(--wine);
-      color: white;
-    }
-
-
-    /* ==================================================
-       04. PORTADA
-    ================================================== */
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-
-      padding: 112px 0 105px;
-
-      background:
-        radial-gradient(
-          ellipse at 90% 15%,
-          rgba(165, 107, 124, .18),
-          transparent 35%
-        ),
-        linear-gradient(
-          115deg,
-          #F5ECE7,
-          #EDE0DB 65%,
-          #E8D8D7
-        );
-
-      border-bottom: 1px solid var(--border);
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-
-      width: 550px;
-      height: 550px;
-
-      right: -180px;
-      top: -270px;
-
-      border: 1px solid rgba(81, 29, 50, .13);
-      border-radius: 50%;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-
-      width: 400px;
-      height: 400px;
-
-      right: -105px;
-      top: -190px;
-
-      border: 1px solid rgba(81, 29, 50, .13);
-      border-radius: 50%;
-    }
-
-    .hero-grid {
-      position: relative;
-      z-index: 1;
-
-      display: grid;
-      grid-template-columns: 1.5fr .8fr;
-      align-items: center;
-      gap: 75px;
-    }
-
-    .hero-overline {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-
-      color: var(--wine);
-      font-family: var(--mono);
-      font-size: .7rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-
-      margin-bottom: 30px;
-    }
-
-    .hero-overline span {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--wine-soft);
-    }
-
-    .hero h1 {
-      font-family: var(--serif);
-      font-size: clamp(3.6rem, 7vw, 6.3rem);
-      font-weight: 500;
-      letter-spacing: -3.5px;
-      line-height: 1.03;
-
-      margin-bottom: 25px;
-    }
-
-    .hero h1 em {
-      display: block;
-      color: var(--wine);
-      font-weight: 400;
-    }
-
-    .hero-role {
-      color: var(--wine-light);
-      font-size: 1.08rem;
-      font-weight: 600;
-      letter-spacing: .1px;
-
-      margin-bottom: 23px;
-    }
-
-    .hero-description {
-      max-width: 650px;
-      color: var(--text);
-      font-size: 1.03rem;
-      line-height: 1.9;
-
-      margin-bottom: 33px;
-    }
-
-    .hero-description strong {
-      color: var(--wine);
-      font-weight: 600;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 13px;
-    }
-
-    .button {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-
-      padding: 12px 21px;
-
-      font-size: .86rem;
-      font-weight: 600;
-      text-decoration: none;
-
-      transition: .25s ease;
-    }
-
-    .button-dark {
-      background: var(--wine);
-      color: white;
-      border: 1px solid var(--wine);
-    }
-
-    .button-dark:hover {
-      background: var(--wine-light);
-      transform: translateY(-3px);
-    }
-
-    .button-light {
-      border: 1px solid var(--wine-soft);
-      color: var(--wine);
-      background: rgba(255,255,255,.2);
-    }
-
-    .button-light:hover {
-      background: rgba(255,255,255,.7);
-      transform: translateY(-3px);
-    }
-
-
-    /* Panel editorial */
-
-    .hero-note {
-      background: rgba(255, 254, 252, .75);
-      border: 1px solid rgba(255,255,255,.85);
-
-      padding: 32px;
-      box-shadow: var(--shadow);
-    }
-
-    .hero-note-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      padding-bottom: 18px;
-      margin-bottom: 25px;
-
-      border-bottom: 1px solid var(--border);
-    }
-
-    .hero-note-header span {
-      color: var(--muted);
-      font-family: var(--mono);
-      font-size: .67rem;
-      letter-spacing: 1px;
-    }
-
-    .hero-note-header i {
-      color: var(--wine);
-      font-size: 1.2rem;
-    }
-
-    .note-item {
-      margin-bottom: 24px;
-    }
-
-    .note-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .note-item small {
-      display: block;
-      color: var(--muted);
-      font-family: var(--mono);
-      font-size: .66rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-
-    .note-item strong {
-      display: block;
-      color: var(--wine);
-      font-size: .98rem;
-      line-height: 1.5;
-    }
-
-    .note-item p {
-      color: var(--text);
-      font-size: .83rem;
-      margin-top: 4px;
-    }
-
-
-    /* ==================================================
-       05. FRASE DE IDENTIDAD
-    ================================================== */
-
-    .statement {
-      padding: 47px 0;
-      background: var(--wine);
-      color: #F8F1ED;
-    }
-
-    .statement-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 35px;
-    }
-
-    .statement p {
-      max-width: 790px;
-      font-family: var(--serif);
-      font-size: clamp(1.35rem, 2.7vw, 2.1rem);
-      line-height: 1.5;
-      font-weight: 400;
-    }
-
-    .statement span {
-      color: #D6A9B7;
-      font-family: var(--mono);
-      font-size: .68rem;
-      letter-spacing: 1.5px;
-      white-space: nowrap;
-    }
-
-
-    /* ==================================================
-       06. SOBRE MÍ
-    ================================================== */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.3fr .7fr;
-      gap: 80px;
-      align-items: start;
-    }
-
-    .about-copy p {
-      color: var(--text);
-      font-size: 1rem;
-      margin-bottom: 20px;
-    }
-
-    .about-copy strong {
-      color: var(--wine);
-      font-weight: 600;
-    }
-
-    .about-copy .personal-note {
-      margin-top: 30px;
-      padding: 22px 26px;
-
-      background: var(--paper);
-      border-left: 3px solid var(--wine-soft);
-
-      color: var(--wine);
-      font-family: var(--serif);
-      font-size: 1.18rem;
-      line-height: 1.65;
-    }
-
-    .about-details {
-      padding: 30px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-    }
-
-    .about-details h3 {
-      font-family: var(--serif);
-      font-size: 1.3rem;
-      font-weight: 500;
-      margin-bottom: 19px;
-    }
-
-    .detail {
-      padding: 15px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .detail:last-child {
-      border: 0;
-      padding-bottom: 0;
-    }
-
-    .detail span {
-      display: block;
-      color: var(--muted);
-      font-family: var(--mono);
-      font-size: .65rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-
-    .detail strong {
-      font-size: .9rem;
-      font-weight: 600;
-    }
-
-
-    /* ==================================================
-       07. EXPERIENCIA PROFESIONAL
-    ================================================== */
-
-    .experience {
-      background: #F0E8E2;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .experience-list {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .experience-item {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 45px;
-
-      padding: 40px 0;
-      border-top: 1px solid #D9C9C3;
-    }
-
-    .experience-item:last-child {
-      border-bottom: 1px solid #D9C9C3;
-    }
-
-    .experience-period {
-      color: var(--wine-light);
-      font-family: var(--mono);
-      font-size: .72rem;
-      line-height: 1.8;
-      padding-top: 6px;
-    }
-
-    .experience-company {
-      color: var(--wine-soft);
-      font-family: var(--mono);
-      font-size: .68rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 7px;
-    }
-
-    .experience-content h3 {
-      font-family: var(--serif);
-      font-size: 1.7rem;
-      font-weight: 500;
-      line-height: 1.3;
-      margin-bottom: 17px;
-    }
-
-    .experience-content p {
-      color: var(--text);
-      font-size: .94rem;
-      margin-bottom: 15px;
-    }
-
-    .experience-content ul {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 8px 22px;
-      margin-top: 18px;
-    }
-
-    .experience-content li {
-      position: relative;
-      padding-left: 17px;
-      color: var(--text);
-      font-size: .83rem;
-    }
-
-    .experience-content li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 12px;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--wine-soft);
-    }
-
-    .experience-current {
-      background: rgba(255, 254, 252, .55);
-      border: 1px solid #DFCCC9;
-      padding: 29px;
-    }
-
-    .current-label {
-      display: inline-block;
-      color: var(--wine);
-      background: var(--wine-pale);
-      padding: 5px 10px;
-      font-family: var(--mono);
-      font-size: .65rem;
-      letter-spacing: 1px;
-      margin-bottom: 15px;
-    }
-
-
-    /* ==================================================
-       08. MODELOS Y ANALÍTICA
-    ================================================== */
-
-    .modeling {
-      background: var(--white);
-    }
-
-    .modeling-intro {
-      max-width: 780px;
-      color: var(--text);
-      font-size: 1rem;
-      margin-bottom: 42px;
-    }
-
-    .modeling-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .model-card {
-      padding: 29px;
-      background: var(--ivory);
-      border: 1px solid var(--border);
-      transition: .25s ease;
-    }
-
-    .model-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--wine-soft);
-    }
-
-    .model-card .model-icon {
-      color: var(--wine-light);
-      font-size: 1.35rem;
-      margin-bottom: 21px;
-    }
-
-    .model-card h3 {
-      font-family: var(--serif);
-      font-size: 1.25rem;
-      font-weight: 500;
-      margin-bottom: 11px;
-    }
-
-    .model-card p {
-      color: var(--text);
-      font-size: .87rem;
-    }
-
-    .model-equation {
-      margin-top: 18px;
-      padding: 13px;
-      background: #EDE1DD;
-      color: var(--wine);
-      text-align: center;
-      font-family: var(--mono);
-      font-size: .82rem;
-    }
-
-
-    /* ==================================================
-       09. HABILIDADES TÉCNICAS
-    ================================================== */
-
-    .technology {
-      background: #F0E8E2;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .technology-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .technology-card {
-      padding: 30px;
-      background: var(--white);
-      border: 1px solid var(--border);
-    }
-
-    .technology-heading {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 22px;
-    }
-
-    .technology-heading i {
-      color: var(--wine);
-      font-size: 1.2rem;
-    }
-
-    .technology-heading h3 {
-      font-size: 1rem;
-      font-weight: 600;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-    }
-
-    .tag {
-      padding: 7px 11px;
-      background: #F2E9E6;
-      color: var(--wine);
-      border: 1px solid #E8D9D5;
-
-      font-family: var(--mono);
-      font-size: .71rem;
-    }
-
-    .technology-note {
-      color: var(--muted);
-      font-size: .79rem;
-      margin-top: 25px;
-    }
-
-
-    /* ==================================================
-       10. PROYECTOS
-    ================================================== */
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 23px;
-    }
-
-    .project {
-      position: relative;
-      padding: 32px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      transition: .25s ease;
-    }
-
-    .project:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .project-index {
-      color: var(--wine-soft);
-      font-family: var(--mono);
-      font-size: .7rem;
-      letter-spacing: 1.5px;
-      margin-bottom: 22px;
-    }
-
-    .project h3 {
-      font-family: var(--serif);
-      font-size: 1.4rem;
-      font-weight: 500;
-      line-height: 1.4;
-      margin-bottom: 13px;
-    }
-
-    .project p {
-      color: var(--text);
-      font-size: .9rem;
-      margin-bottom: 22px;
-    }
-
-
-    /* ==================================================
-       11. FORMACIÓN
-    ================================================== */
-
-    .education {
-      background: #F0E8E2;
-      border-top: 1px solid var(--border);
-    }
-
-    .education-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-    }
-
-    .education-card {
-      padding: 32px;
-      background: var(--white);
-      border: 1px solid var(--border);
-    }
-
-    .education-card > i {
-      color: var(--wine);
-      font-size: 1.4rem;
-      margin-bottom: 20px;
-    }
-
-    .education-card small {
-      display: block;
-      color: var(--wine-light);
-      font-family: var(--mono);
-      font-size: .67rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    .education-card h3 {
-      font-family: var(--serif);
-      font-size: 1.45rem;
-      font-weight: 500;
-      margin-bottom: 10px;
-    }
-
-    .education-card p {
-      color: var(--text);
-      font-size: .89rem;
-    }
-
-    .education-card a {
-      display: inline-block;
-      color: var(--wine);
-      text-decoration: none;
-      border-bottom: 1px solid var(--wine-soft);
-      font-size: .84rem;
-      font-weight: 600;
-      margin-top: 18px;
-    }
-
-
-    /* ==================================================
-       12. DOCENCIA
-    ================================================== */
-
-    .teaching {
-      display: grid;
-      grid-template-columns: 90px 1fr;
-      align-items: start;
-      gap: 27px;
-
-      padding: 34px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--wine-soft);
-    }
-
-    .teaching-icon {
-      width: 72px;
-      height: 72px;
-      display: grid;
-      place-items: center;
-      background: var(--wine-pale);
-      color: var(--wine);
-      font-size: 1.5rem;
-    }
-
-    .teaching h3 {
-      font-family: var(--serif);
-      font-size: 1.5rem;
-      font-weight: 500;
-      margin-bottom: 10px;
-    }
-
-    .teaching p {
-      color: var(--text);
-      font-size: .92rem;
-    }
-
-
-    /* ==================================================
-       13. CONTACTO
-    ================================================== */
-
-    .contact-section {
-      padding: 100px 0;
-    }
-
-    .contact-panel {
-      position: relative;
-      overflow: hidden;
-
-      padding: 75px 35px;
-      text-align: center;
-
-      background:
-        radial-gradient(
-          circle at 90% 10%,
-          rgba(255,255,255,.12),
-          transparent 30%
-        ),
-        var(--wine);
-
-      color: white;
-    }
-
-    .contact-panel::before {
-      content: "";
-      position: absolute;
-      width: 360px;
-      height: 360px;
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 50%;
-      right: -120px;
-      bottom: -220px;
-    }
-
-    .contact-panel .eyebrow {
-      justify-content: center;
-      color: #E6BAC8;
-    }
-
-    .contact-panel .eyebrow::before {
-      background: #D6A9B7;
-    }
-
-    .contact-panel h2 {
-      position: relative;
-      z-index: 1;
-
-      font-family: var(--serif);
-      font-size: clamp(2.2rem, 5vw, 3.7rem);
-      font-weight: 400;
-      line-height: 1.2;
-      margin-bottom: 19px;
-    }
-
-    .contact-panel p {
-      position: relative;
-      z-index: 1;
-
-      max-width: 610px;
-      margin: 0 auto;
-
-      color: #E8D8DC;
-      font-size: .95rem;
-    }
-
-    .contact-icons {
-      position: relative;
-      z-index: 1;
-
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-
-      margin-top: 35px;
-    }
-
-    .contact-icons a {
-      display: grid;
-      place-items: center;
-
-      width: 48px;
-      height: 48px;
-
-      color: white;
-      border: 1px solid rgba(255,255,255,.4);
-
-      text-decoration: none;
-      font-size: 1.15rem;
-
-      transition: .2s ease;
-    }
-
-    .contact-icons a:hover {
-      background: white;
-      color: var(--wine);
-      transform: translateY(-4px);
-    }
-
-
-    /* ==================================================
-       14. PIE DE PÁGINA
-    ================================================== */
-
-    footer {
-      padding: 30px 0;
-      border-top: 1px solid var(--border);
-      background: var(--paper);
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    footer p {
-      color: var(--text);
-      font-size: .79rem;
-    }
-
-    footer span {
-      color: var(--wine-light);
-      font-family: var(--mono);
-      font-size: .67rem;
-      letter-spacing: 1px;
-    }
-
-
-    /* ==================================================
-       15. MOVIMIENTO SUTIL
-    ================================================== */
-
-    .fade-in {
-      animation: fadeIn .9s ease both;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(16px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: .01ms !important;
-        transition-duration: .01ms !important;
-      }
-    }
-
-
-    /* ==================================================
-       16. RESPONSIVE
-    ================================================== */
-
-    @media (max-width: 950px) {
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 45px;
-      }
-
-      .hero-note {
-        max-width: 650px;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-      }
-
-      .modeling-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .experience-item {
-        grid-template-columns: 130px 1fr;
-        gap: 25px;
-      }
-
-    }
-
-
-    @media (max-width: 680px) {
-
-      .container {
-        width: calc(100% - 32px);
-      }
-
-      .nav-inner {
-        padding: 14px 0;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        width: 100%;
-        flex-wrap: wrap;
-        gap: 12px 17px;
-      }
-
-      .nav-links a {
-        font-size: .75rem;
-      }
-
-      .nav-links .contact-link {
-        display: none;
-      }
-
-      .hero {
-        padding: 75px 0;
-      }
-
-      .hero h1 {
-        font-size: 3.5rem;
-        letter-spacing: -2px;
-      }
-
-      .statement-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      section {
-        padding: 75px 0;
-      }
-
-      .experience-item {
-        grid-template-columns: 1fr;
-        gap: 13px;
-      }
-
-      .experience-content ul {
-        grid-template-columns: 1fr;
-      }
-
-      .modeling-grid,
-      .technology-grid,
-      .projects-grid,
-      .education-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .teaching {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-panel {
-        padding: 55px 22px;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-
-    }
-
-  </style>
+<style>
+
+/* =================================================
+   01. PALETA E IDENTIDAD
+================================================= */
+
+:root {
+  --wine: #581727;
+  --wine-dark: #3F101F;
+  --wine-mid: #792538;
+  --red: #A34352;
+  --rose: #C17D83;
+  --blush: #E9D5D0;
+
+  --paper: #F7F1EA;
+  --cream: #EFE5DC;
+  --white: #FFFCF9;
+
+  --ink: #30272A;
+  --text: #65575A;
+  --muted: #958589;
+
+  --border: #E5D8D2;
+
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'DM Sans', sans-serif;
+  --mono: 'DM Mono', monospace;
+
+  --shadow: 0 12px 35px rgba(70, 22, 36, .07);
+  --max: 1120px;
+}
+
+
+/* =================================================
+   02. BASE
+================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--blush);
+  color: var(--wine);
+}
+
+.container {
+  width: min(var(--max), calc(100% - 48px));
+  margin: auto;
+}
+
+section {
+  padding: 85px 0;
+}
+
+.eyebrow {
+  color: var(--red);
+  font-family: var(--mono);
+  font-size: .69rem;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: var(--red);
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+.section-title em {
+  color: var(--wine-mid);
+  font-weight: 400;
+}
+
+.section-intro {
+  color: var(--text);
+  max-width: 650px;
+  font-size: .96rem;
+  margin-top: 13px;
+}
+
+.section-header {
+  margin-bottom: 38px;
+}
+
+
+/* =================================================
+   03. NAVEGACIÓN
+================================================= */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(247, 241, 234, .94);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  min-height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand {
+  text-decoration: none;
+  line-height: 1.3;
+}
+
+.brand strong {
+  font-family: var(--serif);
+  font-size: 1.12rem;
+  font-weight: 600;
+}
+
+.brand small {
+  display: block;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: .61rem;
+  letter-spacing: 1.2px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: .81rem;
+  color: var(--text);
+  transition: color .2s;
+}
+
+.nav-links a:hover {
+  color: var(--red);
+}
+
+.nav-links .contact-link {
+  color: var(--wine);
+  border: 1px solid var(--wine-mid);
+  padding: 7px 15px;
+}
+
+.nav-links .contact-link:hover {
+  background: var(--wine);
+  color: white;
+}
+
+
+/* =================================================
+   04. PORTADA
+================================================= */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 105px 0 95px;
+
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(163, 67, 82, .16),
+      transparent 32%
+    ),
+    linear-gradient(120deg, #F2E6DF, #EBD9D4);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero::before {
+  content: "A";
+  position: absolute;
+  right: 5%;
+  top: -115px;
+  font-family: var(--serif);
+  font-size: 600px;
+  line-height: 1;
+  color: rgba(88, 23, 39, .035);
+  pointer-events: none;
+}
+
+.hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.5fr .7fr;
+  gap: 65px;
+  align-items: center;
+}
+
+.hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--wine);
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: 1.2px;
+  margin-bottom: 24px;
+}
+
+.hero-label i {
+  color: var(--red);
+  font-size: .55rem;
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(3.5rem, 7vw, 6.1rem);
+  line-height: 1.03;
+  letter-spacing: -3px;
+  font-weight: 500;
+  margin-bottom: 22px;
+}
+
+.hero h1 span {
+  display: block;
+  color: var(--wine);
+  font-weight: 400;
+}
+
+.hero-role {
+  font-size: 1rem;
+  color: var(--wine-mid);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  max-width: 640px;
+  font-size: .98rem;
+  color: var(--text);
+  line-height: 1.9;
+  margin-bottom: 29px;
+}
+
+.hero-description strong {
+  color: var(--wine);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 20px;
+  font-size: .84rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: .25s;
+}
+
+.btn-primary {
+  background: var(--wine);
+  color: white;
+  border: 1px solid var(--wine);
+}
+
+.btn-primary:hover {
+  background: var(--wine-mid);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1px solid var(--wine-mid);
+  color: var(--wine);
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,.5);
+  transform: translateY(-2px);
+}
+
+
+/* Tarjeta lateral */
+
+.hero-card {
+  padding: 27px;
+  background: rgba(255,252,249,.78);
+  border: 1px solid white;
+  box-shadow: var(--shadow);
+}
+
+.hero-card-top {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  margin-bottom: 22px;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: .65rem;
+  letter-spacing: 1px;
+}
+
+.hero-card-top i {
+  color: var(--wine);
+  font-size: 1.1rem;
+}
+
+.hero-fact {
+  margin-bottom: 20px;
+}
+
+.hero-fact:last-child {
+  margin-bottom: 0;
+}
+
+.hero-fact small {
+  display: block;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: .64rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-fact strong {
+  display: block;
+  color: var(--wine);
+  font-size: .94rem;
+  line-height: 1.45;
+  margin-top: 4px;
+}
+
+.hero-fact p {
+  color: var(--text);
+  font-size: .79rem;
+}
+
+
+/* =================================================
+   05. BANDA DE IDENTIDAD
+================================================= */
+
+.identity {
+  background: var(--wine);
+  color: white;
+  padding: 27px 0;
+}
+
+.identity-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.identity p {
+  max-width: 760px;
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+.identity span {
+  color: #D9AAB2;
+  font-family: var(--mono);
+  font-size: .65rem;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+
+/* =================================================
+   06. SOBRE MÍ
+================================================= */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.3fr .7fr;
+  gap: 65px;
+  align-items: start;
+}
+
+.about-copy p {
+  color: var(--text);
+  font-size: .96rem;
+  margin-bottom: 16px;
+}
+
+.about-copy strong {
+  color: var(--wine);
+}
+
+.about-quote {
+  border-left: 3px solid var(--red);
+  padding: 15px 22px;
+  margin-top: 25px;
+  background: var(--cream);
+  color: var(--wine);
+  font-family: var(--serif);
+  font-size: 1.15rem;
+}
+
+.about-aside {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 27px;
+  box-shadow: var(--shadow);
+}
+
+.about-aside h3 {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 17px;
+}
+
+.about-aside ul {
+  list-style: none;
+}
+
+.about-aside li {
+  padding: 11px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: .85rem;
+  color: var(--text);
+}
+
+.about-aside li:last-child {
+  border: none;
+}
+
+.about-aside i {
+  width: 23px;
+  color: var(--red);
+}
+
+
+/* =================================================
+   07. EXPERIENCIA
+================================================= */
+
+.experience {
+  background: #EFE5DC;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.experience-list {
+  display: grid;
+  gap: 15px;
+}
+
+.experience-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 26px 29px;
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 28px;
+  transition: .25s;
+}
+
+.experience-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.experience-card.featured {
+  border-left: 4px solid var(--wine);
+  background: #FFFAF6;
+}
+
+.experience-period {
+  color: var(--red);
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .6px;
+  padding-top: 5px;
+}
+
+.experience-company {
+  color: var(--red);
+  font-family: var(--mono);
+  font-size: .67rem;
+  letter-spacing: 1.3px;
+  margin-bottom: 5px;
+}
+
+.experience-content h3 {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.experience-content p {
+  color: var(--text);
+  font-size: .87rem;
+  margin-bottom: 12px;
+}
+
+.experience-content ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  list-style: none;
+  margin-top: 14px;
+}
+
+.experience-content li {
+  background: #F2E8E3;
+  color: var(--wine);
+  padding: 5px 9px;
+  font-size: .72rem;
+  border-radius: 2px;
+}
+
+.current {
+  display: inline-block;
+  color: var(--wine);
+  background: var(--blush);
+  padding: 3px 9px;
+  font-family: var(--mono);
+  font-size: .62rem;
+  margin-bottom: 10px;
+}
+
+
+/* =================================================
+   08. CONOCIMIENTO Y HERRAMIENTAS
+================================================= */
+
+.knowledge-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 25px;
+}
+
+.knowledge-main {
+  background: var(--wine);
+  color: white;
+  padding: 34px;
+  position: relative;
+  overflow: hidden;
+}
+
+.knowledge-main::after {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 50%;
+  right: -100px;
+  bottom: -130px;
+}
+
+.knowledge-main .eyebrow {
+  color: #E5B8BF;
+}
+
+.knowledge-main h3 {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 13px;
+}
+
+.knowledge-main p {
+  color: #E9DADD;
+  font-size: .89rem;
+  margin-bottom: 22px;
+}
+
+.knowledge-main .tag {
+  background: rgba(255,255,255,.1);
+  border-color: rgba(255,255,255,.2);
+  color: white;
+}
+
+.knowledge-side {
+  display: grid;
+  gap: 15px;
+}
+
+.knowledge-item {
+  padding: 21px;
+  background: var(--white);
+  border: 1px solid var(--border);
+}
+
+.knowledge-item h3 {
+  font-size: .94rem;
+  margin-bottom: 10px;
+}
+
+.knowledge-item h3 i {
+  color: var(--red);
+  margin-right: 8px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 9px;
+  background: #F2E8E3;
+  border: 1px solid #E9DAD5;
+  color: var(--wine);
+  font-family: var(--mono);
+  font-size: .68rem;
+}
+
+
+/* =================================================
+   09. PROYECTOS
+================================================= */
+
+.projects {
+  background: #EFE5DC;
+  border-top: 1px solid var(--border);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+}
+
+.project {
+  padding: 25px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  transition: .25s;
+}
+
+.project:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.project-number {
+  color: var(--red);
+  font-family: var(--mono);
+  font-size: .65rem;
+  letter-spacing: 1.2px;
+  margin-bottom: 16px;
+}
+
+.project h3 {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.project p {
+  color: var(--text);
+  font-size: .83rem;
+  margin-bottom: 17px;
+}
+
+
+/* =================================================
+   10. FORMACIÓN Y DOCENCIA
+================================================= */
+
+.education-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17px;
+}
+
+.education-card {
+  padding: 26px;
+  background: var(--white);
+  border: 1px solid var(--border);
+}
+
+.education-card > i {
+  color: var(--red);
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.education-card small {
+  display: block;
+  color: var(--red);
+  font-family: var(--mono);
+  font-size: .64rem;
+  letter-spacing: 1px;
+  margin-bottom: 7px;
+}
+
+.education-card h3 {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+
+.education-card p {
+  color: var(--text);
+  font-size: .84rem;
+}
+
+.education-card a {
+  display: inline-block;
+  margin-top: 13px;
+  color: var(--wine);
+  font-size: .82rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid var(--rose);
+}
+
+.teaching {
+  margin-top: 18px;
+  padding: 25px 28px;
+  background: #EAD9D4;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.teaching-icon {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: var(--wine);
+  color: white;
+  font-size: 1.2rem;
+}
+
+.teaching h3 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.teaching p {
+  color: var(--text);
+  font-size: .84rem;
+}
+
+
+/* =================================================
+   11. CONTACTO
+================================================= */
+
+.contact {
+  padding: 85px 0;
+}
+
+.contact-panel {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 65px 30px;
+  background: var(--wine-dark);
+  color: white;
+}
+
+.contact-panel::before {
+  content: "";
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 50%;
+  top: -220px;
+  right: -80px;
+}
+
+.contact-panel .eyebrow {
+  justify-content: center;
+  color: #E5B8BF;
+}
+
+.contact-panel h2 {
+  position: relative;
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+
+.contact-panel p {
+  position: relative;
+  max-width: 550px;
+  margin: auto;
+  color: #E7D8DB;
+  font-size: .91rem;
+}
+
+.contact-icons {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 13px;
+  margin-top: 28px;
+}
+
+.contact-icons a {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  color: white;
+  border: 1px solid rgba(255,255,255,.4);
+  text-decoration: none;
+  transition: .2s;
+}
+
+.contact-icons a:hover {
+  background: white;
+  color: var(--wine);
+  transform: translateY(-3px);
+}
+
+
+/* =================================================
+   12. FOOTER
+================================================= */
+
+footer {
+  padding: 24px 0;
+  background: var(--cream);
+  border-top: 1px solid var(--border);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+footer p {
+  color: var(--text);
+  font-size: .77rem;
+}
+
+footer span {
+  color: var(--wine);
+  font-family: var(--mono);
+  font-size: .65rem;
+  letter-spacing: .8px;
+}
+
+
+/* =================================================
+   13. RESPONSIVE
+================================================= */
+
+@media (max-width: 900px) {
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .hero-card {
+    max-width: 600px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .knowledge-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 650px) {
+
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  .nav-inner {
+    padding: 13px 0;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 11px 17px;
+  }
+
+  .nav-links a {
+    font-size: .74rem;
+  }
+
+  .nav-links .contact-link {
+    display: none;
+  }
+
+  .hero {
+    padding: 72px 0;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+    letter-spacing: -2px;
+  }
+
+  .identity-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  section {
+    padding: 68px 0;
+  }
+
+  .experience-card {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 23px;
+  }
+
+  .projects-grid,
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .teaching {
+    align-items: flex-start;
+  }
+
+  .contact-panel {
+    padding: 48px 20px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: .01ms !important;
+  }
+
+}
+
+</style>
 
 </head>
 
@@ -1229,1615 +1039,798 @@
 <body>
 
 
-  <!-- ==================================================
-       NAVEGACIÓN
-  =================================================== -->
+<!-- =================================================
+     NAVEGACIÓN
+================================================= -->
 
-  <nav class="navigation">
+<nav>
 
-    <div class="container nav-inner">
+  <div class="container nav-inner">
 
-      <a href="#inicio" class="brand">
+    <a href="#inicio" class="brand">
+      <strong>Pedro Axel Méndez</strong>
+      <small>ACTUARÍA · DATA · ANALYTICS</small>
+    </a>
 
-        <strong>Pedro Axel Méndez</strong>
+    <div class="nav-links">
+      <a href="#sobre-mi">Perfil</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#conocimiento">Conocimiento</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#formacion">Formación</a>
+      <a href="#contacto" class="contact-link">Contacto</a>
+    </div>
 
-        <span>ACTUARÍA · DATOS · MODELACIÓN</span>
+  </div>
 
-      </a>
+</nav>
 
 
-      <div class="nav-links">
 
-        <a href="#sobre-mi">Sobre mí</a>
+<!-- =================================================
+     PORTADA
+================================================= -->
 
-        <a href="#experiencia">Trayectoria</a>
+<header class="hero" id="inicio">
 
-        <a href="#modelacion">Modelación</a>
+  <div class="container hero-grid">
 
-        <a href="#tecnologia">Tecnología</a>
+    <div>
 
-        <a href="#proyectos">Proyectos</a>
+      <div class="hero-label">
+        <i class="fas fa-circle"></i>
+        ACTUARIO · PROFESIONAL DE DATOS
+      </div>
 
-        <a href="#formacion">Formación</a>
+      <h1>
+        Pedro Axel
+        <span>Méndez López.</span>
+      </h1>
 
-        <a href="#contacto" class="contact-link">Contacto</a>
+      <p class="hero-role">
+        Modelación estadística · Riesgo financiero · Ciencia de datos
+      </p>
+
+      <p class="hero-description">
+        Soy actuario y actualmente me desempeño como
+        <strong>Gerente de Modelos Internos Minorista en Banorte</strong>.
+        Me interesa la estadística, la programación y la posibilidad
+        de utilizar las matemáticas para comprender problemas reales.
+
+        Disfruto tanto construir soluciones con datos como
+        compartir lo que aprendo en el camino.
+      </p>
+
+      <div class="hero-actions">
+
+        <a href="#experiencia" class="btn btn-primary">
+          Mi trayectoria
+          <i class="fas fa-arrow-right"></i>
+        </a>
+
+        <a href="https://github.com/AxelM007"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-outline">
+          <i class="fab fa-github"></i>
+          GitHub
+        </a>
 
       </div>
 
     </div>
 
-  </nav>
+
+    <aside class="hero-card">
+
+      <div class="hero-card-top">
+        <span>PERFIL PROFESIONAL</span>
+        <i class="fas fa-asterisk"></i>
+      </div>
+
+      <div class="hero-fact">
+        <small>Actualmente</small>
+        <strong>Grupo Financiero Banorte</strong>
+        <p>Gerente de Modelos Internos Minorista</p>
+      </div>
+
+      <div class="hero-fact">
+        <small>Formación</small>
+        <strong>Actuaría · UNAM</strong>
+        <p>Facultad de Ciencias</p>
+      </div>
+
+      <div class="hero-fact">
+        <small>Me interesa</small>
+        <strong>Estadística y tecnología</strong>
+        <p>Modelación, programación y análisis</p>
+      </div>
+
+      <div class="hero-fact">
+        <small>Fuera del análisis</small>
+        <strong>Docencia y aprendizaje</strong>
+        <p>Probabilidad y matemáticas</p>
+      </div>
+
+    </aside>
+
+  </div>
+
+</header>
 
 
 
-  <!-- ==================================================
-       PORTADA
-  =================================================== -->
+<!-- =================================================
+     FRASE
+================================================= -->
 
-  <header class="hero" id="inicio">
+<div class="identity">
 
-    <div class="container hero-grid">
+  <div class="container identity-inner">
 
-      <div class="fade-in">
+    <p>
+      Los números me enseñaron a buscar respuestas;
+      la curiosidad, a nunca dejar de hacer preguntas.
+    </p>
 
-        <div class="hero-overline">
-          <span></span>
-          UN PERFIL ENTRE LOS DATOS Y LAS IDEAS
-        </div>
+    <span>UNA IDEA QUE ME ACOMPAÑA</span>
 
+  </div>
 
-        <h1>
-          Pedro Axel
-          <em>Méndez López.</em>
-        </h1>
+</div>
 
 
-        <p class="hero-role">
 
-          Actuario · Modelación estadística · Ciencia de datos
+<!-- =================================================
+     SOBRE MÍ
+================================================= -->
 
+<section id="sobre-mi">
+
+  <div class="container">
+
+    <div class="section-header">
+      <span class="eyebrow">01 / Sobre mí</span>
+
+      <h2 class="section-title">
+        Me gustan los datos,
+        <em>pero también las historias detrás de ellos.</em>
+      </h2>
+    </div>
+
+
+    <div class="about-grid">
+
+      <div class="about-copy">
+
+        <p>
+          Estudié Actuaría en la Facultad de Ciencias de la UNAM.
+          Mi formación me acercó a la probabilidad, la estadística
+          y la modelación matemática, disciplinas que terminaron
+          convirtiéndose en una parte importante de mi vida profesional.
         </p>
 
-
-        <p class="hero-description">
-
-          Me interesa entender cómo funcionan las cosas,
-          encontrar patrones donde aparentemente sólo hay
-          números y construir soluciones que tengan sentido
-          más allá de una pantalla.
-
-          Soy actuario con experiencia en análisis cuantitativo,
-          programación y automatización. Actualmente formo parte
-          de <strong>Grupo Financiero Banorte, como Gerente de
-          Modelos Internos Minorista</strong>, donde mi trabajo
-          se relaciona con la modelación estadística y el análisis
-          de riesgo financiero.
-
+        <p>
+          Con el tiempo descubrí que también disfruto llevar
+          esos conocimientos a la práctica: programar, explorar
+          bases de datos, automatizar procesos y encontrar
+          formas más claras de interpretar información.
         </p>
 
+        <p>
+          He tenido la oportunidad de trabajar en distintos
+          entornos, desde el sector salud hasta el financiero.
+          Actualmente, mi trabajo en Banorte está relacionado
+          con modelos estadísticos, estimación de parámetros
+          y análisis de riesgo.
+        </p>
 
-        <div class="hero-buttons">
+        <p>
+          También disfruto enseñar. La docencia me permite
+          mantenerme cerca de las matemáticas y recordar
+          que entender algo de verdad también implica
+          saber explicarlo.
+        </p>
 
-          <a href="#sobre-mi" class="button button-dark">
-
-            Conóceme un poco más
-
-            <i class="fas fa-arrow-right"></i>
-
-          </a>
-
-
-          <a href="https://github.com/AxelM007"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="button button-light">
-
-            <i class="fab fa-github"></i>
-
-            Mi GitHub
-
-          </a>
-
+        <div class="about-quote">
+          Me gusta aprender cosas nuevas, construir soluciones
+          y encontrar maneras sencillas de explicar lo complejo.
         </div>
 
       </div>
 
 
+      <aside class="about-aside">
 
-      <aside class="hero-note">
+        <h3>Lo que me mueve</h3>
 
-        <div class="hero-note-header">
-
-          <span>UN POCO SOBRE MI CAMINO</span>
-
-          <i class="fas fa-feather-pointed"></i>
-
-        </div>
-
-
-        <div class="note-item">
-
-          <small>Actualmente</small>
-
-          <strong>Grupo Financiero Banorte</strong>
-
-          <p>Gerente de Modelos Internos Minorista</p>
-
-        </div>
-
-
-        <div class="note-item">
-
-          <small>Formación</small>
-
-          <strong>Actuaría · UNAM</strong>
-
-          <p>Facultad de Ciencias</p>
-
-        </div>
-
-
-        <div class="note-item">
-
-          <small>Intereses</small>
-
-          <strong>Estadística y programación</strong>
-
-          <p>Modelación, automatización y análisis de datos</p>
-
-        </div>
-
-
-        <div class="note-item">
-
-          <small>También disfruto</small>
-
-          <strong>Compartir conocimiento</strong>
-
-          <p>Docencia y desarrollo de material académico</p>
-
-        </div>
+        <ul>
+          <li><i class="fas fa-chart-line"></i> Estadística y modelación</li>
+          <li><i class="fas fa-code"></i> Programación y automatización</li>
+          <li><i class="fas fa-database"></i> Ciencia de datos</li>
+          <li><i class="fas fa-calculator"></i> Matemáticas aplicadas</li>
+          <li><i class="fas fa-book-open"></i> Docencia y divulgación</li>
+        </ul>
 
       </aside>
 
     </div>
 
-  </header>
+  </div>
+
+</section>
 
 
 
-  <!-- ==================================================
-       FRASE CENTRAL
-  =================================================== -->
+<!-- =================================================
+     EXPERIENCIA
+================================================= -->
 
-  <div class="statement">
+<section class="experience" id="experiencia">
 
-    <div class="container statement-inner">
+  <div class="container">
 
-      <p>
-        Creo en la precisión de las matemáticas,
-        pero también en la importancia de mantener
-        la curiosidad, aprender de los demás y
-        nunca perder de vista el lado humano de lo que hacemos.
+    <div class="section-header">
+
+      <span class="eyebrow">02 / Trayectoria</span>
+
+      <h2 class="section-title">
+        Mi camino <em>profesional.</em>
+      </h2>
+
+      <p class="section-intro">
+        Distintos sectores, diferentes problemas y una constante:
+        encontrar valor en la información.
       </p>
 
-      <span>UNA FORMA DE ENTENDER MI TRABAJO</span>
+    </div>
+
+
+    <div class="experience-list">
+
+
+      <!-- BANORTE -->
+
+      <article class="experience-card featured">
+
+        <div class="experience-period">
+          ACTUALIDAD
+          <br>
+          SECTOR FINANCIERO
+        </div>
+
+        <div class="experience-content">
+
+          <span class="current">POSICIÓN ACTUAL</span>
+
+          <div class="experience-company">
+            GRUPO FINANCIERO BANORTE
+          </div>
+
+          <h3>Gerente de Modelos Internos Minorista</h3>
+
+          <p>
+            Trabajo en el ámbito de modelos internos para el
+            segmento minorista, participando en actividades
+            de modelación estadística, estimación de parámetros
+            y análisis de riesgo de crédito.
+          </p>
+
+          <p>
+            Entre las herramientas metodológicas utilizadas
+            se encuentran las regresiones lineales, el análisis
+            de relaciones entre variables y la evaluación
+            cuantitativa de resultados. También participo
+            en actividades relacionadas con reservas y
+            escenarios macroeconómicos.
+          </p>
+
+          <ul>
+            <li>Regresiones lineales</li>
+            <li>Estimación de parámetros</li>
+            <li>PD, LGD y EAD</li>
+            <li>Análisis de reservas</li>
+            <li>Riesgo de crédito</li>
+            <li>Escenarios macroeconómicos</li>
+          </ul>
+
+        </div>
+
+      </article>
+
+
+      <!-- STAR MEDICA -->
+
+      <article class="experience-card">
+
+        <div class="experience-period">
+          FEB. 2025
+          <br>
+          AGO. 2025
+        </div>
+
+        <div class="experience-content">
+
+          <div class="experience-company">STAR MÉDICA</div>
+
+          <h3>Analista de Gestión de Vistas</h3>
+
+          <p>
+            Análisis de información operativa y administrativa
+            relacionada con insumos médicos, costos e indicadores.
+            Desarrollo de procesos de homologación, automatización
+            y visualización para facilitar el seguimiento de resultados.
+          </p>
+
+          <ul>
+            <li>Python y Pandas</li>
+            <li>Power BI y DAX</li>
+            <li>Procesos ETL</li>
+            <li>Proyecciones y costos</li>
+          </ul>
+
+        </div>
+
+      </article>
+
+
+      <!-- NADRO -->
+
+      <article class="experience-card">
+
+        <div class="experience-period">
+          2024 – 2025
+          <br>
+          ANÁLISIS COMERCIAL
+        </div>
+
+        <div class="experience-content">
+
+          <div class="experience-company">NADRO</div>
+
+          <h3>Becario de Análisis Comercial</h3>
+
+          <p>
+            Elaboración de reportes, seguimiento de información
+            comercial e identificación de tendencias para
+            apoyar el análisis de resultados.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- UNAM -->
+
+      <article class="experience-card">
+
+        <div class="experience-period">
+          2023 – ACTUALIDAD
+          <br>
+          DOCENCIA
+        </div>
+
+        <div class="experience-content">
+
+          <div class="experience-company">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</div>
+
+          <h3>Asistente académico · Probabilidad y Estadística</h3>
+
+          <p>
+            Apoyo a la enseñanza universitaria mediante
+            asesorías, preparación de ejercicios, demostraciones
+            matemáticas y elaboración de material didáctico
+            para estudiantes.
+          </p>
+
+        </div>
+
+      </article>
+
 
     </div>
 
   </div>
 
+</section>
 
 
-  <!-- ==================================================
-       SOBRE MÍ
-  =================================================== -->
 
-  <section id="sobre-mi">
+<!-- =================================================
+     CONOCIMIENTO
+================================================= -->
 
-    <div class="container">
+<section id="conocimiento">
 
-      <div class="section-header">
+  <div class="container">
 
-        <span class="eyebrow">01 / Sobre mí</span>
+    <div class="section-header">
 
-        <h2 class="section-title">
-          Los números son parte de mi trabajo,
-          <em>la curiosidad es parte de mí.</em>
-        </h2>
+      <span class="eyebrow">03 / Conocimiento y herramientas</span>
 
-      </div>
+      <h2 class="section-title">
+        Matemáticas para entender.
+        <em>Tecnología para construir.</em>
+      </h2>
 
-
-
-      <div class="about-grid">
-
-
-        <div class="about-copy">
-
-          <p>
-
-            Estudié Actuaría en la Facultad de Ciencias de
-            la UNAM, una formación que me permitió acercarme
-            a distintas maneras de interpretar el mundo:
-            desde la probabilidad y la estadística hasta
-            la modelación matemática y el análisis de problemas
-            complejos.
-
-          </p>
-
-
-          <p>
-
-            Con el tiempo descubrí que mi interés no estaba
-            únicamente en los fundamentos matemáticos, sino
-            también en llevarlos a la práctica. Me gusta
-            programar, explorar bases de datos, automatizar
-            procesos y encontrar maneras más claras y
-            eficientes de trabajar con información.
-
-          </p>
-
-
-          <p>
-
-            Mi trayectoria me ha llevado por diferentes
-            entornos profesionales. He trabajado con información
-            del sector salud, he participado en proyectos
-            de análisis y visualización, y he tenido la
-            oportunidad de desarrollar mi carrera dentro
-            del sector financiero.
-
-          </p>
-
-
-          <p>
-
-            Actualmente trabajo en <strong>Banorte</strong>,
-            como Gerente de Modelos Internos Minorista.
-            Es una etapa en la que he profundizado en la
-            modelación estadística, la estimación de parámetros
-            y el análisis de riesgo, particularmente desde
-            una perspectiva cuantitativa.
-
-          </p>
-
-
-          <p>
-
-            También conservo una parte importante de mi
-            formación académica a través de la docencia.
-            Disfruto preparar ejercicios, explicar conceptos
-            y descubrir que una idea que parecía complicada
-            puede volverse mucho más sencilla cuando se
-            encuentra la manera correcta de explicarla.
-
-          </p>
-
-
-          <div class="personal-note">
-
-            Más que acumular herramientas, me interesa
-            comprenderlas. Más que encontrar respuestas
-            rápidas, disfruto aprender a formular mejores
-            preguntas.
-
-          </div>
-
-        </div>
-
-
-
-        <aside class="about-details">
-
-          <h3>Algunas coordenadas</h3>
-
-
-          <div class="detail">
-
-            <span>Formación</span>
-
-            <strong>Actuaría · Universidad Nacional Autónoma de México</strong>
-
-          </div>
-
-
-          <div class="detail">
-
-            <span>Actividad profesional</span>
-
-            <strong>Modelos internos y analítica financiera</strong>
-
-          </div>
-
-
-          <div class="detail">
-
-            <span>Programación</span>
-
-            <strong>Python · R · SQL</strong>
-
-          </div>
-
-
-          <div class="detail">
-
-            <span>Visualización</span>
-
-            <strong>Power BI · DAX · Excel</strong>
-
-          </div>
-
-
-          <div class="detail">
-
-            <span>Intereses académicos</span>
-
-            <strong>Probabilidad · Inferencia · Modelación</strong>
-
-          </div>
-
-
-          <div class="detail">
-
-            <span>Un interés constante</span>
-
-            <strong>Aprender, construir y compartir</strong>
-
-          </div>
-
-        </aside>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ==================================================
-       EXPERIENCIA
-  =================================================== -->
-
-  <section class="experience" id="experiencia">
-
-    <div class="container">
-
-      <div class="section-header">
-
-        <span class="eyebrow">02 / Trayectoria</span>
-
-        <h2 class="section-title">
-          Cada experiencia
-          <em>ha sumado una perspectiva distinta.</em>
-        </h2>
-
-        <p class="section-intro">
-
-          He tenido la oportunidad de trabajar con
-          diferentes tipos de información, equipos
-          y problemas. Cada etapa ha contribuido a
-          construir mi manera de entender el análisis
-          y su aplicación en el mundo profesional.
-
-        </p>
-
-      </div>
-
-
-
-      <div class="experience-list">
-
-
-        <!-- BANORTE -->
-
-        <article class="experience-item">
-
-          <div class="experience-period">
-
-            ACTUALIDAD
-
-            <br>
-
-            SECTOR FINANCIERO
-
-          </div>
-
-
-          <div class="experience-content experience-current">
-
-            <span class="current-label">
-              POSICIÓN ACTUAL
-            </span>
-
-
-            <div class="experience-company">
-              GRUPO FINANCIERO BANORTE
-            </div>
-
-
-            <h3>Gerente de Modelos Internos Minorista</h3>
-
-
-            <p>
-
-              Mi trabajo actual se desarrolla en el ámbito
-              de los modelos internos para el segmento
-              minorista, con énfasis en el análisis estadístico,
-              la estimación de parámetros y el seguimiento
-              de indicadores asociados al riesgo de crédito.
-
-            </p>
-
-
-            <p>
-
-              Una parte importante de este trabajo consiste
-              en utilizar herramientas estadísticas para
-              comprender relaciones entre variables,
-              estimar parámetros y analizar el comportamiento
-              de la información. Entre las metodologías
-              empleadas se encuentran los modelos de
-              regresión lineal.
-
-            </p>
-
-
-            <p>
-
-              También participo en actividades relacionadas
-              con el análisis de reservas, la interpretación
-              de resultados y la evaluación de escenarios,
-              procurando que la información cuantitativa
-              tenga una lectura clara y consistente.
-
-            </p>
-
-
-            <ul>
-
-              <li>Modelación estadística mediante regresiones lineales.</li>
-
-              <li>Estimación y análisis de parámetros.</li>
-
-              <li>Análisis de riesgo de crédito minorista.</li>
-
-              <li>Indicadores PD, LGD y EAD.</li>
-
-              <li>Seguimiento y análisis de reservas.</li>
-
-              <li>Evaluación de escenarios macroeconómicos.</li>
-
-            </ul>
-
-          </div>
-
-        </article>
-
-
-
-        <!-- STAR MEDICA -->
-
-        <article class="experience-item">
-
-          <div class="experience-period">
-
-            FEBRERO 2025
-
-            <br>
-
-            AGOSTO 2025
-
-          </div>
-
-
-          <div class="experience-content">
-
-            <div class="experience-company">
-              STAR MÉDICA
-            </div>
-
-
-            <h3>Analista de Gestión de Vistas</h3>
-
-
-            <p>
-
-              Mi experiencia en el sector salud estuvo
-              orientada al análisis de información operativa
-              y administrativa, particularmente relacionada
-              con insumos médicos, costos y seguimiento
-              de indicadores.
-
-            </p>
-
-
-            <p>
-
-              Trabajé con diferentes fuentes de información,
-              desarrollando procesos de homologación,
-              transformación y validación de datos.
-              También participé en la elaboración de
-              reportes y herramientas de visualización
-              para facilitar el seguimiento de resultados.
-
-            </p>
-
-
-            <ul>
-
-              <li>Procesamiento y homologación de información.</li>
-
-              <li>Automatización de tareas mediante Python.</li>
-
-              <li>Construcción de tableros en Power BI.</li>
-
-              <li>Indicadores de costos y operación.</li>
-
-              <li>Proyecciones y seguimiento presupuestal.</li>
-
-              <li>Transformación y validación de bases de datos.</li>
-
-            </ul>
-
-          </div>
-
-        </article>
-
-
-
-        <!-- NADRO -->
-
-        <article class="experience-item">
-
-          <div class="experience-period">
-
-            2024 – 2025
-
-            <br>
-
-            ANÁLISIS COMERCIAL
-
-          </div>
-
-
-          <div class="experience-content">
-
-            <div class="experience-company">
-              NADRO
-            </div>
-
-
-            <h3>Becario de Análisis Comercial</h3>
-
-
-            <p>
-
-              Participación en actividades de análisis
-              comercial, elaboración de reportes y
-              seguimiento de información. Una experiencia
-              que contribuyó a desarrollar mi capacidad
-              para interpretar datos en un contexto
-              de negocio y traducirlos en indicadores
-              útiles para el seguimiento de resultados.
-
-            </p>
-
-          </div>
-
-        </article>
-
-
-
-        <!-- UNAM -->
-
-        <article class="experience-item">
-
-          <div class="experience-period">
-
-            2023 – ACTUALIDAD
-
-            <br>
-
-            DOCENCIA
-
-          </div>
-
-
-          <div class="experience-content">
-
-            <div class="experience-company">
-              UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO
-            </div>
-
-
-            <h3>Asistente académico · Probabilidad y Estadística</h3>
-
-
-            <p>
-
-              Mi actividad académica representa una de las
-              experiencias que más disfruto. Participo en
-              actividades de apoyo a la enseñanza universitaria,
-              preparación de material y acompañamiento
-              a estudiantes en el aprendizaje de conceptos
-              matemáticos y estadísticos.
-
-            </p>
-
-
-            <ul>
-
-              <li>Preparación de ejercicios y soluciones.</li>
-
-              <li>Desarrollo de demostraciones matemáticas.</li>
-
-              <li>Material didáctico en LaTeX.</li>
-
-              <li>Asesorías de probabilidad y estadística.</li>
-
-              <li>Apoyo en inferencia estadística.</li>
-
-              <li>Diseño y evaluación de proyectos académicos.</li>
-
-            </ul>
-
-          </div>
-
-        </article>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ==================================================
-       MODELACIÓN ESTADÍSTICA
-  =================================================== -->
-
-  <section class="modeling" id="modelacion">
-
-    <div class="container">
-
-
-      <div class="section-header">
-
-        <span class="eyebrow">03 / Modelación y análisis</span>
-
-
-        <h2 class="section-title">
-
-          Entender los datos.
-          <em>Explicar sus relaciones.</em>
-
-        </h2>
-
-
-        <p class="section-intro">
-
-          La modelación estadística es una de las áreas
-          que más me interesan de mi formación actuarial.
-          Me gusta trabajar con herramientas que permiten
-          representar relaciones entre variables,
-          estimar parámetros y construir interpretaciones
-          a partir de la información disponible.
-
-        </p>
-
-      </div>
-
-
-
-      <div class="modeling-intro">
-
-        Desde los fundamentos de la inferencia estadística
-        hasta su aplicación en contextos financieros,
-        encuentro especialmente interesante el proceso
-        que conecta los datos observados con una
-        representación matemática del fenómeno que
-        buscamos estudiar.
-
-      </div>
-
-
-
-      <div class="modeling-grid">
-
-
-        <article class="model-card">
-
-          <div class="model-icon">
-            <i class="fas fa-chart-line"></i>
-          </div>
-
-          <h3>Regresión lineal</h3>
-
-          <p>
-
-            Análisis de relaciones entre variables,
-            formulación de modelos lineales y estimación
-            de coeficientes mediante procedimientos
-            estadísticos como mínimos cuadrados.
-
-          </p>
-
-          <div class="model-equation">
-            Y = β₀ + β₁X + ε
-          </div>
-
-        </article>
-
-
-
-        <article class="model-card">
-
-          <div class="model-icon">
-            <i class="fas fa-calculator"></i>
-          </div>
-
-          <h3>Estimación de parámetros</h3>
-
-          <p>
-
-            Estudio de procedimientos de estimación,
-            interpretación de coeficientes, evaluación
-            de supuestos y análisis de la incertidumbre
-            asociada a los resultados.
-
-          </p>
-
-        </article>
-
-
-
-        <article class="model-card">
-
-          <div class="model-icon">
-            <i class="fas fa-building-columns"></i>
-          </div>
-
-          <h3>Riesgo y reservas</h3>
-
-          <p>
-
-            Aplicación de herramientas cuantitativas
-            al análisis de parámetros de riesgo,
-            seguimiento de reservas y evaluación
-            de escenarios en el contexto financiero.
-
-          </p>
-
-        </article>
-
-
-
-        <article class="model-card">
-
-          <div class="model-icon">
-            <i class="fas fa-chart-pie"></i>
-          </div>
-
-          <h3>Análisis exploratorio</h3>
-
-          <p>
-
-            Identificación de patrones, comportamiento
-            de variables, distribuciones y relaciones
-            relevantes como punto de partida para
-            el desarrollo de análisis estadísticos.
-
-          </p>
-
-        </article>
-
-
-
-        <article class="model-card">
-
-          <div class="model-icon">
-            <i class="fas fa-wave-square"></i>
-          </div>
-
-          <h3>Inferencia estadística</h3>
-
-          <p>
-
-            Fundamentos de estimación, distribuciones
-            muestrales, intervalos de confianza,
-            pruebas de hipótesis y propiedades
-            de los estimadores.
-
-          </p>
-
-        </article>
-
-
-
-        <article class="model-card">
-
-          <div class="model-icon">
-            <i class="fas fa-database"></i>
-          </div>
-
-          <h3>Procesamiento de información</h3>
-
-          <p>
-
-            Preparación, transformación y validación
-            de información para garantizar que los
-            análisis y resultados partan de datos
-            estructurados y consistentes.
-
-          </p>
-
-        </article>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ==================================================
-       TECNOLOGÍA
-  =================================================== -->
-
-  <section class="technology" id="tecnologia">
-
-    <div class="container">
-
-
-      <div class="section-header">
-
-        <span class="eyebrow">04 / Herramientas y tecnología</span>
-
-
-        <h2 class="section-title">
-
-          Programar también es
-          <em>otra manera de pensar.</em>
-
-        </h2>
-
-
-        <p class="section-intro">
-
-          La programación se ha convertido en una parte
-          importante de mi trabajo. Me interesa utilizarla
-          no solamente para resolver tareas, sino para
-          construir procesos más ordenados, reproducibles
-          y eficientes.
-
-        </p>
-
-      </div>
-
-
-
-      <div class="technology-grid">
-
-
-        <article class="technology-card">
-
-          <div class="technology-heading">
-
-            <i class="fab fa-python"></i>
-
-            <h3>Programación y análisis de datos</h3>
-
-          </div>
-
-
-          <div class="tags">
-
-            <span class="tag">Python</span>
-
-            <span class="tag">Pandas</span>
-
-            <span class="tag">NumPy</span>
-
-            <span class="tag">Statsmodels</span>
-
-            <span class="tag">R</span>
-
-            <span class="tag">Jupyter</span>
-
-          </div>
-
-        </article>
-
-
-
-        <article class="technology-card">
-
-          <div class="technology-heading">
-
-            <i class="fas fa-database"></i>
-
-            <h3>Bases de datos</h3>
-
-          </div>
-
-
-          <div class="tags">
-
-            <span class="tag">SQL</span>
-
-            <span class="tag">MySQL</span>
-
-            <span class="tag">PostgreSQL</span>
-
-            <span class="tag">Consultas</span>
-
-            <span class="tag">Manipulación de datos</span>
-
-          </div>
-
-        </article>
-
-
-
-        <article class="technology-card">
-
-          <div class="technology-heading">
-
-            <i class="fas fa-chart-column"></i>
-
-            <h3>Business Intelligence</h3>
-
-          </div>
-
-
-          <div class="tags">
-
-            <span class="tag">Power BI</span>
-
-            <span class="tag">DAX</span>
-
-            <span class="tag">Power Query</span>
-
-            <span class="tag">Excel avanzado</span>
-
-            <span class="tag">Visualización</span>
-
-          </div>
-
-        </article>
-
-
-
-        <article class="technology-card">
-
-          <div class="technology-heading">
-
-            <i class="fas fa-code"></i>
-
-            <h3>Desarrollo y documentación</h3>
-
-          </div>
-
-
-          <div class="tags">
-
-            <span class="tag">HTML</span>
-
-            <span class="tag">CSS</span>
-
-            <span class="tag">Git</span>
-
-            <span class="tag">GitHub</span>
-
-            <span class="tag">LaTeX</span>
-
-            <span class="tag">Wolfram Mathematica</span>
-
-          </div>
-
-        </article>
-
-
-
-        <article class="technology-card">
-
-          <div class="technology-heading">
-
-            <i class="fas fa-square-root-variable"></i>
-
-            <h3>Fundamentos matemáticos</h3>
-
-          </div>
-
-
-          <div class="tags">
-
-            <span class="tag">Probabilidad</span>
-
-            <span class="tag">Inferencia estadística</span>
-
-            <span class="tag">Regresión</span>
-
-            <span class="tag">Distribuciones</span>
-
-            <span class="tag">Estimación</span>
-
-          </div>
-
-        </article>
-
-
-
-        <article class="technology-card">
-
-          <div class="technology-heading">
-
-            <i class="fas fa-chart-area"></i>
-
-            <h3>Analítica financiera</h3>
-
-          </div>
-
-
-          <div class="tags">
-
-            <span class="tag">PD</span>
-
-            <span class="tag">LGD</span>
-
-            <span class="tag">EAD</span>
-
-            <span class="tag">Reservas</span>
-
-            <span class="tag">Modelos internos</span>
-
-            <span class="tag">Escenarios</span>
-
-          </div>
-
-        </article>
-
-
-      </div>
-
-
-      <p class="technology-note">
-
-        Herramientas utilizadas en distintos proyectos
-        profesionales y académicos. No todas corresponden
-        a un mismo entorno de trabajo.
-
+      <p class="section-intro">
+        Me interesa combinar los fundamentos estadísticos
+        con herramientas computacionales para desarrollar
+        análisis útiles y soluciones reproducibles.
       </p>
 
     </div>
 
-  </section>
 
+    <div class="knowledge-grid">
 
 
-  <!-- ==================================================
-       PROYECTOS
-  =================================================== -->
+      <article class="knowledge-main">
 
-  <section id="proyectos">
+        <span class="eyebrow">Mi base cuantitativa</span>
 
-    <div class="container">
-
-
-      <div class="section-header">
-
-        <span class="eyebrow">05 / Proyectos e intereses</span>
-
-
-        <h2 class="section-title">
-
-          De la teoría a la práctica,
-          <em>y de vuelta a la teoría.</em>
-
-        </h2>
-
-
-        <p class="section-intro">
-
-          Una selección de las áreas en las que he trabajado
-          y de los temas que continúan despertando mi interés.
-          Me gusta que el conocimiento tenga aplicaciones,
-          pero también disfruto comprender sus fundamentos.
-
-        </p>
-
-      </div>
-
-
-
-      <div class="projects-grid">
-
-
-        <article class="project">
-
-          <div class="project-index">01 — AUTOMATIZACIÓN</div>
-
-          <h3>Procesamiento y homologación de información</h3>
-
-          <p>
-
-            Desarrollo de scripts para limpiar, transformar
-            y consolidar información de diferentes fuentes.
-            Un trabajo orientado a reducir tareas manuales
-            y mejorar la consistencia de los datos.
-
-          </p>
-
-          <div class="tags">
-
-            <span class="tag">Python</span>
-
-            <span class="tag">Pandas</span>
-
-            <span class="tag">NumPy</span>
-
-          </div>
-
-        </article>
-
-
-
-        <article class="project">
-
-          <div class="project-index">02 — BUSINESS INTELLIGENCE</div>
-
-          <h3>Tableros e indicadores de gestión</h3>
-
-          <p>
-
-            Construcción de herramientas de visualización
-            para seguimiento de indicadores, análisis
-            de desempeño, integración de presupuestos
-            y proyecciones de cierre mensual.
-
-          </p>
-
-          <div class="tags">
-
-            <span class="tag">Power BI</span>
-
-            <span class="tag">DAX</span>
-
-            <span class="tag">Excel</span>
-
-          </div>
-
-        </article>
-
-
-
-        <article class="project">
-
-          <div class="project-index">03 — ESTADÍSTICA</div>
-
-          <h3>Modelación y análisis cuantitativo</h3>
-
-          <p>
-
-            Aplicación de herramientas estadísticas
-            para estudiar relaciones entre variables,
-            estimar parámetros y desarrollar
-            interpretaciones fundamentadas en datos.
-
-          </p>
-
-          <div class="tags">
-
-            <span class="tag">R</span>
-
-            <span class="tag">Python</span>
-
-            <span class="tag">Statsmodels</span>
-
-          </div>
-
-        </article>
-
-
-
-        <article class="project">
-
-          <div class="project-index">04 — DOCENCIA</div>
-
-          <h3>Material académico de Probabilidad</h3>
-
-          <p>
-
-            Elaboración de documentos en LaTeX,
-            ejercicios resueltos y demostraciones
-            matemáticas para acompañar el aprendizaje
-            de estudiantes universitarios.
-
-          </p>
-
-          <div class="tags">
-
-            <span class="tag">LaTeX</span>
-
-            <span class="tag">Probabilidad</span>
-
-            <span class="tag">Matemáticas</span>
-
-          </div>
-
-        </article>
-
-
-
-        <article class="project">
-
-          <div class="project-index">05 — DESARROLLO WEB</div>
-
-          <h3>Portafolio profesional</h3>
-
-          <p>
-
-            Diseño y desarrollo de este espacio personal
-            para documentar mi trayectoria, presentar
-            mis intereses y compartir parte de mi
-            trabajo técnico.
-
-          </p>
-
-          <div class="tags">
-
-            <span class="tag">HTML</span>
-
-            <span class="tag">CSS</span>
-
-            <span class="tag">GitHub Pages</span>
-
-          </div>
-
-        </article>
-
-
-
-        <article class="project">
-
-          <div class="project-index">06 — APRENDIZAJE CONTINUO</div>
-
-          <h3>Estadística y minería de datos</h3>
-
-          <p>
-
-            Interés en técnicas de análisis estadístico,
-            minería de datos y herramientas computacionales
-            que permitan explorar información y descubrir
-            patrones relevantes.
-
-          </p>
-
-          <div class="tags">
-
-            <span class="tag">Data Science</span>
-
-            <span class="tag">R</span>
-
-            <span class="tag">Python</span>
-
-          </div>
-
-        </article>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ==================================================
-       FORMACIÓN
-  =================================================== -->
-
-  <section class="education" id="formacion">
-
-    <div class="container">
-
-
-      <div class="section-header">
-
-        <span class="eyebrow">06 / Formación académica</span>
-
-
-        <h2 class="section-title">
-
-          Una formación que sigue
-          <em>acompañando mi camino.</em>
-
-        </h2>
-
-      </div>
-
-
-
-      <div class="education-grid">
-
-
-        <article class="education-card">
-
-          <i class="fas fa-university"></i>
-
-          <small>Formación universitaria</small>
-
-          <h3>Actuaría</h3>
-
-          <p>
-
-            Facultad de Ciencias
-
-            <br>
-
-            Universidad Nacional Autónoma de México
-
-          </p>
-
-          <p style="margin-top: 15px;">
-
-            Formación en matemáticas, probabilidad,
-            estadística, inferencia y modelación.
-
-          </p>
-
-        </article>
-
-
-
-        <article class="education-card">
-
-          <i class="fas fa-award"></i>
-
-          <small>Formación complementaria</small>
-
-          <h3>Técnicas Estadísticas y Minería de Datos</h3>
-
-          <p>
-
-            Diplomado
-
-            <br>
-
-            FES Acatlán · UNAM
-
-          </p>
-
-          <p style="margin-top: 15px;">
-
-            Formación especializada en técnicas
-            estadísticas y herramientas de minería
-            de datos.
-
-          </p>
-
-
-          <a href="https://drive.google.com/file/d/1pIvyxVzOB1T1U4Gftgas0YZhP_0lyXmG/view?usp=sharing"
-             target="_blank"
-             rel="noopener noreferrer">
-
-            Consultar constancia
-
-            <i class="fas fa-arrow-up-right-from-square"></i>
-
-          </a>
-
-        </article>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ==================================================
-       DOCENCIA
-  =================================================== -->
-
-  <section id="docencia">
-
-    <div class="container">
-
-
-      <div class="section-header">
-
-        <span class="eyebrow">07 / Un espacio para compartir</span>
-
-
-        <h2 class="section-title">
-
-          Aprender también significa
-          <em>enseñar.</em>
-
-        </h2>
-
-
-        <p class="section-intro">
-
-          La docencia ha sido una parte importante de mi
-          trayectoria. Es una actividad que me permite
-          mantener cercanía con los fundamentos de mi
-          formación y, al mismo tiempo, aprender de
-          nuevas perspectivas.
-
-        </p>
-
-      </div>
-
-
-
-      <div class="teaching">
-
-
-        <div class="teaching-icon">
-
-          <i class="fas fa-book-open"></i>
-
-        </div>
-
-
-        <div>
-
-          <h3>Probabilidad y Estadística · UNAM</h3>
-
-          <p>
-
-            Participo en actividades de apoyo a la enseñanza
-            universitaria, particularmente en temas de
-            probabilidad, estadística e inferencia.
-
-            Disfruto preparar ejercicios, desarrollar
-            demostraciones y construir material que permita
-            explicar los conceptos con claridad.
-
-            La elaboración de documentos en LaTeX y
-            soluciones detalladas también me ha permitido
-            profundizar en los temas que comparto con
-            mis estudiantes.
-
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ==================================================
-       CONTACTO
-  =================================================== -->
-
-  <section class="contact-section" id="contacto">
-
-    <div class="container">
-
-      <div class="contact-panel">
-
-        <span class="eyebrow">
-          08 / Contacto
-        </span>
-
-
-        <h2>
-          Siempre hay algo nuevo<br>
-          que aprender y construir.
-        </h2>
-
+        <h3>Estadística y modelación</h3>
 
         <p>
-
-          Si compartimos intereses en actuaría,
-          estadística, programación o análisis de datos,
-          será un gusto conectar. Me interesa conocer
-          nuevas perspectivas, intercambiar ideas
-          y seguir construyendo experiencias.
-
+          Probabilidad, inferencia estadística, regresión,
+          estimación de parámetros, análisis exploratorio,
+          distribuciones y modelación aplicada.
         </p>
 
-
-
-        <div class="contact-icons">
-
-
-          <a href="mailto:axelmendezlopez@gmail.com"
-             title="Correo electrónico"
-             aria-label="Correo electrónico">
-
-            <i class="fas fa-envelope"></i>
-
-          </a>
-
-
-          <a href="https://github.com/AxelM007"
-             target="_blank"
-             rel="noopener noreferrer"
-             title="GitHub"
-             aria-label="GitHub">
-
-            <i class="fab fa-github"></i>
-
-          </a>
-
-
-          <a href="https://www.linkedin.com/in/pedro-axel-méndez-lópez-2b695a27a/"
-             target="_blank"
-             rel="noopener noreferrer"
-             title="LinkedIn"
-             aria-label="LinkedIn">
-
-            <i class="fab fa-linkedin-in"></i>
-
-          </a>
-
-
-          <a href="https://drive.google.com/file/d/1Rl6EV9l2bOaOtlM8R4zCsphDsvJIRVp2/view?usp=sharing"
-             target="_blank"
-             rel="noopener noreferrer"
-             title="Currículum PDF"
-             aria-label="Currículum PDF">
-
-            <i class="fas fa-file-pdf"></i>
-
-          </a>
-
-
+        <div class="tags">
+          <span class="tag">Regresión lineal</span>
+          <span class="tag">Inferencia</span>
+          <span class="tag">Estimación</span>
+          <span class="tag">Series de tiempo</span>
+          <span class="tag">Modelos estadísticos</span>
         </div>
+
+      </article>
+
+
+      <div class="knowledge-side">
+
+        <article class="knowledge-item">
+
+          <h3><i class="fab fa-python"></i> Programación</h3>
+
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">Statsmodels</span>
+            <span class="tag">R</span>
+          </div>
+
+        </article>
+
+
+        <article class="knowledge-item">
+
+          <h3><i class="fas fa-database"></i> Datos y consultas</h3>
+
+          <div class="tags">
+            <span class="tag">SQL</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">PostgreSQL</span>
+          </div>
+
+        </article>
+
+
+        <article class="knowledge-item">
+
+          <h3><i class="fas fa-chart-column"></i> Visualización</h3>
+
+          <div class="tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">DAX</span>
+            <span class="tag">Excel</span>
+            <span class="tag">Plotly</span>
+          </div>
+
+        </article>
+
+
+        <article class="knowledge-item">
+
+          <h3><i class="fas fa-laptop-code"></i> Desarrollo</h3>
+
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">LaTeX</span>
+            <span class="tag">Wolfram</span>
+          </div>
+
+        </article>
 
       </div>
 
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
 
-  <!-- ==================================================
-       FOOTER
-  =================================================== -->
+<!-- =================================================
+     PROYECTOS
+================================================= -->
 
-  <footer>
+<section class="projects" id="proyectos">
 
-    <div class="container footer-inner">
+  <div class="container">
 
-      <p>
+    <div class="section-header">
 
-        © 2026 Pedro Axel Méndez López.
+      <span class="eyebrow">04 / Proyectos e intereses</span>
 
-        Hecho con curiosidad y un poco de código.
+      <h2 class="section-title">
+        Ideas que toman <em>forma.</em>
+      </h2>
 
+      <p class="section-intro">
+        Algunas de las áreas en las que he aplicado
+        mis conocimientos y que continúan formando
+        parte de mis intereses.
       </p>
-
-
-      <span>
-
-        ACTUARÍA · DATOS · IDEAS
-
-      </span>
 
     </div>
 
-  </footer>
+
+    <div class="projects-grid">
+
+
+      <article class="project">
+
+        <div class="project-number">01 / DATA</div>
+
+        <h3>Automatización y procesamiento</h3>
+
+        <p>
+          Limpieza, homologación e integración de fuentes
+          de información mediante scripts y procesos ETL.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">SQL</span>
+        </div>
+
+      </article>
+
+
+      <article class="project">
+
+        <div class="project-number">02 / BI</div>
+
+        <h3>Indicadores y proyecciones</h3>
+
+        <p>
+          Tableros de gestión, análisis de costos,
+          presupuestos y proyecciones de cierre mensual.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Power BI</span>
+          <span class="tag">DAX</span>
+          <span class="tag">Excel</span>
+        </div>
+
+      </article>
+
+
+      <article class="project">
+
+        <div class="project-number">03 / ACADEMIA</div>
+
+        <h3>Material de Probabilidad</h3>
+
+        <p>
+          Ejercicios resueltos, demostraciones y documentos
+          académicos para la enseñanza universitaria.
+        </p>
+
+        <div class="tags">
+          <span class="tag">LaTeX</span>
+          <span class="tag">Matemáticas</span>
+          <span class="tag">R</span>
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =================================================
+     FORMACIÓN
+================================================= -->
+
+<section id="formacion">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <span class="eyebrow">05 / Formación y docencia</span>
+
+      <h2 class="section-title">
+        Siempre hay algo <em>por aprender.</em>
+      </h2>
+
+    </div>
+
+
+    <div class="education-grid">
+
+
+      <article class="education-card">
+
+        <i class="fas fa-university"></i>
+
+        <small>Formación universitaria</small>
+
+        <h3>Licenciatura en Actuaría</h3>
+
+        <p>
+          Facultad de Ciencias · Universidad Nacional
+          Autónoma de México.
+        </p>
+
+      </article>
+
+
+      <article class="education-card">
+
+        <i class="fas fa-award"></i>
+
+        <small>Formación especializada</small>
+
+        <h3>Técnicas Estadísticas y Minería de Datos</h3>
+
+        <p>
+          Diplomado · FES Acatlán · UNAM.
+        </p>
+
+        <a href="https://drive.google.com/file/d/1pIvyxVzOB1T1U4Gftgas0YZhP_0lyXmG/view?usp=sharing"
+           target="_blank"
+           rel="noopener noreferrer">
+          Ver constancia
+          <i class="fas fa-arrow-up-right-from-square"></i>
+        </a>
+
+      </article>
+
+    </div>
+
+
+    <div class="teaching">
+
+      <div class="teaching-icon">
+        <i class="fas fa-book-open"></i>
+      </div>
+
+      <div>
+        <h3>También disfruto enseñar</h3>
+        <p>
+          Colaboro en actividades académicas de Probabilidad
+          y Estadística en la UNAM. Preparar ejercicios,
+          desarrollar demostraciones y explicar conceptos
+          matemáticos es una parte que valoro mucho de mi trayectoria.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =================================================
+     CONTACTO
+================================================= -->
+
+<section class="contact" id="contacto">
+
+  <div class="container">
+
+    <div class="contact-panel">
+
+      <span class="eyebrow">Un gusto coincidir</span>
+
+      <h2>
+        Las buenas ideas<br>
+        también empiezan con una conversación.
+      </h2>
+
+      <p>
+        Me interesa conectar con personas que disfruten
+        aprender, compartir conocimiento y construir
+        soluciones desde la estadística, la tecnología
+        y el análisis de datos.
+      </p>
+
+
+      <div class="contact-icons">
+
+        <a href="mailto:axelmendezlopez@gmail.com"
+           title="Correo electrónico"
+           aria-label="Correo electrónico">
+          <i class="fas fa-envelope"></i>
+        </a>
+
+
+        <a href="https://github.com/AxelM007"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="GitHub"
+           aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+
+
+        <a href="https://www.linkedin.com/in/pedro-axel-méndez-lópez-2b695a27a/"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="LinkedIn"
+           aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+
+
+        <a href="https://drive.google.com/file/d/1Rl6EV9l2bOaOtlM8R4zCsphDsvJIRVp2/view?usp=sharing"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="Currículum PDF"
+           aria-label="Currículum PDF">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =================================================
+     FOOTER
+================================================= -->
+
+<footer>
+
+  <div class="container footer-inner">
+
+    <p>
+      © 2026 Pedro Axel Méndez López.
+      Hecho con curiosidad y un poco de código.
+    </p>
+
+    <span>
+      ACTUARÍA · DATOS · IDEAS
+    </span>
+
+  </div>
+
+</footer>
 
 
 </body>
-
 </html>
